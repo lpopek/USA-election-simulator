@@ -39,6 +39,14 @@ Mogą wydarzyć się niespodziewane okoliczności, które spowodują krajowe bą
 ### Debate:
 - _wymusza decyzje i odpowiedzi na pewne pytania_
 
+### Issue:
+- _pytanie z debaty_
+- _wybór odpowiedzi_
+
+### Answer:
+- _odpowiedź na dane pytanie_
+- _procent zgodności z daną partią_
+
 ### Klasy wizualizujace, inicjujace, ect.
 
 
