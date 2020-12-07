@@ -1,5 +1,7 @@
 import java.util.Random;
 
+import javax.lang.model.util.ElementScanner6;
+
 public class State {
 
     String id; 
@@ -51,6 +53,55 @@ public class State {
         Random r = new Random();
         this.stateType = tab[r.nextInt(5)];
     }
+    public String checkSupport(){
+        switch(this.stateType ){
+            case "LD":
+                return "D";
+            case "D":
+                return "D";
+            case "R":
+                return "R";
+            case "LR":
+                return "R";
+            default:
+                return null;
+        }
+    }
+
+    public void changeSupport(String party){
+        double undecided = this.getUndecided();
+        Random r = new Random();
+        if (party == "DEM"){
+            switch(this.stateType){
+                    case "LD":
+                        this.DEMSupport += undecided * r.nextDouble() * 0.4;
+                    case "D":
+                        this.DEMSupport += undecided * r.nextDouble() * 0.5;
+                    case "R":
+                        this.DEMSupport += undecided * r.nextDouble() * 0.1;
+                    case "LR":
+                        this.DEMSupport += undecided * r.nextDouble() * 0.2;
+                    default:
+                        this.DEMSupport += undecided * r.nextDouble() * 0.3;;
+                }
+        }
+        else{
+            switch(this.stateType){
+                    case "LD":
+                        this.GOPSupport += undecided * r.nextDouble() * 0.2;
+                    case "D":
+                        this.GOPSupport += undecided * r.nextDouble() * 0.1;
+                    case "R":
+                        this.GOPSupport += undecided * r.nextDouble() * 0.5;
+                    case "LR":
+                        this.GOPSupport += undecided * r.nextDouble() * 0.4;
+                    default:
+                        this.GOPSupport += undecided * r.nextDouble() * 0.3;
+                }
+        }
+
+    }
+
 
     public double getUndecided(){
         return 1 - this.DEMSupport - this.GOPSupport;

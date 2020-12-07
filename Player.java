@@ -1,17 +1,20 @@
+
 public class Player {
     String name;
     String surname;
     String party;
+    int founds = 100;
 
-    public  Player(String name, String surname) {
+    public Player(String name, String surname, String party ) {
         this.name = name;
         this.surname = surname;
+        this.party = party;
     }
-    public void setParty(int type){
-        if(type == 1){
-            this.party = "GOP";
-        }
-        else
-            this.party = "DEM";
+    
+    public void makeVisit(State state){
+        state.changeSupport(this.party);
+    }
+    public void getFounds(){
+        this.founds += 20;
     }
 }
