@@ -26,16 +26,6 @@ Mogą wydarzyć się niespodziewane okoliczności, które spowodują krajowe bą
 - posiada informacje o wszystkich stanach i graczu
 - generuje losowe wypadki
 
-### Decision:
-- _wpływa na poparcie globalne lub lokalne_
-
-### Journey:
-- _czas i miejsce w jakim się odbywa_ 
-- _wygłaszane są przemowy wpływające na poparacie w danym stanie_
-    
-### Unpredictable Event:
-- _powodują nagły wzrost lub spadek poparcia lokalnie lub ogólnokrajowo_
-
 ### Debate:
 - _wymusza decyzje i odpowiedzi na pewne pytania_
 
@@ -47,8 +37,19 @@ Mogą wydarzyć się niespodziewane okoliczności, które spowodują krajowe bą
 - _odpowiedź na dane pytanie_
 - _procent zgodności z daną partią_
 
+### Decision:
+- _wpływa na poparcie globalne lub lokalne_
+
+### Journey:
+- _czas i miejsce w jakim się odbywa_ 
+- _wygłaszane są przemowy wpływające na poparacie w danym stanie_
+    
+### Unpredictable Event:
+- _powodują nagły wzrost lub spadek poparcia lokalnie lub ogólnokrajowo_
+
 ### Klasy wizualizujace, inicjujace, ect.
 
 
 ### Użyta technologia:
 Java 
+JUnit 5
