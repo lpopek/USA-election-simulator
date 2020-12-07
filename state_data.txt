@@ -41,7 +41,7 @@ PA|Pennsylvania|20
 RI|Rhode Island|4
 SC|South Carolina|9
 SD|South Dakota|3
-TN|Tennessee|01325873
+TN|Tennessee|11
 TX|Texas|38
 UT|Utah|6
 VT|Vermont|3

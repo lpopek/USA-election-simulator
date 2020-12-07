@@ -1,14 +1,12 @@
 import java.util.ArrayList;
-import java.util.List;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
-import javax.print.DocFlavor.STRING;
 
 public class Game {
     ArrayList<State> USA = new ArrayList<State>();
-    int daysTillElection;
-
+    int daysTillElection = 20;
+    boolean gameOver = false;
     public Game(){
         System.out.print( "gra zainicjalizowana\n" );
     }
@@ -37,6 +35,36 @@ public class Game {
         }
     }
 
+    public void getWinner(){
+        int GOPElectVotes = 0 , DEMElectVotes = 0;
+
+        for(int i=0; i < this.USA.size(); i++){
+            State s = this.USA.get((i));
+            System.out.println(s);
+            if (s.DEMSupport > s.GOPSupport)
+                DEMElectVotes += s.electoralVotes;
+            else
+                GOPElectVotes += s.electoralVotes;
+        }
+        if (GOPElectVotes > DEMElectVotes){
+            System.out.println("Wygrał kandydat Republikanów liczbą głosów " + GOPElectVotes);
+            this.gameOver = true;
+        }
+        else{
+            System.out.println("Wygrał kandydat Demokratów liczbą głosów " + DEMElectVotes);
+            this.gameOver = true;
+        }
+        
+    }
+
+    public void finishTurn(){
+        System.out.println("Tura numer:"+ this.daysTillElection);
+        if (this.daysTillElection == 0)
+            this.getWinner();
+        else
+            this.daysTillElection --;
+    }
+
 
 
     public static void main(String[] args){
@@ -44,8 +72,11 @@ public class Game {
             String[] dataStates = getDataFromFile();
             Game g = new Game();
             g.getUSListRandom(dataStates);
-            for(int i=0; i < g.USA.size(); i++){
-                System.out.println(g.USA.get((i)));
+            // for(int i=0; i < g.USA.size(); i++){
+            //     System.out.println(g.USA.get((i)));
+            // }
+            while(g.gameOver == false){
+                g.finishTurn();
             }
 
         }
