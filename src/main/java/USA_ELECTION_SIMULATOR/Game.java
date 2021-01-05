@@ -7,14 +7,22 @@ import java.util.Scanner;
 
 public class Game {
     ArrayList<State> USA = new ArrayList<State>();
-    int money = 0;
-    int daysTillElection = 5;
+    int money = 1000;
+    int weekTillElection = 5;
     boolean gameOver = false;
+
+    public int getWeekTillElections(){
+        return this.weekTillElection;
+    }
+    public int getMoney(){
+        return this.money;
+    }
+
     public Game() throws FileNotFoundException {
         String[] dataStates = getDataFromFile();
         System.out.print( "gra zainicjalizowana\n" );
         Player p = new Player("Donald", "Trump", "GOP");
-        System.out.println("Witaj " + p.name+" ! Życzymy powodzenia");
+        System.out.println("Witaj " + p.name +" ! Życzymy powodzenia");
         getUSListRandom(dataStates);
     }
 
@@ -84,19 +92,19 @@ public class Game {
     }
 
     public void finishTurn(){
-        System.out.println("Tura numer: "+ this.daysTillElection);
-        if (this.daysTillElection == 0)
+        System.out.println("Tura numer: "+ this.weekTillElection);
+        if (this.weekTillElection == 0)
             this.getWinner();
         else
-            this.daysTillElection --;
+            this.weekTillElection --;
     }
 
 
 
     public static void main(String[] args){
-        try{
+        // try{
             
-            Game g = new Game();
+            //Game g = new Game();
             
             // for(int i=0; i < g.USA.size(); i++){
             //     System.out.println(g.USA.get((i)));
@@ -140,10 +148,10 @@ public class Game {
             // }
             // scan.close();
 
-        }
-        catch(FileNotFoundException e){
-            System.out.println("Nie udało się otworzyć pliku z danymi");
-        }
+        // }
+        // catch(FileNotFoundException e){
+        //     System.out.println("Nie udało się otworzyć pliku z danymi");
+        // }
         
         
       }
