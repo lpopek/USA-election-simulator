@@ -10,13 +10,13 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.StackPane;
 import javafx.scene.text.Text;
 
 
 public class debatePage implements Initializable {
 
-
-    @FXML private AnchorPane debatePane;
+    @FXML private StackPane debatePane;
 
     @FXML private Text question;
 
@@ -93,7 +93,7 @@ public class debatePage implements Initializable {
     }
 
     private void loadResults() throws IOException {
-        AnchorPane resultsPane = (AnchorPane) FXMLLoader.load(getClass().getResource("debate_results.fxml"));
+        StackPane resultsPane = (StackPane) FXMLLoader.load(getClass().getResource("debate_results.fxml"));
         debatePane.getChildren().setAll(resultsPane);
 
         printResults();
