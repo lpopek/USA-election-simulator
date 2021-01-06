@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.chart.PieChart?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.TextFlow?>
+
+<VBox prefHeight="800.0" prefWidth="1330.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+  <children>
+      <MenuBar>
+        <menus>
+          <Menu mnemonicParsing="false" text="File">
+            <items>
+              <MenuItem mnemonicParsing="false" text="Close" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Edit">
+            <items>
+              <MenuItem mnemonicParsing="false" text="Delete" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Help">
+            <items>
+              <MenuItem mnemonicParsing="false" text="About" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+    <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="374.0" prefWidth="506.0" VBox.vgrow="ALWAYS">
+      <children>
+            <ScrollPane layoutX="286.0" layoutY="1.0" prefHeight="379.0" prefWidth="344.0" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="286.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="1.0">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="768.0" prefWidth="1333.0">
+                     <children>
+                        <ImageView fitHeight="768.0" fitWidth="1333.0" pickOnBounds="true" preserveRatio="true" AnchorPane.rightAnchor="100.0">
+                           <image>
+                              <Image url="@map.png" />
+                           </image>
+                        </ImageView>
+                        <Line id="missisipiLine" endX="766.4000244140625" endY="644.0" layoutX="98.0" layoutY="16.0" startX="712.7999267578125" startY="517.6000366210938" strokeLineCap="BUTT" strokeLineJoin="ROUND" strokeWidth="3.0">
+                           <fill>
+                              <LinearGradient endX="1.0" endY="1.0">
+                                 <stops>
+                                    <Stop color="BLACK" />
+                                    <Stop color="WHITE" offset="1.0" />
+                                 </stops>
+                              </LinearGradient>
+                           </fill>
+                        </Line>
+                        <Button id="washington-button" alignment="TOP_CENTER" contentDisplay="TOP" defaultButton="true" layoutX="149.0" layoutY="54.0" mnemonicParsing="false" onMousePressed="#p" prefHeight="34.0" prefWidth="94.0" style="-fx-background-color: red; -fx-border-style: solid; -fx-font-weight: bold;" styleClass="Democrat" text="Washington" textAlignment="CENTER" />
+                        <Button id="oregon-button" alignment="TOP_CENTER" contentDisplay="TOP" defaultButton="true" layoutX="122.0" layoutY="132.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="94.0" style="-fx-background-color: red; -fx-border-style: solid; -fx-font-weight: bold;" styleClass="Democrat" text="Oregon" textAlignment="CENTER" />
+                        <Button alignment="TOP_CENTER" contentDisplay="TOP" defaultButton="true" layoutX="100.0" layoutY="365.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="88.0" style="-fx-background-color: red; -fx-border-style: solid; -fx-font-weight: bold;" text="California" textAlignment="CENTER" />
+                        <Button alignment="TOP_CENTER" contentDisplay="TOP" defaultButton="true" layoutX="244.0" layoutY="186.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="82.0" style="-fx-background-color: red; -fx-border-style: solid; -fx-font-weight: bold;" text="Idaho" textAlignment="CENTER" />
+                        <Button alignment="TOP_CENTER" contentDisplay="TOP" defaultButton="true" layoutX="159.0" layoutY="260.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="94.0" style="-fx-background-color: red; -fx-border-style: solid; -fx-font-weight: bold;" text="Nevada" textAlignment="CENTER" />
+                        <Button alignment="TOP_CENTER" contentDisplay="TOP" defaultButton="true" layoutX="247.0" layoutY="441.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="89.0" style="-fx-background-color: red; -fx-border-style: solid; -fx-font-weight: bold;" text="Arizona" textAlignment="CENTER" />
+                        <Button alignment="TOP_CENTER" contentDisplay="TOP" defaultButton="true" layoutX="379.0" layoutY="454.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="94.0" style="-fx-background-color: red; -fx-border-style: solid; -fx-font-weight: bold;" text="New Mexico" textAlignment="CENTER" />
+                        <Button alignment="TOP_CENTER" contentDisplay="TOP" defaultButton="true" layoutX="549.0" layoutY="559.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="62.0" style="-fx-background-color: red; -fx-border-style: solid; -fx-font-weight: bold;" text="Texas" textAlignment="CENTER" />
+                        <Line id="louisianaLine" endX="747.5999755859375" endY="654.4000244140625" startX="747.5999755859375" startY="586.4000244140625" strokeLineCap="BUTT" strokeLineJoin="ROUND" strokeWidth="3.0">
+                           <fill>
+                              <LinearGradient endX="1.0" endY="1.0">
+                                 <stops>
+                                    <Stop color="BLACK" />
+                                    <Stop color="WHITE" offset="1.0" />
+                                 </stops>
+                              </LinearGradient>
+                           </fill>
+                        </Line>
+                        <Button alignment="TOP_CENTER" contentDisplay="TOP" defaultButton="true" layoutX="401.0" layoutY="336.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="94.0" style="-fx-background-color: red; -fx-border-style: solid; -fx-font-weight: bold;" text="Colorado" textAlignment="CENTER" />
+                        <Button alignment="TOP_CENTER" contentDisplay="TOP" defaultButton="true" layoutX="268.0" layoutY="322.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="94.0" style="-fx-background-color: red; -fx-border-style: solid; -fx-font-weight: bold;" text="Utah" textAlignment="CENTER" />
+                        <Button alignment="TOP_CENTER" contentDisplay="TOP" defaultButton="true" layoutX="379.0" layoutY="206.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="94.0" style="-fx-background-color: red; -fx-border-style: solid; -fx-font-weight: bold;" text="Wyoming" textAlignment="CENTER" />
+                        <Button alignment="TOP_CENTER" contentDisplay="TOP" defaultButton="true" layoutX="362.0" layoutY="93.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="94.0" style="-fx-background-color: red; -fx-border-style: solid; -fx-font-weight: bold;" text="Montana" textAlignment="CENTER" />
+                        <Button alignment="TOP_CENTER" contentDisplay="TOP" defaultButton="true" layoutX="985.0" layoutY="626.0" mnemonicParsing="false" prefHeight="18.0" prefWidth="71.0" rotate="60.5" style="-fx-background-color: red; -fx-border-style: solid; -fx-font-weight: bold;" text="Florida" textAlignment="CENTER" />
+                        <Button alignment="TOP_CENTER" contentDisplay="TOP" defaultButton="true" layoutX="709.0" layoutY="646.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="90.0" style="-fx-background-color: red; -fx-border-style: solid; -fx-font-weight: bold;" text="Louisiana" textAlignment="CENTER" />
+                        <Button alignment="TOP_CENTER" contentDisplay="TOP" defaultButton="true" layoutX="817.0" layoutY="421.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="94.0" style="-fx-background-color: red; -fx-border-style: solid; -fx-font-weight: bold;" text="Tennese" textAlignment="CENTER" />
+                        <Button alignment="TOP_CENTER" contentDisplay="TOP" defaultButton="true" layoutX="698.0" layoutY="441.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="76.0" style="-fx-background-color: red; -fx-border-style: solid; -fx-font-weight: bold;" text="Arkansas" textAlignment="CENTER" />
+                        <Button alignment="TOP_CENTER" contentDisplay="TOP" defaultButton="true" layoutX="836.0" layoutY="516.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="76.0" style="-fx-background-color: red; -fx-border-style: solid; -fx-font-weight: bold;" text="Alabama" textAlignment="CENTER" />
+                        <Button alignment="TOP_CENTER" contentDisplay="TOP" defaultButton="true" layoutX="828.0" layoutY="646.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="92.0" style="-fx-background-color: red; -fx-border-style: solid; -fx-font-weight: bold;" text="Missisipi" textAlignment="CENTER" />
+                        <Button alignment="TOP_CENTER" contentDisplay="TOP" defaultButton="true" layoutX="923.0" layoutY="516.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="71.0" style="-fx-background-color: red; -fx-border-style: solid; -fx-font-weight: bold;" text="Georgia" textAlignment="CENTER" />
+                        <Button alignment="TOP_CENTER" contentDisplay="TOP" defaultButton="true" layoutX="1207.0" layoutY="260.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="90.0" style="-fx-background-color: red; -fx-border-style: solid; -fx-font-weight: bold;" text="New Jersey" textAlignment="CENTER" />
+                        <Button alignment="TOP_CENTER" contentDisplay="TOP" defaultButton="true" layoutX="1207.0" layoutY="308.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="78.0" style="-fx-background-color: red; -fx-border-style: solid; -fx-font-weight: bold;" text="Delaware" textAlignment="CENTER" />
+                     </children>
+                  </AnchorPane>
+              </content>
+               <padding>
+                  <Insets left="30.0" top="30.0" />
+               </padding>
+            </ScrollPane>
+            <SplitPane dividerPositions="0.5319422977846471" orientation="VERTICAL" prefHeight="778.0" prefWidth="286.0">
+              <items>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+                     <children>
+                        <TextFlow layoutY="8.0" prefHeight="200.0" prefWidth="200.0">
+                           <children>
+                              <CardPane prefHeight="400.0" prefWidth="286.0">
+                                  <Label style="-fx-padding:10;" text="label1" />
+                                  <Label style="-fx-padding:10;" text="label2" />
+                                  <Label style="-fx-padding:10;" text="label3" />
+                              </CardPane>
+                           </children>
+                        </TextFlow>
+                     </children>
+                  </AnchorPane>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="141.0" prefWidth="151.0">
+                     <children>
+                        <ScrollPane layoutX="3.0" prefHeight="360.0" prefWidth="278.0">
+                           <content>
+                              <PieChart prefHeight="386.0" prefWidth="270.0" />
+                           </content>
+                        </ScrollPane>
+                     </children>
+                  </AnchorPane>
+              </items>
+            </SplitPane>
+      </children>
+    </AnchorPane>
+  </children>
+</VBox>
