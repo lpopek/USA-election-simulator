@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Group?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleButton?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<StackPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-image: url('file:resources/flag-background.jpg'); -fx-background-size: 100% 100%;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="USA_ELECTION_SIMULATOR.ChoosePlayerController">
+   <children>
+      <AnchorPane opacity="0.5" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: ffffff;" />
+      <BorderPane>
+         <center>
+            <AnchorPane cacheShape="false" centerShape="false" prefHeight="315.0" prefWidth="600.0" scaleShape="false" BorderPane.alignment="BOTTOM_CENTER">
+               <children>
+                  <VBox alignment="CENTER" layoutX="20.0" layoutY="-9.0" prefHeight="389.0" prefWidth="697.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="50.0" AnchorPane.rightAnchor="50.0" AnchorPane.topAnchor="0.0">
+                     <children>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Choose Your Player" wrappingWidth="221.1650390625">
+                           <font>
+                              <Font name="Javanese Text" size="26.0" />
+                           </font>
+                        </Text>
+                        <HBox alignment="CENTER" prefHeight="97.33333333333333" prefWidth="600.0" spacing="20.0">
+                           <children>
+                              <Group fx:id="republican">
+                                 <children>
+                                    <ImageView fitHeight="61.0" fitWidth="76.0" layoutX="15.100006103515625" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@Republican_Disc.png" />
+                                       </image>
+                                    </ImageView>
+                                    <ToggleButton fx:id="republicanButton" layoutX="4.100006103515625" layoutY="61.0" mnemonicParsing="false" onAction="#clickedRepublican" text="Republican" />
+                                 </children>
+                              </Group>
+                              <Group fx:id="democratic">
+                                 <children>
+                                    <ImageView fitHeight="61.0" fitWidth="76.0" layoutX="15.76666259765625" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@Democratic_Disc.png" />
+                                       </image>
+                                    </ImageView>
+                                    <ToggleButton fx:id="democraticButton" layoutX="4.100006103515625" layoutY="61.0" mnemonicParsing="false" onAction="#clickedDemocratic" text="Democratic" />
+                                 </children>
+                              </Group>
+                           </children>
+                           <VBox.margin>
+                              <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                           </VBox.margin>
+                        </HBox>
+                        <Group>
+                           <children>
+                              <Label text="Home State">
+                                 <font>
+                                    <Font name="Javanese Text" size="12.0" />
+                                 </font>
+                              </Label>
+                              <TextField fx:id="homeStateField" layoutX="70.0" layoutY="4.0" prefWidth="150.0" promptText="Enter Your Home State" />
+                           </children>
+                           <VBox.margin>
+                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                           </VBox.margin>
+                        </Group>
+                        <Group>
+                           <children>
+                              <TextField fx:id="nameField" layoutX="44.0" layoutY="4.0" maxWidth="150.0" promptText="Enter Your Name" />
+                              <Label text="Player">
+                                 <font>
+                                    <Font name="Javanese Text" size="12.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                           <VBox.margin>
+                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                           </VBox.margin>
+                        </Group>
+                        <HBox alignment="CENTER" prefHeight="55.0" spacing="70.0">
+                           <children>
+                              <AnchorPane>
+                                 <HBox.margin>
+                                    <Insets bottom="20.0" left="20.0" right="20.0" />
+                                 </HBox.margin>
+                                 <children>
+                                    <Button contentDisplay="TOP" layoutX="4.099998474121094" layoutY="3.0999999046325684" mnemonicParsing="false" onAction="#loadMainScreen" text="Back" />
+                                 </children>
+                              </AnchorPane>
+                              <Text fx:id="dataPrompt" strokeType="OUTSIDE" strokeWidth="0.0" text="enter home state" textAlignment="CENTER" visible="false" wrappingWidth="128.1089038848877">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </Text>
+                              <AnchorPane>
+                                 <HBox.margin>
+                                    <Insets bottom="20.0" left="20.0" right="20.0" />
+                                 </HBox.margin>
+                                 <children>
+                                    <Button layoutX="4.0999755859375" layoutY="3.0999999046325684" mnemonicParsing="false" onAction="#loadGame" text="Play" />
+                                 </children>
+                              </AnchorPane>
+                           </children>
+                        </HBox>
+                     </children>
+                     <padding>
+                        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                     </padding>
+                  </VBox>
+               </children>
+            </AnchorPane>
+         </center>
+         <bottom>
+            <AnchorPane prefHeight="1.0" prefWidth="600.0" BorderPane.alignment="CENTER" />
+         </bottom>
+         <top>
+            <AnchorPane prefHeight="10.0" prefWidth="600.0" BorderPane.alignment="CENTER" />
+         </top>
+      </BorderPane>
+   </children>
+</StackPane>
