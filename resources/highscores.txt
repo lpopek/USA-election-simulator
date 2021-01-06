@@ -1,0 +1,15 @@
+D Lyndon B. Johnson 486
+R Richard Nixon 301
+R Richard Nixon 520
+D Jimmy Carter 297
+R Ronald Reagan 489
+R Ronald Reagan 525
+R George H. W. Bush 426
+D Bill Clinton 370
+D Bill Clinton 379
+R George W. Bush 271
+R George W. Bush 286
+D Barack Obama 365
+D Barack Obama 332
+R Donald Trump 304
+D Joe Biden 306
