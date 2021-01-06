@@ -1,12 +1,7 @@
 package USA_ELECTION_SIMULATOR;
 
 import java.net.URL;
-import java.util.ArrayList;
-import java.util.Observable;
 import java.util.ResourceBundle;
-
-import javax.print.DocFlavor.STRING;
-
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -20,12 +15,6 @@ import javafx.scene.control.Label;
 import javafx.scene.control.MenuItem;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Polygon;
-
-
-import USA_ELECTION_SIMULATOR.Game;
-import USA_ELECTION_SIMULATOR.App;
-import USA_ELECTION_SIMULATOR.State;
-
 
 
 public class FMXLDocumentController implements Initializable {
