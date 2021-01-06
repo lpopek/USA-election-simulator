@@ -14,12 +14,6 @@ public class State {
     String stateType; 
 
     public State(String id, String name,  int electoralVotes){
-        /**
- * This is constructor of class state.
- * @id - id of state (string)
- * @name - name of state (string)
- * @electoralVotes - sets number of electoral votes
- */
         this.id = id;
         this.name = name;
         this.electoralVotes = electoralVotes;
