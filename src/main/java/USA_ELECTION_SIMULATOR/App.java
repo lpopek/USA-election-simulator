@@ -21,12 +21,16 @@ public class App extends Application {
     }
     @Override
     public void start(Stage stage) throws Exception {
-        FXMLLoader loader = new FXMLLoader(new File("./src/main/java/USA_ELECTION_SIMULATOR/main_view.fxml").toURI().toURL());
-        
-        Parent root = loader.load();
-        Scene scene = new Scene(root);
         stage.setTitle("USA_Simulator");
-        stage.setScene(scene);
+        
+        FXMLLoader mainPage = (new FXMLLoader(new File("./src/main/java/USA_ELECTION_SIMULATOR/main_page.fxml").toURI().toURL()));
+        Parent mainPageRoot = mainPage.load();
+        Scene primaryScene = new Scene(mainPageRoot);
+        stage.setScene(primaryScene);
+        // FXMLLoader loaderMap = new FXMLLoader(new File("./src/main/java/USA_ELECTION_SIMULATOR/main_view.fxml").toURI().toURL());
+        // Parent root = loaderMap.load();
+        // Scene sceneMap = new Scene(root);
+        // stage.setScene(sceneMap);
         stage.show();
      }
      
