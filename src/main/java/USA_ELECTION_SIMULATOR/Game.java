@@ -7,10 +7,23 @@ import java.util.Scanner;
 
 public class Game {
     ArrayList<State> USA = new ArrayList<State>();
-    int daysTillElection = 5;
+    int money = 1000;
+    int weekTillElection = 5;
     boolean gameOver = false;
-    public Game(){
+
+    public int getWeekTillElections(){
+        return this.weekTillElection;
+    }
+    public int getMoney(){
+        return this.money;
+    }
+
+    public Game() throws FileNotFoundException {
+        String[] dataStates = getDataFromFile();
         System.out.print( "gra zainicjalizowana\n" );
+        Player p = new Player("Donald", "Trump", "GOP");
+        System.out.println("Witaj " + p.name +" ! Życzymy powodzenia");
+        getUSListRandom(dataStates);
     }
 
     public static String[] getDataFromFile() throws FileNotFoundException {
@@ -79,65 +92,66 @@ public class Game {
     }
 
     public void finishTurn(){
-        System.out.println("Tura numer: "+ this.daysTillElection);
-        if (this.daysTillElection == 0)
+        System.out.println("Tura numer: "+ this.weekTillElection);
+        if (this.weekTillElection == 0)
             this.getWinner();
         else
-            this.daysTillElection --;
+            this.weekTillElection --;
     }
 
 
 
     public static void main(String[] args){
-        try{
-            String[] dataStates = getDataFromFile();
-            Game g = new Game();
-            g.getUSListRandom(dataStates);
+        // try{
+            
+            //Game g = new Game();
+            
             // for(int i=0; i < g.USA.size(); i++){
             //     System.out.println(g.USA.get((i)));
             // }
-            Player p = new Player("Donald", "Trump", "GOP");
-            System.out.println("Witaj " + p.name+" ! Życymy powodzenia");
-            Scanner scan = new Scanner(System.in);
-            while(g.gameOver == false){
-                System.out.println("Wybierz akcje:\n 1 - zbierz fundusze 2 - przeprowadź wizytę");
-                int choice = scan.nextInt();
-                scan.nextLine();
-                if (choice == 1){
-                    p.getFounds();
-                }
-                else{
-                    if(p.founds - 20 < 0){
-                        System.out.println("za mało funduszy. Za oszustwo wyborcze tracisz turę!");
-                    }
-                    else{
-                        System.out.println("Wprowdź ID stanu w któym chesz przeprowadzić wiec wyborczy");
-                        for(int i = 0; i < g.USA.size(); i++){
-                            State helper = g.USA.get(i);
-                            System.out.println(helper.name + " " + helper.id);
-                        }
-                        String stateId = scan.nextLine();
-                        State chosenState = g.chooseStateByID(stateId);
-                        if (chosenState != null){
-                            System.out.println("Tak wygladał stan przed wizytą");
-                            System.out.println(chosenState);
-                            p.makeVisit(chosenState);
-                            System.out.println("Tak wygladał stan po wizycie");
-                            System.out.println(chosenState);
-                            g.USA.add(chosenState);
-                        }
-                        
-                    }
-                }
-                
-                g.finishTurn();
-            }
-            scan.close();
+            
 
-        }
-        catch(FileNotFoundException e){
-            System.out.println("Nie udało się otworzyć pliku z danymi");
-        }
+
+            //Scanner scan = new Scanner(System.in);
+            // while(g.gameOver == false){
+            //     System.out.println("Wybierz akcje:\n 1 - zbierz fundusze 2 - przeprowadź wizytę");
+            //     int choice = scan.nextInt();
+            //     scan.nextLine();
+            //     if (choice == 1){
+            //         p.getFounds();
+            //     }
+            //     else{
+            //         if(p.founds - 20 < 0){
+            //             System.out.println("za mało funduszy. Za oszustwo wyborcze tracisz turę!");
+            //         }
+            //         else{
+            //             System.out.println("Wprowdź ID stanu w któym chesz przeprowadzić wiec wyborczy");
+            //             for(int i = 0; i < g.USA.size(); i++){
+            //                 State helper = g.USA.get(i);
+            //                 System.out.println(helper.name + " " + helper.id);
+            //             }
+            //             String stateId = scan.nextLine();
+            //             State chosenState = g.chooseStateByID(stateId);
+            //             if (chosenState != null){
+            //                 System.out.println("Tak wygladał stan przed wizytą");
+            //                 System.out.println(chosenState);
+            //                 p.makeVisit(chosenState);
+            //                 System.out.println("Tak wygladał stan po wizycie");
+            //                 System.out.println(chosenState);
+            //                 g.USA.add(chosenState);
+            //             }
+                        
+            //         }
+            //     }
+                
+            //     g.finishTurn();
+            // }
+            // scan.close();
+
+        // }
+        // catch(FileNotFoundException e){
+        //     System.out.println("Nie udało się otworzyć pliku z danymi");
+        // }
         
         
       }

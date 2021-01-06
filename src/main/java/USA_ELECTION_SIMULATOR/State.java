@@ -2,7 +2,6 @@ package USA_ELECTION_SIMULATOR;
 
 import java.util.Random;
 
-import javax.lang.model.util.ElementScanner6;
 
 public class State {
 
@@ -14,12 +13,6 @@ public class State {
     String stateType; 
 
     public State(String id, String name,  int electoralVotes){
-        /**
- * This is constructor of class state.
- * @id - id of state (string)
- * @name - name of state (string)
- * @electoralVotes - sets number of electoral votes
- */
         this.id = id;
         this.name = name;
         this.electoralVotes = electoralVotes;
