@@ -48,13 +48,14 @@ public class ChoosePlayerController {
             dataPrompt.setVisible(false);
             System.out.println(party+" player "+name+" from "+state);
         }
+        App.screenController.activate("map");
         
     }
 
     @FXML
     private void loadMainScreen(ActionEvent event) {        
         System.out.println("clicked Back");
-        //TODO: load main screen
+        App.screenController.activate("main");
     }
 
     @FXML

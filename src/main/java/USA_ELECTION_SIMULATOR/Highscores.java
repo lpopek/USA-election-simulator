@@ -17,16 +17,16 @@ public class Highscores extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception {
-        Highscores.stage = primaryStage;
-        FXMLLoader loader = new FXMLLoader(new File("resources/highscores.fxml").toURI().toURL());
-        // FXMLLoader loader = new FXMLLoader(new File("resources/choose_player.fxml").toURI().toURL());
-        Parent root = loader.load();
-        Scene scene = new Scene(root);
-        primaryStage.setTitle("USA_Simulator");
-        primaryStage.setMinHeight(400);
-        primaryStage.setMinWidth(600);
-        primaryStage.setScene(scene);
-        primaryStage.show();
+        // Highscores.stage = primaryStage;
+        // FXMLLoader loader = new FXMLLoader(new File("resources/highscores.fxml").toURI().toURL());
+        // // FXMLLoader loader = new FXMLLoader(new File("resources/choose_player.fxml").toURI().toURL());
+        // Parent root = loader.load();
+        // Scene scene = new Scene(root);
+        // primaryStage.setTitle("USA_Simulator");
+        // primaryStage.setMinHeight(400);
+        // primaryStage.setMinWidth(600);
+        // primaryStage.setScene(scene);
+        // primaryStage.show();
 
     }
     

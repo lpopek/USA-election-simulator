@@ -3,8 +3,8 @@ root {
 }
 
 .root {
-     -fx-background-image: url("pic/main_page.jpg");
-     -fx-background-size: cover;
+     -fx-background-image: url("../pic/background_graphics_main_page.jpg");
+     -fx-background-size: 100% 100%;
 }
 
 .debatemain {
