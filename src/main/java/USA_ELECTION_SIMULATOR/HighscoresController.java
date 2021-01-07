@@ -40,13 +40,13 @@ public class HighscoresController implements Initializable {
     private AnchorPane mainHighscores;
 
     @FXML
-    private void loadChoosePlayer(ActionEvent event) {        
-        System.out.println("clicked Play Game");
+    private void loadChoosePlayer(ActionEvent event) { 
+        App.screenController.activate("choose_player");       
     }
 
     @FXML
     private void loadMainScreen(ActionEvent event) {        
-        System.out.println("clicked Back");
+        App.screenController.activate("main");
     }
 
     private void loadData() {

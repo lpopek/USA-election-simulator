@@ -20,7 +20,7 @@
       <Region opacity="0.54" prefHeight="400.0" prefWidth="677.3333333333334" style="-fx-background-color: FFFFFF;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
       <ImageView fx:id="backgroundImg" fitHeight="400.0" fitWidth="640.0" focusTraversable="true" opacity="0.54" pickOnBounds="true" preserveRatio="true" visible="false">
          <image>
-            <Image url="@flag-background.jpg" />
+            <Image url="@../pic/flag-background.jpg" />
          </image>
       </ImageView>
       <BorderPane prefHeight="400.0" prefWidth="678.6666564941406" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
