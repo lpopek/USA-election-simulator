@@ -15,7 +15,7 @@
 <?import javafx.scene.shape.Polygon?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1580.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="USA_ELECTION_SIMULATOR.FMXLDocumentController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1300.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="USA_ELECTION_SIMULATOR.FMXLDocumentController">
    <children>
       <MenuBar prefHeight="30.0" prefWidth="600.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
         <menus>
@@ -34,25 +34,59 @@
           </Menu>
         </menus>
       </MenuBar>
-      <SplitPane dividerPositions="0.29797979797979796" layoutX="7.0" layoutY="28.0" prefHeight="370.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="30.0">
+      <SplitPane dividerPositions="0.3644067796610169" layoutX="191.0" layoutY="28.0" prefHeight="870.0" prefWidth="1409.0" scaleShape="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="30.0">
         <items>
-          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="369.0" prefWidth="223.0">
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="822.0" prefWidth="470.0">
                <children>
-                  <SplitPane dividerPositions="0.3712871287128713" layoutX="-2.0" layoutY="1.0" orientation="VERTICAL" prefHeight="769.0" prefWidth="294.0" AnchorPane.bottomAnchor="-0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+                  <SplitPane dividerPositions="0.25821596244131456" layoutX="-2.0" layoutY="1.0" orientation="VERTICAL" prefHeight="869.0" prefWidth="470.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                     <items>
-                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="297.0" prefWidth="234.0" />
-                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="408.0" prefWidth="293.0">
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="291.0" prefWidth="469.0" style="-fx-background-color: azure; -fx-background-opacity: 0.1;" SplitPane.resizableWithParent="false">
                            <children>
-                              <ScrollPane prefHeight="480.0" prefWidth="294.0">
+                              <Label fx:id="timeLabel" layoutX="40.0" layoutY="52.0" prefHeight="23.0" prefWidth="261.0" text="timeLibel">
+                                 <font>
+                                    <Font name="Arial Bold" size="20.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="electoralVotesLabel" layoutX="40.0" layoutY="88.0" prefHeight="23.0" prefWidth="280.0" text="electoralVotes">
+                                 <font>
+                                    <Font name="Arial Bold" size="20.0" />
+                                 </font>
+                              </Label>
+                              <Button layoutX="311.0" layoutY="40.0" mnemonicParsing="false" prefHeight="48.0" prefWidth="144.0" style="-fx-background-color: wheat; -fx-background-radius: 10px; -fx-border-color: black; -fx-border-radius: 10px;" text="END TURN">
+                                 <font>
+                                    <Font name="Arial Bold" size="15.0" />
+                                 </font>
+                              </Button>
+                              <Label fx:id="moneyLabel" layoutX="40.0" layoutY="133.0" prefHeight="23.0" prefWidth="280.0" text="moneyLabel">
+                                 <font>
+                                    <Font name="Arial Bold" size="20.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="moneyLabel1" layoutX="40.0" layoutY="168.0" prefHeight="23.0" prefWidth="280.0" text="posibleActions">
+                                 <font>
+                                    <Font name="Arial Bold" size="20.0" />
+                                 </font>
+                              </Label>
+                           </children></AnchorPane>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="483.0" prefWidth="474.0">
+                           <children>
+                              <ScrollPane prefHeight="566.0" prefWidth="467.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                                 <content>
-                                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="469.0" prefWidth="291.0">
+                                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="562.0" prefWidth="464.0">
                                        <children>
-                                          <PieChart fx:id="support" layoutY="178.0" prefHeight="293.0" prefWidth="294.0" stylesheets="@../css/PieChartStyle.css" />
-                                          <Label layoutX="14.0" layoutY="14.0" text="STATE INFORMATIONS">
+                                          <PieChart fx:id="support" layoutX="2.0" layoutY="329.0" prefHeight="226.0" prefWidth="250.0" stylesheets="@../css/styleMainWindow.css" />
+                                          <Label layoutX="119.0" layoutY="14.0" styleClass="h1" stylesheets="@../css/styleMainWindow.css" text="STATE INFORMATIONS">
                                              <font>
-                                                <Font name="Arial Bold" size="23.0" />
+                                                <Font name="Arial Bold" size="30.0" />
                                              </font>
                                           </Label>
+                                          <Label layoutX="239.0" layoutY="104.0" prefHeight="30.0" prefWidth="166.0" stylesheets="@../css/styleMainWindow.css" text="population" />
+                                          <Label layoutX="239.0" layoutY="141.0" stylesheets="@../css/styleMainWindow.css" text="type of State" />
+                                          <Label layoutX="15.0" layoutY="63.0" styleClass="h1" stylesheets="@../css/styleMainWindow.css" text="Actions" />
+                                          <Label layoutX="239.0" layoutY="75.0" stylesheets="@../css/styleMainWindow.css" text="possible Money" />
+                                          <Button layoutX="15.0" layoutY="100.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="200.0" stylesheets="@../css/styleMainWindow.css" text="Raise Founds" />
+                                          <Button layoutX="15.0" layoutY="153.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="200.0" stylesheets="@../css/styleMainWindow.css" text="Make Visit" />
+                                          <Button layoutX="15.0" layoutY="206.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="200.0" stylesheets="@../css/styleMainWindow.css" text="Lauch TV campaign" />
                                        </children>
                                     </AnchorPane>
                                 </content>
@@ -62,15 +96,15 @@
                     </items>
                   </SplitPane>
                </children></AnchorPane>
-          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="246.0" prefWidth="418.0">
+          <AnchorPane minHeight="0.0" minWidth="0.0" scaleShape="false">
                <children>
-                  <ScrollPane prefHeight="370.0" prefWidth="418.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                  <ScrollPane hmax="0.95" maxHeight="500.0" minHeight="-Infinity" minWidth="-Infinity" vmax="0.7" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                      <content>
-                        <AnchorPane prefHeight="325.0" prefWidth="397.0">
+                        <AnchorPane>
                            <children>
-                              <ImageView fitHeight="600.0" fitWidth="1333.0" layoutX="112.0" layoutY="68.0" opacity="0.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                              <ImageView fitHeight="900.0" fitWidth="1212.0" layoutX="8.0" layoutY="60.0" opacity="0.73" pickOnBounds="true" AnchorPane.bottomAnchor="-30.0" AnchorPane.leftAnchor="-20.0" AnchorPane.rightAnchor="-60.0" AnchorPane.topAnchor="-60.0">
                                  <image>
-                                    <Image url="@../pic/map.png" />
+                                    <Image url="@../pic/flag-background.jpg" />
                                  </image>
                               </ImageView>
                               <Polygon id="OR" fx:id="OR" fill="WHITE" layoutX="205.0" layoutY="181.0" onMouseClicked="#clickStateOR" onMouseEntered="#hoverOverStateOR" onMouseExited="#exitOverStateOR" points="-11.600006103515625, -66.80000305175781, -20.600006103515625, -59.0, -22.20001220703125, -50.600006103515625, -24.600006103515625, -45.19999694824219, -28.600006103515625, -40.0, -28.600006103515625, -33.0, -28.600006103515625, -30.199996948242188, -32.600006103515625, -26.600006103515625, -32.600006103515625, -19.0, -35.0, -14.800003051757812, -40.0, -10.0, -38.20001220703125, -6.600006103515625, -44.0, -3.0, -46.0, 7.5999908447265625, -48.399993896484375, 13.0, -48.399993896484375, 19.399993896484375, -46.0, 25.600006103515625, 66.79998779296875, 53.80000305175781, 88.79998779296875, -37.19999694824219, 66.79998779296875, -40.0, 54.0, -42.600006103515625, 41.199981689453125, -42.600006103515625, 27.199981689453125, -42.600006103515625, 20.0, -46.80000305175781, 5.399993896484375, -46.80000305175781, -0.600006103515625, -50.600006103515625, 1.0, -59.0, -2.399993896484375, -63.80000305175781" stroke="BLACK" strokeType="INSIDE" strokeWidth="2.0" />
@@ -105,26 +139,6 @@
                               <Polygon id="KY" fx:id="KY" fill="WHITE" layoutX="843.0" layoutY="470.0" onMouseClicked="#clickStateKY" onMouseEntered="#hoverOverStateKY" onMouseExited="#exitOverStateKY" points="-28.5999755859375, -143.79998779296875, -32.7999267578125, -140.5999755859375, -39.199951171875, -130.79998779296875, -44.5999755859375, -130.79998779296875, -46.5999755859375, -119.0, -51.0, -115.19998168945312, -53.5999755859375, -119.0, -61.0, -115.19998168945312, -66.4000244140625, -111.39999389648438, -74.4000244140625, -111.39999389648438, -83.4000244140625, -109.0, -85.4000244140625, -101.19998168945312, -89.199951171875, -101.19998168945312, -89.199951171875, -95.39999389648438, -101.4000244140625, -84.79998779296875, -104.0, -77.0, -93.5999755859375, -74.0, -83.4000244140625, -79.60000610351562, -3.4000244140625, -88.60000610351562, -1.0, -91.19998168945312, 5.2000732421875, -97.19998168945312, 11.5999755859375, -99.0, 13.5999755859375, -105.0, 19.800048828125, -111.39999389648438, 11.5999755859375, -133.19998168945312, 5.2000732421875, -138.5999755859375, -3.4000244140625, -137.0, -5.7999267578125, -137.0, -10.0, -137.0, -14.4000244140625, -137.0, -20.0, -138.5999755859375, -24.5999755859375, -143.79998779296875" stroke="BLACK" strokeType="INSIDE" strokeWidth="2.0" />
                               <Polygon id="TN" fx:id="TN" fill="WHITE" layoutX="853.0" layoutY="480.0" onMouseClicked="#clickStateTN" onMouseEntered="#hoverOverStateTN" onMouseExited="#exitOverStateTN" points="-68.0, -93.5999755859375, -68.0, -93.5999755859375, -68.0, -93.5999755859375, -68.0, -93.5999755859375, -68.0, -93.5999755859375, -68.0, -93.5999755859375, -68.0, -93.5999755859375, -68.0, -93.5999755859375, -68.0, -93.5999755859375, -93.4000244140625, -91.0, -103.199951171875, -84.0, -114.0, -87.39999389648438, -121.199951171875, -78.39999389648438, -121.199951171875, -69.19998168945312, -123.4000244140625, -60.199981689453125, -127.5999755859375, -55.79998779296875, -129.5999755859375, -51.399993896484375, -89.199951171875, -53.399993896484375, -22.5999755859375, -60.199951171875, -17.199951171875, -73.39999389648438, -1.0, -82.19998168945312, 2.0, -89.0, 6.4000244140625, -89.0, 30.0, -105.0, -13.199951171875, -98.79998779296875, -68.0, -93.5999755859375, -68.0, -93.5999755859375, -68.0, -93.5999755859375" stroke="BLACK" strokeType="INSIDE" strokeWidth="2.0" />
                               <Polygon id="MS" fx:id="MS" fill="WHITE" layoutX="740.0" layoutY="574.0" onMouseClicked="#clickStateMS" onMouseEntered="#hoverOverStateMS" onMouseExited="#exitOverStateMS" points="23.800048828125, -148.19998168945312, 23.800048828125, -148.19998168945312, 23.800048828125, -148.19998168945312, 23.800048828125, -148.19998168945312, 23.800048828125, -148.19998168945312, 23.800048828125, -148.19998168945312, 23.800048828125, -148.19998168945312, 23.800048828125, -148.19998168945312, 23.800048828125, -62.79998779296875, 25.800048828125, -48.20001220703125, 25.800048828125, -48.20001220703125, 25.800048828125, -48.20001220703125, 23.800048828125, -48.20001220703125, 25.800048828125, -48.20001220703125, 16.4000244140625, -49.79998779296875, 1.0, -44.39996337890625, -1.5999755859375, -52.79998779296875, -35.199951171875, -52.79998779296875, -39.0, -64.39996337890625, -32.4000244140625, -70.39996337890625, -32.4000244140625, -74.79998779296875, -25.5999755859375, -80.39996337890625, -32.4000244140625, -98.19998168945312, -32.4000244140625, -117.5999755859375, -25.5999755859375, -126.79998779296875, -20.7999267578125, -132.5999755859375, -22.7999267578125, -140.5999755859375, -16.199951171875, -146.19998168945312" stroke="BLACK" strokeType="INSIDE" strokeWidth="2.0" />
-                              <Button layoutY="88.0" mnemonicParsing="false" prefHeight="48.0" prefWidth="144.0" style="-fx-background-color: wheat; -fx-background-radius: 10px; -fx-border-color: black; -fx-border-radius: 10px;" text="END TURN">
-                                 <font>
-                                    <Font name="Arial Bold" size="15.0" />
-                                 </font>
-                              </Button>
-                              <Label fx:id="electoralVotesLabel" layoutX="6.0" layoutY="29.0" prefHeight="23.0" prefWidth="280.0" text="electoralVotes">
-                                 <font>
-                                    <Font name="Arial Bold" size="20.0" />
-                                 </font>
-                              </Label>
-                              <Label fx:id="moneyLabel" layoutX="6.0" layoutY="60.0" prefHeight="23.0" prefWidth="280.0" text="moneyLabel">
-                                 <font>
-                                    <Font name="Arial Bold" size="20.0" />
-                                 </font>
-                              </Label>
-                              <Label fx:id="timeLabel" layoutX="6.0" layoutY="2.0" prefHeight="23.0" prefWidth="261.0" text="timeLibel">
-                                 <font>
-                                    <Font name="Arial Bold" size="20.0" />
-                                 </font>
-                              </Label>
                               <Polygon id="GA" fx:id="GA" fill="WHITE" layoutX="1098.0" layoutY="515.0" onMouseClicked="#clickStateGA" onMouseEntered="#hoverOverStateGA" onMouseExited="#exitOverStateGA" points="-209.4000244140625, 8.4000244140625, -211.0, -7.79998779296875, -197.0, -6.0, -200.199951171875, -12.5999755859375, -197.0, -26.5999755859375, -197.0, -26.5999755859375, -197.0, -26.5999755859375, -197.0, -26.5999755859375, -193.4000244140625, -32.0, -193.4000244140625, -32.0, -193.4000244140625, -32.0, -198.5999755859375, -32.0, -186.0, -41.79998779296875, -193.4000244140625, -46.79998779296875, -200.199951171875, -44.79998779296875, -218.7999267578125, -70.39999389648438, -226.199951171875, -70.39999389648438, -239.5999755859375, -87.5999755859375, -243.7999267578125, -87.5999755859375, -248.199951171875, -91.0, -245.4000244140625, -97.79998779296875, -290.199951171875, -92.79998779296875, -272.5999755859375, -35.399993896484375, -275.7999267578125, -24.20001220703125, -270.5999755859375, -16.5999755859375, -272.5999755859375, -7.79998779296875, -268.5999755859375, -0.79998779296875, -268.5999755859375, 5.60003662109375, -215.199951171875, 5.60003662109375, -212.5999755859375, 8.4000244140625" stroke="BLACK" strokeType="INSIDE" strokeWidth="2.0" />
                               <Polygon id="FL" fx:id="FL" fill="WHITE" layoutX="811.0" layoutY="576.0" onMouseClicked="#clickStateFL" onMouseEntered="#hoverOverStateFL" onMouseExited="#exitOverStateFL" points="-27.7999267578125, -46.0, -22.199951171875, -46.0, -13.5999755859375, -50.39996337890625, -7.7999267578125, -50.39996337890625, -0.4000244140625, -46.0, 10.4000244140625, -42.5999755859375, 26.2000732421875, -41.0, 30.4000244140625, -46.0, 32.5999755859375, -48.39996337890625, 53.5999755859375, -39.20001220703125, 69.800048828125, -28.39996337890625, 71.4000244140625, -23.39996337890625, 69.800048828125, -14.20001220703125, 71.4000244140625, 0.79998779296875, 74.800048828125, -7.20001220703125, 77.4000244140625, -1.5999755859375, 74.800048828125, 2.60003662109375, 74.800048828125, 7.79998779296875, 77.4000244140625, 10.60003662109375, 84.2000732421875, 16.60003662109375, 89.0, 15.06671142578125, 89.0, 22.0, 92.2000732421875, 24.79998779296875, 92.2000732421875, 30.79998779296875, 100.0, 35.33331298828125, 108.5999755859375, 42.26666259765625, 110.800048828125, 48.0, 115.4000244140625, 51.0, 122.0, 51.0, 128.0, 46.0, 128.0, 43.79998779296875, 131.800048828125, 29.20001220703125, 131.800048828125, 10.60003662109375, 125.0, 0.79998779296875, 118.0, -9.0, 115.4000244140625, -16.39996337890625, 112.800048828125, -21.5999755859375, 107.0, -30.20001220703125, 102.2000732421875, -39.20001220703125, 100.0, -46.0, 96.4000244140625, -52.20001220703125, 92.2000732421875, -59.39996337890625, 89.0, -68.20001220703125, 74.800048828125, -70.5999755859375, 77.4000244140625, -54.20001220703125, 74.800048828125, -54.20001220703125, 73.0, -56.5999755859375, 20.2000732421875, -56.5999755859375, 18.0, -62.5999755859375, -2.7999267578125, -62.5999755859375, -2.7999267578125, -62.5999755859375, -30.5999755859375, -62.5999755859375" stroke="BLACK" strokeType="INSIDE" strokeWidth="2.0" />
                               <Polygon id="SC" fx:id="SC" fill="WHITE" layoutX="932.0" layoutY="537.0" onMouseClicked="#clickStateSC" onMouseEntered="#hoverOverStateSC" onMouseExited="#exitOverStateSC" points="-41.0, -127.79998779296875, -41.0, -127.79998779296875, -41.0, -127.79998779296875, -41.0, -127.79998779296875, -50.199951171875, -127.79998779296875, -50.199951171875, -127.79998779296875, -59.7999267578125, -126.19998168945312, -71.0, -126.19998168945312, -80.7999267578125, -118.99996948242188, -83.4000244140625, -112.99996948242188, -78.199951171875, -108.99993896484375, -75.0, -108.99984741210938, -61.5999755859375, -91.19992065429688, -53.4000244140625, -91.199951171875, -34.4000244140625, -64.99996948242188, -28.5999755859375, -67.79998779296875, -18.0, -61.999969482421875, -18.0, -61.99993896484375, -22.7999267578125, -71.39999389648438, -16.4000244140625, -72.99993896484375, -16.4000244140625, -78.19998168945312, -12.4000244140625, -78.199951171875, -7.4000244140625, -80.39999389648438, -3.4000244140625, -87.5999755859375, 0.5999755859375, -89.19998168945312, 0.5999755859375, -95.19998168945312, 4.4000244140625, -103.79998779296875, 11.5999755859375, -108.9998779296875, -12.4000244140625, -126.19998168945312, -36.0, -124.19998168945312, -41.0, -127.79998779296875, -41.0, -127.79998779296875" stroke="BLACK" strokeType="INSIDE" strokeWidth="2.0" />
@@ -144,6 +158,21 @@
                               <Polygon id="NH" fx:id="NH" fill="WHITE" layoutX="1072.0" layoutY="305.0" onMouseClicked="#clickStateNH" onMouseEntered="#hoverOverStateNH" onMouseExited="#exitOverStateNH" points="-66.99993896484375, -147.60000610351562, -70.99993896484375, -153.39999389648438, -61.99993896484375, -155.8000030517578, -45.0, -113.19999694824219, -42.60009765625, -111.60000610351562, -42.60009765625, -100.59999084472656, -70.99993896484375, -98.0, -68.60003662109375, -106.0, -70.99993896484375, -116.19999694824219, -70.99993896484375, -128.8000030517578, -68.60003662109375, -135.0, -68.60003662109375, -144.1999969482422" stroke="BLACK" strokeType="INSIDE" />
                               <Polygon id="MA" fx:id="MA" fill="WHITE" layoutX="1052.0" layoutY="373.0" onMouseClicked="#clickStateMA" onMouseEntered="#hoverOverStateMA" onMouseExited="#exitOverStateMA" points="-64.60003662109375, -166.39999389648438, -64.60003662109375, -140.8000030517578, -64.60003662109375, -140.8000030517578, -64.60003662109375, -140.8000030517578, -64.60003662109375, -140.8000030517578, -64.60003662109375, -140.8000030517578, -64.60003662109375, -140.8000030517578, -64.60003662109375, -140.8000030517578, -64.60003662109375, -140.8000030517578, -64.60003662109375, -140.8000030517578, -64.60003662109375, -140.8000030517578, -64.60003662109375, -140.8000030517578, -64.60003662109375, -140.8000030517578, -64.60003662109375, -140.8000030517578, -34.20001220703125, -150.5999755859375, -29.20001220703125, -149.0, -25.60009765625, -146.1999969482422, -18.0, -143.59999084472656, -14.7999267578125, -146.1999969482422, -8.2000732421875, -146.1999969482422, -2.2000732421875, -149.0, -2.2000732421875, -153.1999969482422, -8.2000732421875, -160.1999969482422, -6.199951171875, -156.1999969482422, -8.2000732421875, -153.1999969482422, -12.5999755859375, -153.1999969482422, -18.0, -160.1999969482422, -22.800048828125, -169.60000610351562" stroke="BLACK" strokeType="INSIDE" strokeWidth="2.0" />
                               <Polygon id="ME" fx:id="ME" fill="WHITE" layoutX="1160.0" layoutY="264.0" onMouseClicked="#clickStateME" onMouseEntered="#hoverOverStateME" onMouseExited="#exitOverStateME" points="-141.0, -156.0, -146.4000244140625, -152.1999969482422, -144.4000244140625, -136.8000030517578, -146.4000244140625, -124.19998168945312, -150.0, -114.20001220703125, -132.5999755859375, -70.20002746582031, -130.5999755859375, -70.20001220703125, -128.7999267578125, -79.40000915527344, -123.7999267578125, -88.00001525878906, -110.199951171875, -102.4000244140625, -110.199951171875, -109.00003051757812, -102.199951171875, -109.00001525878906, -94.0, -118.20002746582031, -86.5999755859375, -118.20001220703125, -83.1192626953125, -121.40000915527344, -86.5999755859375, -124.19998168945312, -90.7999267578125, -126.20001220703125, -96.199951171875, -131.8000030517578, -98.0, -136.8000030517578, -103.7999267578125, -134.40000915527344, -105.5999755859375, -136.8000030517578, -107.199951171875, -154.39999389648438, -110.199951171875, -166.8000030517578, -117.4000244140625, -175.80001831054688, -121.0, -175.80001831054688, -128.7999267578125, -170.1999969482422, -134.7999267578125, -175.80001831054688, -141.0, -172.60000610351562" stroke="BLACK" strokeType="INSIDE" strokeWidth="2.0" />
+                              <Button id="HI" fx:id="HI" layoutX="45.0" layoutY="490.0" mnemonicParsing="false" onMouseClicked="#clickStateHI" onMouseEntered="#hoverOverStateHI" onMouseExited="#exitOverStateHI" prefHeight="56.0" prefWidth="127.0" text="HAWAII">
+                                 <font>
+                                    <Font size="13.0" />
+                                 </font>
+                              </Button>
+                              <Button id="AK" fx:id="AK" layoutX="45.0" layoutY="27.0" mnemonicParsing="false" onMouseClicked="#clickStateAK" onMouseEntered="#hoverOverStateAK" onMouseExited="#exitOverStateAK" prefHeight="56.0" prefWidth="127.0" text="ALASKA" textAlignment="CENTER">
+                                 <font>
+                                    <Font size="13.0" />
+                                 </font>
+                              </Button>
+                              <Button id="DC" fx:id="DC" layoutX="922.0" layoutY="477.0" mnemonicParsing="false" onMouseClicked="#clickStateDC" onMouseEntered="#hoverOverStateDC" onMouseExited="#exitOverStateDC" prefHeight="56.0" prefWidth="176.0" text="DISTRICT OF COLUMBIA">
+                                 <font>
+                                    <Font size="13.0" />
+                                 </font>
+                              </Button>
                            </children>
                            <padding>
                               <Insets bottom="60.0" left="20.0" right="60.0" top="60.0" />

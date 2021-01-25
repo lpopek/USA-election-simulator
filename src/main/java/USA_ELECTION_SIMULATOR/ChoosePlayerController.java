@@ -54,22 +54,21 @@ public class ChoosePlayerController {
 
     @FXML
     private void loadMainScreen(ActionEvent event) {        
-        System.out.println("clicked Back");
         App.screenController.activate("main");
     }
 
     @FXML
     private void clickedDemocratic(ActionEvent event) {        
         System.out.println("clicked Democratic");
+        App.GAME.player.setDemocrat();
         republicanButton.setSelected(false);
-        // TODO: unclick republican, save into player object
     }
 
     @FXML
     private void clickedRepublican(ActionEvent event) {        
         System.out.println("clicked Republican");
+        App.GAME.player.setRepublican();
         democraticButton.setSelected(false);
-        // TODO: unclick democratic, save into player object
     }
 
 

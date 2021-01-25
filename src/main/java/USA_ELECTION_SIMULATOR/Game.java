@@ -7,11 +7,32 @@ import java.util.Scanner;
 
 public class Game {
     ArrayList<State> USA = new ArrayList<State>();
+    Player player = new Player(null, null, null);
     int money = 1000;
     int weekTillElection = 5;
+    int electoralVotes;
     boolean gameOver = false;
 
-    public int getWeekTillElections(){
+
+    protected int countVotes(){
+        int electoralVotes = 0; 
+        if (player.party == "R"){
+            for(int i=0; i < this.USA.size(); i++){
+                State s = this.USA.get((i));
+                if (s.DEMSupport < s.GOPSupport){electoralVotes += s.electoralVotes;}
+            } 
+        }
+        else{
+            for(int i=0; i < this.USA.size(); i++){
+                State s = this.USA.get((i));
+                if (s.DEMSupport > s.GOPSupport){electoralVotes += s.electoralVotes;}
+            } 
+        }
+        this.electoralVotes = electoralVotes;
+        return electoralVotes;   
+    }
+
+    protected int getWeekTillElections(){
         return this.weekTillElection;
     }
     public int getMoney(){
@@ -20,9 +41,7 @@ public class Game {
 
     public Game() throws FileNotFoundException {
         String[] dataStates = getDataFromFile();
-        System.out.print( "gra zainicjalizowana\n" );
-        Player p = new Player("Donald", "Trump", "GOP");
-        System.out.println("Witaj " + p.name +" ! Życzymy powodzenia");
+        System.out.print( "gra zainicjalizowana\n" );;
         getUSListRandom(dataStates);
     }
 

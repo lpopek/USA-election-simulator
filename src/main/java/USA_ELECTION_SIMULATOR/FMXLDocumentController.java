@@ -38,18 +38,21 @@ public class FMXLDocumentController implements Initializable {
 
     ////////////STATES GEOMETRY////////////////
     @FXML private Polygon AL;
+    @FXML private Button AK;
     @FXML private Polygon AR;
     @FXML private Polygon AZ;
     @FXML private Polygon CA;
     @FXML private Polygon CO;
     @FXML private Polygon CT;
     @FXML private Polygon DE;
+    @FXML private Button DC;
     @FXML private Polygon FL;
     @FXML private Polygon GA;
     @FXML private Polygon ID;
     @FXML private Polygon IL;
     @FXML private Polygon IN;
     @FXML private Polygon IA;
+    @FXML private Button HI;
     @FXML private Polygon KS;
     @FXML private Polygon KY;
     @FXML private Polygon LA;
@@ -106,6 +109,24 @@ public class FMXLDocumentController implements Initializable {
     }
 
     ///////////ALASKA////////////
+    
+    State ak = App.GAME.USA.get(1);
+
+    @FXML void colorStateAK(){
+        colorStateBtn(AK, ak);
+    }
+
+    @FXML void clickStateAK(Event event){
+        AK.setStyle("-fx-background-color: GREEN ;");
+        showPieChart(ak);
+    }
+    @FXML void hoverOverStateAK(Event event){
+        AK.setStyle("-fx-background-color: LIGHTGREEN ;");
+    }
+    @FXML void exitOverStateAK(Event event){
+        colorStateAK();
+    }
+
 
 
     ///////////ARIZONA///////////
@@ -228,6 +249,21 @@ public class FMXLDocumentController implements Initializable {
 
     State dc = App.GAME.USA.get(8);
 
+    @FXML void colorStateDC(){
+        colorStateBtn(DC, dc);
+    }
+
+    @FXML void clickStateDC(Event event){
+        DC.setStyle("-fx-background-color: GREEN ;");
+        showPieChart(dc);
+    }
+    @FXML void hoverOverStateDC(Event event){
+        DC.setStyle("-fx-background-color: LIGHTGREEN ;");
+    }
+    @FXML void exitOverStateDC(Event event){
+        colorStateDC();
+    }
+
     ///////////FLORIDA///////////
 
     State fl = App.GAME.USA.get(9);
@@ -269,6 +305,21 @@ public class FMXLDocumentController implements Initializable {
     ///////////HAWAII///////////
 
     State hi = App.GAME.USA.get(11);
+
+    @FXML void colorStateHI(){
+        colorStateBtn(HI, hi);
+    }
+
+    @FXML void clickStateHI(Event event){
+        HI.setStyle("-fx-background-color: GREEN ;");
+        showPieChart(hi);
+    }
+    @FXML void hoverOverStateHI(Event event){
+        HI.setStyle("-fx-background-color: LIGHTGREEN ;");
+    }
+    @FXML void exitOverStateHI(Event event){
+        colorStateHI();
+    }
 
     ///////////IDAHO///////////
 
@@ -1026,16 +1077,30 @@ public class FMXLDocumentController implements Initializable {
         //support.setVisible(true);
     }
 
-    @FXML void colorState(Polygon pol, State s){
+    @FXML void colorStateBtn(Button b, State s){
         if (s.DEMSupport > s.GOPSupport){
-            pol.setFill(Color.rgb(0, 0, 255, s.DEMSupport));
-            pol.setOpacity(s.DEMSupport + s.getUndecided()/2);
+            b.setStyle("-fx-background-color: BLUE; -fx-border-width: 3px; -fx-border-color: black;");
+            // b.setOpacity(s.DEMSupport + s.getUndecided())
+        }
+            
+        else{
+            b.setStyle("-fx-background-color: RED; -fx-border-width: 3px; -fx-border-color: black;");
+            // b.setOpacity(s.GOPSupport + s.getUndecided());
+        }
+    }
+
+    @FXML void colorState(Polygon pol, State s){
+
+
+        if (s.DEMSupport > s.GOPSupport){
+            pol.setFill(Color.rgb(0, 0, 255));
+            // pol.setOpacity(s.DEMSupport + s.getUndecided());
             pol.setStyle("-fx-border-color: transparent;");
         }
             
         else{
             pol.setFill(Color.rgb(255, 0, 0));
-            pol.setOpacity(s.GOPSupport + s.getUndecided()/2);
+            // pol.setOpacity(s.GOPSupport + s.getUndecided());
             pol.setStyle("-fx-border-color: transparent;");
         }
             
@@ -1048,24 +1113,27 @@ public class FMXLDocumentController implements Initializable {
 
     @FXML public void initLabels() {
         timeLabel.setText("Weeks until election: " + App.GAME.getWeekTillElections());
-        electoralVotesLabel.setText("Electoral votes: " + 270);
+        electoralVotesLabel.setText("Electoral votes: " + App.GAME.countVotes());
         moneyLabel.setText("Money: " + App.GAME.getMoney()+ "$");
     }
 
     @FXML public void colorMap(){
         colorStateAL();
+        colorStateAK();
         colorStateAR();
         colorStateAZ();
         colorStateCA();
         colorStateCO();
         colorStateCT();
         colorStateDE();
+        colorStateDC();
         colorStateFL();
         colorStateGA();
         colorStateID();
         colorStateIL();
         colorStateIN();
         colorStateIA();
+        colorStateHI();
         colorStateKS();
         colorStateKY();
         colorStateLA();
