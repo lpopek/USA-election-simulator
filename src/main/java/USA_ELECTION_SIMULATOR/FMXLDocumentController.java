@@ -228,6 +228,7 @@ public class FMXLDocumentController implements Initializable {
         App.GAME.chosenState = co;
         CO.setFill(Color.GREEN);
         showPieChart(co);
+        showStateInformation(co);
     }
     @FXML void hoverOverStateCO(Event event){
         CO.setFill(Color.LIGHTGREEN);
@@ -248,6 +249,7 @@ public class FMXLDocumentController implements Initializable {
         App.GAME.chosenState = ct;
         CT.setFill(Color.GREEN);
         showPieChart(ct);
+        showStateInformation(ct);
     }
     @FXML void hoverOverStateCT(Event event){
         CT.setFill(Color.LIGHTGREEN);
@@ -268,6 +270,7 @@ public class FMXLDocumentController implements Initializable {
         App.GAME.chosenState = de;
         DE.setFill(Color.GREEN);
         showPieChart(de);
+        showStateInformation(de);
     }
     @FXML void hoverOverStateDE(Event event){
         DE.setFill(Color.LIGHTGREEN);
@@ -281,13 +284,14 @@ public class FMXLDocumentController implements Initializable {
     State dc = App.GAME.USA.get(8);
 
     @FXML void colorStateDC(){
-        App.GAME.chosenState = dc;
         colorStateBtn(DC, dc);
     }
 
     @FXML void clickStateDC(Event event){
+        App.GAME.chosenState = dc;
         DC.setStyle("-fx-background-color: GREEN ;");
         showPieChart(dc);
+        showStateInformation(dc);
     }
     @FXML void hoverOverStateDC(Event event){
         DC.setStyle("-fx-background-color: LIGHTGREEN ;");
@@ -301,13 +305,14 @@ public class FMXLDocumentController implements Initializable {
     State fl = App.GAME.USA.get(9);
 
     @FXML void colorStateFL(){
-        App.GAME.chosenState = fl;
         colorState(FL, fl);
     }
 
     @FXML void clickStateFL(Event event){
+        App.GAME.chosenState = fl;
         FL.setFill(Color.GREEN);
         showPieChart(fl);
+        showStateInformation(fl);
     }
     @FXML void hoverOverStateFL(Event event){
         FL.setFill(Color.LIGHTGREEN);
@@ -328,6 +333,7 @@ public class FMXLDocumentController implements Initializable {
         App.GAME.chosenState = ga;
         GA.setFill(Color.GREEN);
         showPieChart(ga);
+        showStateInformation(ga);
     }
     @FXML void hoverOverStateGA(Event event){
         GA.setFill(Color.LIGHTGREEN);
@@ -348,6 +354,7 @@ public class FMXLDocumentController implements Initializable {
         App.GAME.chosenState = hi;
         HI.setStyle("-fx-background-color: GREEN ;");
         showPieChart(hi);
+        showStateInformation(hi);
     }
     @FXML void hoverOverStateHI(Event event){
         HI.setStyle("-fx-background-color: LIGHTGREEN ;");
@@ -368,6 +375,7 @@ public class FMXLDocumentController implements Initializable {
         App.GAME.chosenState = id;
         ID.setFill(Color.GREEN);
         showPieChart(id);
+        showStateInformation(id);
     }
     @FXML void hoverOverStateID(Event event){
         ID.setFill(Color.LIGHTGREEN);
@@ -388,6 +396,7 @@ public class FMXLDocumentController implements Initializable {
         App.GAME.chosenState = il;
         IL.setFill(Color.GREEN);
         showPieChart(il);
+        showStateInformation(il);
     }
     @FXML void hoverOverStateIL(Event event){
         IL.setFill(Color.LIGHTGREEN);
@@ -408,6 +417,7 @@ public class FMXLDocumentController implements Initializable {
         App.GAME.chosenState = in;
         IN.setFill(Color.GREEN);
         showPieChart(in);
+        showStateInformation(in);
     }
     @FXML void hoverOverStateIN(Event event){
         IN.setFill(Color.LIGHTGREEN);
@@ -428,6 +438,7 @@ public class FMXLDocumentController implements Initializable {
         App.GAME.chosenState = ia;
         IA.setFill(Color.GREEN);
         showPieChart(ia);
+        showStateInformation(ia);
     }
     @FXML void hoverOverStateIA(Event event){
         IA.setFill(Color.LIGHTGREEN);
@@ -445,9 +456,10 @@ public class FMXLDocumentController implements Initializable {
     }
 
     @FXML void clickStateKS(Event event){
-        App.GAME.chosenState = ia;
+        App.GAME.chosenState = ks;
         KS.setFill(Color.GREEN);
         showPieChart(ks);
+        showStateInformation(ks);
     }
     @FXML void hoverOverStateKS(Event event){
         KS.setFill(Color.LIGHTGREEN);
@@ -468,6 +480,7 @@ public class FMXLDocumentController implements Initializable {
         App.GAME.chosenState = ky;
         KY.setFill(Color.GREEN);
         showPieChart(ky);
+        showStateInformation(ky);
     }
     @FXML void hoverOverStateKY(Event event){
         KY.setFill(Color.LIGHTGREEN);
@@ -488,6 +501,7 @@ public class FMXLDocumentController implements Initializable {
         App.GAME.chosenState = la;
         LA.setFill(Color.GREEN);
         showPieChart(la);
+        showStateInformation(la);
     }
     @FXML void hoverOverStateLA(Event event){
         LA.setFill(Color.LIGHTGREEN);
@@ -506,8 +520,10 @@ public class FMXLDocumentController implements Initializable {
 
     @FXML void clickStateME(Event event){
         App.GAME.chosenState = me;
+        showStateInformation(me);
         ME.setFill(Color.GREEN);
         showPieChart(me);
+
     }
     @FXML void hoverOverStateME(Event event){
         ME.setFill(Color.LIGHTGREEN);
@@ -526,6 +542,8 @@ public class FMXLDocumentController implements Initializable {
     }
 
     @FXML void clickStateMD(Event event){
+        App.GAME.chosenState = md;
+        showStateInformation(md);
         MD.setFill(Color.GREEN);
         showPieChart(md);
     }
@@ -545,6 +563,8 @@ public class FMXLDocumentController implements Initializable {
     }
 
     @FXML void clickStateMA(Event event){
+        App.GAME.chosenState = ma;
+        showStateInformation(ma);
         MA.setFill(Color.GREEN);
         showPieChart(ma);
     }
@@ -565,6 +585,8 @@ public class FMXLDocumentController implements Initializable {
     }
 
     @FXML void clickStateMI(Event event){
+        App.GAME.chosenState = mi;
+        showStateInformation(mi);
         MI.setFill(Color.GREEN);
         showPieChart(mi);
     }
@@ -585,6 +607,8 @@ public class FMXLDocumentController implements Initializable {
     }
 
     @FXML void clickStateMN(Event event){
+        App.GAME.chosenState = mi;
+        showStateInformation(mi);
         MN.setFill(Color.GREEN);
         showPieChart(mn);
     }
@@ -604,6 +628,8 @@ public class FMXLDocumentController implements Initializable {
     }
 
     @FXML void clickStateMS(Event event){
+        App.GAME.chosenState = ms;
+        showStateInformation(ms);
         MS.setFill(Color.GREEN);
         showPieChart(ms);
     }
@@ -623,6 +649,8 @@ public class FMXLDocumentController implements Initializable {
     }
 
     @FXML void clickStateMO(Event event){
+        App.GAME.chosenState = mo;
+        showStateInformation(mo);
         MO.setFill(Color.GREEN);
         showPieChart(mo);
     }
@@ -642,6 +670,8 @@ public class FMXLDocumentController implements Initializable {
     }
 
     @FXML void clickStateMT(Event event){
+        App.GAME.chosenState = mt;
+        showStateInformation(mt);
         MT.setFill(Color.GREEN);
         showPieChart(mt);
     }
@@ -662,6 +692,8 @@ public class FMXLDocumentController implements Initializable {
     }
 
     @FXML void clickStateNE(Event event){
+        App.GAME.chosenState = ne;
+        showStateInformation(ne);
         NE.setFill(Color.GREEN);
         showPieChart(ne);
     }
@@ -681,6 +713,8 @@ public class FMXLDocumentController implements Initializable {
     }
 
     @FXML void clickStateNV(Event event){
+        App.GAME.chosenState = nv;
+        showStateInformation(nv);
         NV.setFill(Color.GREEN);
         showPieChart(nv);
     }
@@ -700,6 +734,8 @@ public class FMXLDocumentController implements Initializable {
     }
 
     @FXML void clickStateNH(Event event){
+        App.GAME.chosenState = nh;
+        showStateInformation(nh);
         NH.setFill(Color.GREEN);
         showPieChart(nh);
     }
@@ -719,6 +755,8 @@ public class FMXLDocumentController implements Initializable {
     }
 
     @FXML void clickStateNJ(Event event){
+        App.GAME.chosenState = nj;
+        showStateInformation(nj);
         NJ.setFill(Color.GREEN);
         showPieChart(nj);
     }
@@ -738,6 +776,8 @@ public class FMXLDocumentController implements Initializable {
     }
 
     @FXML void clickStateNM(Event event){
+        App.GAME.chosenState = nm;
+        showStateInformation(nm);
         NM.setFill(Color.GREEN);
         showPieChart(nm);
     }
@@ -757,6 +797,8 @@ public class FMXLDocumentController implements Initializable {
     }
 
     @FXML void clickStateNY(Event event){
+        App.GAME.chosenState = ny;
+        showStateInformation(ny);
         NY.setFill(Color.GREEN);
         showPieChart(ny);
     }
@@ -776,6 +818,8 @@ public class FMXLDocumentController implements Initializable {
     }
 
     @FXML void clickStateNC(Event event){
+        App.GAME.chosenState = nc;
+        showStateInformation(nc);
         NC.setFill(Color.GREEN);
         showPieChart(nc);
     }
@@ -795,6 +839,8 @@ public class FMXLDocumentController implements Initializable {
     }
 
     @FXML void clickStateND(Event event){
+        App.GAME.chosenState = nd;
+        showStateInformation(nd);
         ND.setFill(Color.GREEN);
         showPieChart(nd);
     }
@@ -814,6 +860,8 @@ public class FMXLDocumentController implements Initializable {
     }
 
     @FXML void clickStateOH(Event event){
+        App.GAME.chosenState = oh;
+        showStateInformation(oh);
         showPieChart(oh);
         OH.setFill(Color.GREEN);
     }
@@ -833,6 +881,8 @@ public class FMXLDocumentController implements Initializable {
     }
 
     @FXML void clickStateOK(Event event){
+        App.GAME.chosenState = ok;
+        showStateInformation(ok);
         showPieChart(ok);
         OK.setFill(Color.GREEN);
     }
@@ -852,6 +902,8 @@ public class FMXLDocumentController implements Initializable {
     }
 
     @FXML void clickStateOR(Event event){
+        App.GAME.chosenState = or;
+        showStateInformation(or);
         showPieChart(or);
         OR.setFill(Color.GREEN);
     }
@@ -871,6 +923,8 @@ public class FMXLDocumentController implements Initializable {
     }
 
     @FXML void clickStatePA(Event event){
+        App.GAME.chosenState = pa;
+        showStateInformation(pa);
         showPieChart(pa);
         PA.setFill(Color.GREEN);
     }
@@ -890,6 +944,8 @@ public class FMXLDocumentController implements Initializable {
     }
 
     @FXML void clickStateRI(Event event){
+        App.GAME.chosenState = ri;
+        showStateInformation(ri);
         showPieChart(ri);
         RI.setFill(Color.GREEN);
     }
@@ -909,6 +965,8 @@ public class FMXLDocumentController implements Initializable {
     }
 
     @FXML void clickStateSC(Event event){
+        App.GAME.chosenState = sc;
+        showStateInformation(sc);
         showPieChart(sc);
         SC.setFill(Color.GREEN);
     }
@@ -928,6 +986,8 @@ public class FMXLDocumentController implements Initializable {
     }
 
     @FXML void clickStateSD(Event event){
+        App.GAME.chosenState = sd;
+        showStateInformation(sd);
         showPieChart(sd);
         SD.setFill(Color.GREEN);
     }
@@ -947,6 +1007,8 @@ public class FMXLDocumentController implements Initializable {
     }
 
     @FXML void clickStateTN(Event event){
+        App.GAME.chosenState = tn;
+        showStateInformation(tn);
         showPieChart(tn);
         TN.setFill(Color.GREEN);
     }
@@ -966,6 +1028,8 @@ public class FMXLDocumentController implements Initializable {
     }
 
     @FXML void clickStateTX(Event event){
+        App.GAME.chosenState = tx;
+        showStateInformation(tx);
         showPieChart(tx);
         TX.setFill(Color.GREEN);
     }
@@ -985,6 +1049,8 @@ public class FMXLDocumentController implements Initializable {
     }
 
     @FXML void clickStateUT(Event event){
+        App.GAME.chosenState = ut;
+        showStateInformation(ut);
         UT.setFill(Color.GREEN);
         showPieChart(ut);
     }
@@ -1004,6 +1070,8 @@ public class FMXLDocumentController implements Initializable {
     }
 
     @FXML void clickStateVT(Event event){
+        App.GAME.chosenState = vt;
+        showStateInformation(vt);
         VT.setFill(Color.GREEN);
         showPieChart(vt);
     }
@@ -1023,6 +1091,8 @@ public class FMXLDocumentController implements Initializable {
     }
 
     @FXML void clickStateVA(Event event){
+        App.GAME.chosenState = va;
+        showStateInformation(va);
         VA.setFill(Color.GREEN);
         showPieChart(va);
     }
@@ -1042,6 +1112,8 @@ public class FMXLDocumentController implements Initializable {
     }
 
     @FXML void clickStateWA(Event event){
+        App.GAME.chosenState = wa;
+        showStateInformation(wa);
         WA.setFill(Color.GREEN);
         showPieChart(wa);
     }
@@ -1061,6 +1133,8 @@ public class FMXLDocumentController implements Initializable {
     }
 
     @FXML void clickStateWV(Event event){
+        App.GAME.chosenState = wv;
+        showStateInformation(wv);
         WV.setFill(Color.GREEN);
         showPieChart(wv);
     }
@@ -1079,6 +1153,8 @@ public class FMXLDocumentController implements Initializable {
     }
 
     @FXML void clickStateWI(Event event){
+        App.GAME.chosenState = wi;
+        showStateInformation(wi);
         WI.setFill(Color.GREEN);
         showPieChart(wi);
     }
@@ -1099,7 +1175,10 @@ public class FMXLDocumentController implements Initializable {
     }
 
     @FXML void clickStateWY(Event event){
+        App.GAME.chosenState = wy;
+        showStateInformation(wy);
         WY.setFill(Color.GREEN);
+        showPieChart(wy);
     }
     @FXML void hoverOverStateWY(Event event){
         WY.setFill(Color.LIGHTGREEN);
@@ -1114,6 +1193,23 @@ public class FMXLDocumentController implements Initializable {
         stateMomentum.setText("STATE MOMENTUM: ");
         statePopulation.setText("STATE POPULATION: ");
         statePossibleMoney.setText("STATE POSSIBLE FOUNDS: ");
+        switch(s.stateType){
+            case "D":
+                stateType.setStyle("-fx-background-color: BLUE;");
+                break;
+            case "LD":
+                stateType.setStyle("-fx-background-color: LIGHTBLUE");
+                break;
+            case "S":
+                stateType.setStyle("-fx-background-color: GRAY");
+                break;
+            case "R":
+                stateType.setStyle("-fx-background-color: RED;");
+                break;
+            case "LR":
+                stateType.setStyle("-fx-background-color: LightCoral");
+                break;
+        }
         stateInfo.setVisible(true);
         actionsPane.setVisible(true);
     }
@@ -1127,6 +1223,8 @@ public class FMXLDocumentController implements Initializable {
             new PieChart.Data("undecided", state.getUndecided())
         );
         support.setData(pieChartData);
+        support.setLegendVisible(false);
+        support.setLabelsVisible(false);
         support.setTitle("Election Pools in " + state.name);
         String GOPpool = String.format("%.2f", state.GOPSupport * 100);
         String DEMpool = String.format("%.2f", state.DEMSupport * 100);

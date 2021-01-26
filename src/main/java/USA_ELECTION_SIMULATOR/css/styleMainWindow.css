@@ -6,6 +6,18 @@
 .default-color5.chart-pie { -fx-pie-color: GREY; }
 
 
+/* PANELS */
+.boxBigerStyle{
+    -fx-background-color: lavender;
+}
+
+.boxOneStyle{
+    -fx-background-color: LIGHTPINK;
+    -fx-background-radius: 20px;
+    -fx-border-width: 3px;
+    -fx-border-color: DarkBLUE;
+    -fx-border-radius: 20px;
+}
 /* BUTTTONS */
 
 .button {
@@ -29,10 +41,12 @@
 .label {
     -fx-font-size: 12pt;
     -fx-font-family: "Arial";
+    -fx-text-align:center;
 }
 
 .h1 {
     -fx-font-size: 15pt;
     -fx-font-weight: bold;
     -fx-font-family: "Arial";
+    -fx-text-align:center;
 }
