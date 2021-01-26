@@ -32,14 +32,7 @@ public class App extends Application {
         screenController.addScreen("choose_player", FXMLLoader.load(getClass().getResource( "FXML_Files/choose_player.fxml" )));
         screenController.addScreen("highscores", FXMLLoader.load(getClass().getResource( "FXML_Files/highscores.fxml" )));
         screenController.addScreen("map", FXMLLoader.load(getClass().getResource( "FXML_Files/main_view.fxml" )));
-        
-        //screenController.addScreen("set_player", FXMLLoader.load(getClass().getResource( "choose_player.fxml" )));
-        
-
-        // FXMLLoader loaderMap = new FXMLLoader(new File("./src/main/java/USA_ELECTION_SIMULATOR/main_view.fxml").toURI().toURL());
-        // Parent root = loaderMap.load();
-        // Scene sceneMap = new Scene(root);
-        // stage.setScene(sceneMap);
+        screenController.addScreen("results", FXMLLoader.load(getClass().getResource( "FXML_Files/result_page.fxml" )));
         stage.show();
      }
      

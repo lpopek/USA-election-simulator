@@ -13,7 +13,10 @@ import javafx.scene.chart.PieChart;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.MenuItem;
+import javafx.scene.image.Image;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.paint.Color;
+import javafx.scene.shape.Circle;
 import javafx.scene.shape.Polygon;
 
 
@@ -25,6 +28,9 @@ public class FMXLDocumentController implements Initializable {
     ////////BUTTONS////////
     @FXML private static MenuItem exitBtn;
     @FXML private Button endTurnBtn;
+
+    ///////BOXES///////
+    @FXML private AnchorPane legend;
 
     //////////LABELS//////
     @FXML private Label timeLabel;
@@ -1082,6 +1088,7 @@ public class FMXLDocumentController implements Initializable {
         GOPSupport.setText(GOPpool + "%");
         DEMSupport.setText(DEMpool + "%");
         undecided.setText(undecidedStr + "%");
+        legend.setVisible(true);
     }
 
     @FXML void colorStateBtn(Button b, State s){
@@ -1120,6 +1127,7 @@ public class FMXLDocumentController implements Initializable {
         timeLabel.setText("Weeks until election: " + App.GAME.getWeekTillElections());
         electoralVotesLabel.setText("Electoral votes: " + App.GAME.countVotes());
         moneyLabel.setText("Money: " + App.GAME.getMoney()+ "$");
+        legend.setVisible(false);
     }
 
     @FXML public void colorMap(){
