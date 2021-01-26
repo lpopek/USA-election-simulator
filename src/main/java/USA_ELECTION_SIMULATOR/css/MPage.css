@@ -48,6 +48,10 @@ root {
     -fx-background-color: linear-gradient(#2A5058, #61a2b1);
 }
 
+.button:focus {
+    -fx-background-color: linear-gradient(#009d2d, #03561d);
+}
+
 .image {
     -fx-background-size: cover;
 }

@@ -28,6 +28,7 @@ public class FMXLDocumentController implements Initializable {
     ////////BUTTONS////////
     @FXML private static MenuItem exitBtn;
     @FXML private Button endTurnBtn;
+    @FXML private Button makeVisitBtn;
 
     ///////BOXES///////
     @FXML private AnchorPane legend;
@@ -36,6 +37,7 @@ public class FMXLDocumentController implements Initializable {
     @FXML private Label timeLabel;
     @FXML private Label moneyLabel;
     @FXML private Label electoralVotesLabel;
+    @FXML private Label actionNumber;
     @FXML private Label stateTypeLabel;
     @FXML protected Label GOPSupport;
     @FXML protected Label DEMSupport;
@@ -107,6 +109,7 @@ public class FMXLDocumentController implements Initializable {
     }
 
     @FXML void clickStateAL(Event event){
+        App.GAME.chosenState = al;
         AL.setFill(Color.GREEN);
         showPieChart(al);
     }
@@ -126,6 +129,7 @@ public class FMXLDocumentController implements Initializable {
     }
 
     @FXML void clickStateAK(Event event){
+        App.GAME.chosenState = ak;
         AK.setStyle("-fx-background-color: GREEN ;");
         showPieChart(ak);
     }
@@ -147,6 +151,7 @@ public class FMXLDocumentController implements Initializable {
     }
 
     @FXML void clickStateAZ(Event event){
+        App.GAME.chosenState = az;
         AZ.setFill(Color.GREEN);
         showPieChart(az);
     }
@@ -166,6 +171,7 @@ public class FMXLDocumentController implements Initializable {
     }
 
     @FXML void clickStateAR(Event event){
+        App.GAME.chosenState = ar;
         AR.setFill(Color.GREEN);
         showPieChart(ar);
     }
@@ -185,6 +191,7 @@ public class FMXLDocumentController implements Initializable {
     }
 
     @FXML void clickStateCA(Event event){
+        App.GAME.chosenState = ca;
         CA.setFill(Color.GREEN);
         showPieChart(ca);
     }
@@ -206,6 +213,7 @@ public class FMXLDocumentController implements Initializable {
     }
 
     @FXML void clickStateCO(Event event){
+        App.GAME.chosenState = co;
         CO.setFill(Color.GREEN);
         showPieChart(co);
     }
@@ -225,6 +233,7 @@ public class FMXLDocumentController implements Initializable {
     }
 
     @FXML void clickStateCT(Event event){
+        App.GAME.chosenState = ct;
         CT.setFill(Color.GREEN);
         showPieChart(ct);
     }
@@ -244,6 +253,7 @@ public class FMXLDocumentController implements Initializable {
     }
 
     @FXML void clickStateDE(Event event){
+        App.GAME.chosenState = de;
         DE.setFill(Color.GREEN);
         showPieChart(de);
     }
@@ -259,6 +269,7 @@ public class FMXLDocumentController implements Initializable {
     State dc = App.GAME.USA.get(8);
 
     @FXML void colorStateDC(){
+        App.GAME.chosenState = dc;
         colorStateBtn(DC, dc);
     }
 
@@ -278,6 +289,7 @@ public class FMXLDocumentController implements Initializable {
     State fl = App.GAME.USA.get(9);
 
     @FXML void colorStateFL(){
+        App.GAME.chosenState = fl;
         colorState(FL, fl);
     }
 
@@ -301,6 +313,7 @@ public class FMXLDocumentController implements Initializable {
     }
 
     @FXML void clickStateGA(Event event){
+        App.GAME.chosenState = ga;
         GA.setFill(Color.GREEN);
         showPieChart(ga);
     }
@@ -320,6 +333,7 @@ public class FMXLDocumentController implements Initializable {
     }
 
     @FXML void clickStateHI(Event event){
+        App.GAME.chosenState = hi;
         HI.setStyle("-fx-background-color: GREEN ;");
         showPieChart(hi);
     }
@@ -339,6 +353,7 @@ public class FMXLDocumentController implements Initializable {
     }
 
     @FXML void clickStateID(Event event){
+        App.GAME.chosenState = id;
         ID.setFill(Color.GREEN);
         showPieChart(id);
     }
@@ -358,6 +373,7 @@ public class FMXLDocumentController implements Initializable {
     }
 
     @FXML void clickStateIL(Event event){
+        App.GAME.chosenState = il;
         IL.setFill(Color.GREEN);
         showPieChart(il);
     }
@@ -377,6 +393,7 @@ public class FMXLDocumentController implements Initializable {
     }
 
     @FXML void clickStateIN(Event event){
+        App.GAME.chosenState = in;
         IN.setFill(Color.GREEN);
         showPieChart(in);
     }
@@ -396,6 +413,7 @@ public class FMXLDocumentController implements Initializable {
     }
 
     @FXML void clickStateIA(Event event){
+        App.GAME.chosenState = ia;
         IA.setFill(Color.GREEN);
         showPieChart(ia);
     }
@@ -415,6 +433,7 @@ public class FMXLDocumentController implements Initializable {
     }
 
     @FXML void clickStateKS(Event event){
+        App.GAME.chosenState = ia;
         KS.setFill(Color.GREEN);
         showPieChart(ks);
     }
@@ -434,6 +453,7 @@ public class FMXLDocumentController implements Initializable {
     }
 
     @FXML void clickStateKY(Event event){
+        App.GAME.chosenState = ky;
         KY.setFill(Color.GREEN);
         showPieChart(ky);
     }
@@ -453,6 +473,7 @@ public class FMXLDocumentController implements Initializable {
     }
 
     @FXML void clickStateLA(Event event){
+        App.GAME.chosenState = la;
         LA.setFill(Color.GREEN);
         showPieChart(la);
     }
@@ -472,6 +493,7 @@ public class FMXLDocumentController implements Initializable {
     }
 
     @FXML void clickStateME(Event event){
+        App.GAME.chosenState = me;
         ME.setFill(Color.GREEN);
         showPieChart(me);
     }
@@ -1075,6 +1097,7 @@ public class FMXLDocumentController implements Initializable {
     }
    
     @FXML void showPieChart(State state) {
+        support.setVisible(true);
         ObservableList<PieChart.Data> pieChartData = FXCollections.observableArrayList(
             new PieChart.Data("Democratic Party support", state.DEMSupport),
             new PieChart.Data("Republican Party support", state.GOPSupport),
@@ -1118,16 +1141,17 @@ public class FMXLDocumentController implements Initializable {
             
     }
 
-    @FXML void hidePieChart(State state) {
+    @FXML void hidePieChart() {
         support.setVisible(false);
+        legend.setVisible(false);
     }
 
 
-    @FXML public void initLabels() {
+    @FXML public void initMainLabels() {
         timeLabel.setText("Weeks until election: " + App.GAME.getWeekTillElections());
         electoralVotesLabel.setText("Electoral votes: " + App.GAME.countVotes());
         moneyLabel.setText("Money: " + App.GAME.getMoney()+ "$");
-        legend.setVisible(false);
+        actionNumber.setText("You can stil make " + App.GAME.noActionProTurn + " actions");
     }
 
     @FXML public void colorMap(){
@@ -1190,10 +1214,21 @@ public class FMXLDocumentController implements Initializable {
         System.exit(0);
     }
 
+    @FXML void makeVisit(Event event){
+        boolean isVisted = App.GAME.visitState();
+        if (isVisted == true){
+            initMainLabels();
+            colorMap();}
+        else{
+            System.out.println("cos nie tak");
+        }
+
+    }
+
     @FXML void endTurn(Event event){
         App.GAME.finishTurn();
         if(App.GAME.gameOver ==false){
-            initLabels();
+            initMainLabels();
         }
         else{
             App.screenController.activate("results");
@@ -1204,8 +1239,9 @@ public class FMXLDocumentController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        initLabels();
+        initMainLabels();
         colorMap();
+        hidePieChart();
     }
     
 

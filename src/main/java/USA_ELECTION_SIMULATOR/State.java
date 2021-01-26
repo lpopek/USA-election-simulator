@@ -64,10 +64,10 @@ public class State {
         }
     }
 
-    public void changeSupport(String party){
+    public void visitState(String party){
         double undecided = this.getUndecided();
         Random r = new Random();
-        if (party == "DEM"){
+        if (party == "D"){
             switch(this.stateType){
                     case "LD":
                         this.DEMSupport += undecided * r.nextDouble() * 0.4;

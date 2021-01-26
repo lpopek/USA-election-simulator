@@ -11,9 +11,11 @@ public class Game {
     int money = 1000;
     int weekTillElection = 10;
     int electoralVotes;
-    int noActionProTurn = 3;
+    int noActionProTurn = 4;
+    int actionProTurnDefaultValue = 4;
     boolean gameOver = false;
     boolean isWinner = false;
+    State chosenState = null;
 
 
     protected int countVotes(){
@@ -97,11 +99,31 @@ public class Game {
             this.gameOver = true;}
         else{
             this.weekTillElection --;
-            this.noActionProTurn = 3;
+            this.noActionProTurn = this.actionProTurnDefaultValue;
         }
 
     }
-    protected void visitState(State s){
+    protected boolean visitState(){
+        if(this.chosenState != null){
+            if(this.noActionProTurn > 0){
+                if(this.money > 0){
+                    chosenState.visitState(App.GAME.player.party);
+                    this.noActionProTurn--;
+                    return true;
+                }
+                //TODO makecondition for maoney
+                else{
+                //TODO say why it is imposible     
+                    return false;
+                }
 
+            }
+            else{
+                return false;
+            }
+        }
+        else{
+            return false;
+        }
     }
 }

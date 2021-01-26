@@ -43,7 +43,7 @@
                     <items>
                       <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="274.0" prefWidth="512.0" style="-fx-background-color: azure; -fx-background-opacity: 0.1;" SplitPane.resizableWithParent="false">
                            <children>
-                              <Button fx:id="endTurnBtn" layoutX="348.0" layoutY="32.0" mnemonicParsing="false" prefHeight="48.0" prefWidth="144.0" style="-fx-background-color: wheat; -fx-background-radius: 10px; -fx-border-color: black; -fx-border-radius: 10px;" text="END TURN" onMouseClicked="#endTurn">
+                              <Button fx:id="endTurnBtn" layoutX="276.0" layoutY="34.0" mnemonicParsing="false" onMouseClicked="#endTurn" prefHeight="99.0" prefWidth="144.0" style="-fx-background-radius: 60px; -fx-border-width: 5px; -fx-border-color: black; -fx-border-radius: 60px;" stylesheets="@../css/styleMainWindow.css" text="NEXT TURN">
                                  <font>
                                     <Font name="Arial Bold" size="15.0" />
                                  </font>
@@ -65,7 +65,7 @@
                                           <Font name="Arial Bold" size="20.0" />
                                        </font>
                                     </Label>
-                                    <Label fx:id="moneyLabel1" layoutX="6.0" layoutY="83.0" prefHeight="23.0" prefWidth="280.0" text="posibleActions">
+                                    <Label fx:id="actionNumber" layoutX="6.0" layoutY="83.0" prefHeight="23.0" prefWidth="280.0" text="posibleActions">
                                        <font>
                                           <Font name="Arial Bold" size="20.0" />
                                        </font>
@@ -98,11 +98,11 @@
                                                 <Label id="repSup" fx:id="GOPSupport" layoutX="110.0" layoutY="118.0" text="RepSup" />
                                              </children>
                                           </AnchorPane>
-                                          <AnchorPane id="StateInfo" layoutX="14.0" layoutY="29.0" prefHeight="213.0" prefWidth="238.0">
+                                          <AnchorPane id="StateInfo" layoutX="14.0" layoutY="14.0" prefHeight="242.0" prefWidth="238.0">
                                              <children>
-                                                <Label layoutY="53.0" stylesheets="@../css/styleMainWindow.css" text="type of State" />
-                                                <Label layoutY="79.0" stylesheets="@../css/styleMainWindow.css" text="possible Money" />
-                                                <Label layoutY="23.0" prefHeight="30.0" prefWidth="166.0" stylesheets="@../css/styleMainWindow.css" text="population" />
+                                                <Label layoutY="80.0" stylesheets="@../css/styleMainWindow.css" text="type of State" />
+                                                <Label layoutY="107.0" stylesheets="@../css/styleMainWindow.css" text="possible Money" />
+                                                <Label layoutY="42.0" prefHeight="30.0" prefWidth="166.0" stylesheets="@../css/styleMainWindow.css" text="population" />
                                                 <Label styleClass="h1" stylesheets="@../css/styleMainWindow.css" text="STATE INFORMATIONS">
                                                    <font>
                                                       <Font name="Arial Bold" size="30.0" />
@@ -110,12 +110,13 @@
                                                 </Label>
                                              </children>
                                           </AnchorPane>
-                                          <AnchorPane layoutX="246.0" layoutY="14.0" prefHeight="200.0" prefWidth="251.0">
+                                          <AnchorPane layoutX="246.0" layoutY="14.0" prefHeight="266.0" prefWidth="250.0">
                                              <children>
                                                 <Button layoutX="26.0" layoutY="50.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="200.0" stylesheets="@../css/styleMainWindow.css" text="Lauch TV campaign" />
-                                                <Button layoutX="26.0" layoutY="150.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="200.0" stylesheets="@../css/styleMainWindow.css" text="Make Visit" />
-                                                <Button layoutX="26.0" layoutY="100.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="200.0" stylesheets="@../css/styleMainWindow.css" text="Raise Founds" />
-                                                <Label layoutX="80.0" layoutY="14.0" styleClass="h1" stylesheets="@../css/styleMainWindow.css" text="ACTIONS" />
+                                                <Button fx:id="makeVisitBtn" layoutX="26.0" layoutY="100.0" mnemonicParsing="false" onMouseClicked="#makeVisit" prefHeight="40.0" prefWidth="200.0" stylesheets="@../css/styleMainWindow.css" text="Make Visit" />
+                                                <Button layoutX="26.0" layoutY="150.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="200.0" stylesheets="@../css/styleMainWindow.css" text="Raise Founds" />
+                                                <Label layoutX="80.0" layoutY="2.0" styleClass="h1" stylesheets="@../css/styleMainWindow.css" text="ACTIONS" />
+                                                <Button layoutX="26.0" layoutY="200.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="200.0" stylesheets="@../css/styleMainWindow.css" text="Exit from state panel" />
                                              </children>
                                           </AnchorPane>
                                        </children>
