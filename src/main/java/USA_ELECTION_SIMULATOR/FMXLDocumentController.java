@@ -31,6 +31,9 @@ public class FMXLDocumentController implements Initializable {
     @FXML private Label moneyLabel;
     @FXML private Label electoralVotesLabel;
     @FXML private Label stateTypeLabel;
+    @FXML protected Label GOPSupport;
+    @FXML protected Label DEMSupport;
+    @FXML protected Label undecided;
 
     ///////PIECHART///////
     @FXML private PieChart support;
@@ -1073,8 +1076,12 @@ public class FMXLDocumentController implements Initializable {
         );
         support.setData(pieChartData);
         support.setTitle("Election Pools in " + state.name);
-        support.setLegendSide(Side.BOTTOM);
-        //support.setVisible(true);
+        String GOPpool = String.format("%.2f", state.GOPSupport * 100);
+        String DEMpool = String.format("%.2f", state.DEMSupport * 100);
+        String undecidedStr = String.format("%.2f", state.getUndecided() * 100);
+        GOPSupport.setText(GOPpool + "%");
+        DEMSupport.setText(DEMpool + "%");
+        undecided.setText(undecidedStr + "%");
     }
 
     @FXML void colorStateBtn(Button b, State s){
@@ -1094,13 +1101,11 @@ public class FMXLDocumentController implements Initializable {
 
         if (s.DEMSupport > s.GOPSupport){
             pol.setFill(Color.rgb(0, 0, 255));
-            // pol.setOpacity(s.DEMSupport + s.getUndecided());
             pol.setStyle("-fx-border-color: transparent;");
         }
             
         else{
             pol.setFill(Color.rgb(255, 0, 0));
-            // pol.setOpacity(s.GOPSupport + s.getUndecided());
             pol.setStyle("-fx-border-color: transparent;");
         }
             
