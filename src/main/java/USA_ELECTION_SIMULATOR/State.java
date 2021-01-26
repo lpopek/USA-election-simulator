@@ -10,6 +10,7 @@ public class State {
     double GOPSupport;
     double DEMSupport;
     int electoralVotes;
+    int population;
     String stateType; 
     int momentum;
 

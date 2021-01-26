@@ -32,6 +32,8 @@ public class FMXLDocumentController implements Initializable {
 
     ///////BOXES///////
     @FXML private AnchorPane legend;
+    @FXML private AnchorPane stateInfo;
+    @FXML private AnchorPane actionsPane;
 
     //////////LABELS//////
     @FXML private Label timeLabel;
@@ -42,6 +44,11 @@ public class FMXLDocumentController implements Initializable {
     @FXML protected Label GOPSupport;
     @FXML protected Label DEMSupport;
     @FXML protected Label undecided;
+    @FXML protected Label stateName;
+    @FXML protected Label stateType;
+    @FXML protected Label statePopulation;
+    @FXML protected Label stateMomentum;
+    @FXML protected Label statePossibleMoney;
 
     ///////PIECHART///////
     @FXML private PieChart support;
@@ -112,6 +119,7 @@ public class FMXLDocumentController implements Initializable {
         App.GAME.chosenState = al;
         AL.setFill(Color.GREEN);
         showPieChart(al);
+        showStateInformation(al);
     }
     @FXML void hoverOverStateAL(Event event){
         AL.setFill(Color.LIGHTGREEN);
@@ -132,6 +140,7 @@ public class FMXLDocumentController implements Initializable {
         App.GAME.chosenState = ak;
         AK.setStyle("-fx-background-color: GREEN ;");
         showPieChart(ak);
+        showStateInformation(ak);
     }
     @FXML void hoverOverStateAK(Event event){
         AK.setStyle("-fx-background-color: LIGHTGREEN ;");
@@ -154,6 +163,7 @@ public class FMXLDocumentController implements Initializable {
         App.GAME.chosenState = az;
         AZ.setFill(Color.GREEN);
         showPieChart(az);
+        showStateInformation(az);
     }
     @FXML void hoverOverStateAZ(Event event){
         AZ.setFill(Color.LIGHTGREEN);
@@ -174,6 +184,7 @@ public class FMXLDocumentController implements Initializable {
         App.GAME.chosenState = ar;
         AR.setFill(Color.GREEN);
         showPieChart(ar);
+        showStateInformation(ar);
     }
     @FXML void hoverOverStateAR(Event event){
         AR.setFill(Color.LIGHTGREEN);
@@ -194,6 +205,7 @@ public class FMXLDocumentController implements Initializable {
         App.GAME.chosenState = ca;
         CA.setFill(Color.GREEN);
         showPieChart(ca);
+        showStateInformation(ca);
     }
     @FXML void hoverOverStateCA(Event event){
         CA.setFill(Color.LIGHTGREEN);
@@ -1095,6 +1107,17 @@ public class FMXLDocumentController implements Initializable {
     @FXML void exitOverStateWY(Event event){
         colorStateWY();
     }
+
+    @FXML void showStateInformation(State s){
+        stateName.setText("NAME: " + s.name);
+        stateType.setText("STATE TYPE: " + s.stateType);
+        stateMomentum.setText("STATE MOMENTUM: ");
+        statePopulation.setText("STATE POPULATION: ");
+        statePossibleMoney.setText("STATE POSSIBLE FOUNDS: ");
+        stateInfo.setVisible(true);
+        actionsPane.setVisible(true);
+    }
+
    
     @FXML void showPieChart(State state) {
         support.setVisible(true);
@@ -1141,9 +1164,11 @@ public class FMXLDocumentController implements Initializable {
             
     }
 
-    @FXML void hidePieChart() {
+    @FXML void hideStateInfo() {
+        stateInfo.setVisible(false);
         support.setVisible(false);
         legend.setVisible(false);
+        actionsPane.setVisible(false);
     }
 
 
@@ -1241,7 +1266,7 @@ public class FMXLDocumentController implements Initializable {
     public void initialize(URL location, ResourceBundle resources) {
         initMainLabels();
         colorMap();
-        hidePieChart();
+        hideStateInfo();
     }
     
 
