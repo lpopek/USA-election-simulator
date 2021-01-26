@@ -35,62 +35,54 @@
           </Menu>
         </menus>
       </MenuBar>
-      <SplitPane dividerPositions="0.3644067796610169" layoutX="191.0" layoutY="28.0" prefHeight="870.0" prefWidth="1409.0" scaleShape="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="30.0">
+      <SplitPane dividerPositions="0.3975346687211094" layoutX="191.0" layoutY="28.0" prefHeight="870.0" prefWidth="1409.0" scaleShape="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="30.0">
         <items>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="822.0" prefWidth="470.0">
                <children>
-                  <SplitPane dividerPositions="0.3351591027647366" layoutX="-2.0" layoutY="1.0" orientation="VERTICAL" prefHeight="869.0" prefWidth="470.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                  <SplitPane dividerPositions="0.3977569118414189" layoutX="-2.0" layoutY="1.0" orientation="VERTICAL" prefHeight="869.0" prefWidth="470.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                     <items>
-                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="267.0" prefWidth="469.0" style="-fx-background-color: azure; -fx-background-opacity: 0.1;" SplitPane.resizableWithParent="false">
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="274.0" prefWidth="512.0" style="-fx-background-color: azure; -fx-background-opacity: 0.1;" SplitPane.resizableWithParent="false">
                            <children>
-                              <Label fx:id="timeLabel" layoutX="40.0" layoutY="52.0" prefHeight="23.0" prefWidth="261.0" text="timeLibel">
-                                 <font>
-                                    <Font name="Arial Bold" size="20.0" />
-                                 </font>
-                              </Label>
-                              <Label fx:id="electoralVotesLabel" layoutX="40.0" layoutY="88.0" prefHeight="23.0" prefWidth="280.0" text="electoralVotes">
-                                 <font>
-                                    <Font name="Arial Bold" size="20.0" />
-                                 </font>
-                              </Label>
-                              <Button layoutX="311.0" layoutY="40.0" mnemonicParsing="false" prefHeight="48.0" prefWidth="144.0" style="-fx-background-color: wheat; -fx-background-radius: 10px; -fx-border-color: black; -fx-border-radius: 10px;" text="END TURN">
+                              <Button fx:id="endTurnBtn" layoutX="348.0" layoutY="32.0" mnemonicParsing="false" prefHeight="48.0" prefWidth="144.0" style="-fx-background-color: wheat; -fx-background-radius: 10px; -fx-border-color: black; -fx-border-radius: 10px;" text="END TURN" onMouseClicked="#endTurn">
                                  <font>
                                     <Font name="Arial Bold" size="15.0" />
                                  </font>
                               </Button>
-                              <Label fx:id="moneyLabel" layoutX="40.0" layoutY="133.0" prefHeight="23.0" prefWidth="280.0" text="moneyLabel">
-                                 <font>
-                                    <Font name="Arial Bold" size="20.0" />
-                                 </font>
-                              </Label>
-                              <Label fx:id="moneyLabel1" layoutX="40.0" layoutY="168.0" prefHeight="23.0" prefWidth="280.0" text="posibleActions">
-                                 <font>
-                                    <Font name="Arial Bold" size="20.0" />
-                                 </font>
-                              </Label>
+                              <AnchorPane layoutX="14.0" layoutY="24.0" prefHeight="149.0" prefWidth="333.0">
+                                 <children>
+                                    <Label fx:id="timeLabel" layoutX="6.0" layoutY="14.0" prefHeight="23.0" prefWidth="326.0" text="timeLibel">
+                                       <font>
+                                          <Font name="Arial Bold" size="20.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="electoralVotesLabel" layoutX="6.0" layoutY="37.0" prefHeight="23.0" prefWidth="280.0" text="electoralVotes">
+                                       <font>
+                                          <Font name="Arial Bold" size="20.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="moneyLabel" layoutX="6.0" layoutY="60.0" prefHeight="23.0" prefWidth="280.0" text="moneyLabel">
+                                       <font>
+                                          <Font name="Arial Bold" size="20.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="moneyLabel1" layoutX="6.0" layoutY="83.0" prefHeight="23.0" prefWidth="280.0" text="posibleActions">
+                                       <font>
+                                          <Font name="Arial Bold" size="20.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </AnchorPane>
                            </children></AnchorPane>
                       <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="483.0" prefWidth="474.0">
                            <children>
-                              <ScrollPane prefHeight="566.0" prefWidth="467.0" vvalue="1.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                              <ScrollPane prefHeight="566.0" prefWidth="467.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                                 <content>
-                                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="562.0" prefWidth="464.0">
+                                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="562.0" prefWidth="498.0">
                                        <children>
                                           <PieChart fx:id="support" layoutX="6.0" layoutY="302.0" prefHeight="254.0" prefWidth="280.0" stylesheets="@../css/styleMainWindow.css" />
-                                          <Label layoutX="119.0" layoutY="14.0" styleClass="h1" stylesheets="@../css/styleMainWindow.css" text="STATE INFORMATIONS">
-                                             <font>
-                                                <Font name="Arial Bold" size="30.0" />
-                                             </font>
-                                          </Label>
-                                          <Label layoutX="239.0" layoutY="104.0" prefHeight="30.0" prefWidth="166.0" stylesheets="@../css/styleMainWindow.css" text="population" />
-                                          <Label layoutX="239.0" layoutY="141.0" stylesheets="@../css/styleMainWindow.css" text="type of State" />
-                                          <Label layoutX="15.0" layoutY="63.0" styleClass="h1" stylesheets="@../css/styleMainWindow.css" text="Actions" />
-                                          <Label layoutX="239.0" layoutY="75.0" stylesheets="@../css/styleMainWindow.css" text="possible Money" />
-                                          <Button layoutX="15.0" layoutY="100.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="200.0" stylesheets="@../css/styleMainWindow.css" text="Raise Founds" />
-                                          <Button layoutX="15.0" layoutY="153.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="200.0" stylesheets="@../css/styleMainWindow.css" text="Make Visit" />
-                                          <Button layoutX="15.0" layoutY="206.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="200.0" stylesheets="@../css/styleMainWindow.css" text="Lauch TV campaign" />
                                           <AnchorPane id="Legend" fx:id="legend" layoutX="298.0" layoutY="293.0" prefHeight="254.0" prefWidth="144.0">
                                              <children>
-                                                <Label fx:id="undecided" id="und" layoutX="101.0" layoutY="210.0" text="Undecide" />
+                                                <Label id="und" fx:id="undecided" layoutX="101.0" layoutY="210.0" text="Undecide" />
                                                 <ImageView fitHeight="71.0" fitWidth="72.0" layoutX="1.0" layoutY="-1.0" pickOnBounds="true" preserveRatio="true">
                                                    <image>
                                                       <Image url="@../pic/Democratic_Disc.png" />
@@ -104,6 +96,26 @@
                                                    </image>
                                                 </ImageView>
                                                 <Label id="repSup" fx:id="GOPSupport" layoutX="110.0" layoutY="118.0" text="RepSup" />
+                                             </children>
+                                          </AnchorPane>
+                                          <AnchorPane id="StateInfo" layoutX="14.0" layoutY="29.0" prefHeight="213.0" prefWidth="238.0">
+                                             <children>
+                                                <Label layoutY="53.0" stylesheets="@../css/styleMainWindow.css" text="type of State" />
+                                                <Label layoutY="79.0" stylesheets="@../css/styleMainWindow.css" text="possible Money" />
+                                                <Label layoutY="23.0" prefHeight="30.0" prefWidth="166.0" stylesheets="@../css/styleMainWindow.css" text="population" />
+                                                <Label styleClass="h1" stylesheets="@../css/styleMainWindow.css" text="STATE INFORMATIONS">
+                                                   <font>
+                                                      <Font name="Arial Bold" size="30.0" />
+                                                   </font>
+                                                </Label>
+                                             </children>
+                                          </AnchorPane>
+                                          <AnchorPane layoutX="246.0" layoutY="14.0" prefHeight="200.0" prefWidth="251.0">
+                                             <children>
+                                                <Button layoutX="26.0" layoutY="50.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="200.0" stylesheets="@../css/styleMainWindow.css" text="Lauch TV campaign" />
+                                                <Button layoutX="26.0" layoutY="150.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="200.0" stylesheets="@../css/styleMainWindow.css" text="Make Visit" />
+                                                <Button layoutX="26.0" layoutY="100.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="200.0" stylesheets="@../css/styleMainWindow.css" text="Raise Founds" />
+                                                <Label layoutX="80.0" layoutY="14.0" styleClass="h1" stylesheets="@../css/styleMainWindow.css" text="ACTIONS" />
                                              </children>
                                           </AnchorPane>
                                        </children>

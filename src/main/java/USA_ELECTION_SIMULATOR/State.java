@@ -11,6 +11,7 @@ public class State {
     double DEMSupport;
     int electoralVotes;
     String stateType; 
+    int momentum;
 
     public State(String id, String name,  int electoralVotes){
         this.id = id;

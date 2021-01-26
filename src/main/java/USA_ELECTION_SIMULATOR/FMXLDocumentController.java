@@ -1190,6 +1190,16 @@ public class FMXLDocumentController implements Initializable {
         System.exit(0);
     }
 
+    @FXML void endTurn(Event event){
+        App.GAME.finishTurn();
+        if(App.GAME.gameOver ==false){
+            initLabels();
+        }
+        else{
+            App.screenController.activate("results");
+        }
+    }
+
 
 
     @Override

@@ -9,9 +9,11 @@ public class Game {
     ArrayList<State> USA = new ArrayList<State>();
     Player player = new Player(null, null, null);
     int money = 1000;
-    int weekTillElection = 5;
+    int weekTillElection = 10;
     int electoralVotes;
+    int noActionProTurn = 3;
     boolean gameOver = false;
+    boolean isWinner = false;
 
 
     protected int countVotes(){
@@ -70,25 +72,8 @@ public class Game {
     }
 
     public void getWinner(){
-        int GOPElectVotes = 0 , DEMElectVotes = 0;
-
-        for(int i=0; i < this.USA.size(); i++){
-            State s = this.USA.get((i));
-            System.out.println(s);
-            if (s.DEMSupport > s.GOPSupport)
-                DEMElectVotes += s.electoralVotes;
-            else
-                GOPElectVotes += s.electoralVotes;
-        }
-        if (GOPElectVotes > DEMElectVotes){
-            System.out.println("Wygrał kandydat Republikanów liczbą głosów " + GOPElectVotes);
-            this.gameOver = true;
-        }
-        else{
-            System.out.println("Wygrał kandydat Demokratów liczbą głosów " + DEMElectVotes);
-            this.gameOver = true;
-        }
-        
+        if (electoralVotes > 270)
+            this.isWinner = true;
     }
 
     public State chooseStateByID(String searchID){
@@ -102,76 +87,21 @@ public class Game {
                 break;
             }
         }
-        if (isFound == false){
-            System.out.println("Podano zły napis spróbuj jesscze raz, ale tą kolejke straciłeś");
-            return null;
-        }
         this.USA.remove(helper);
         return helper;
     }
 
-    public void finishTurn(){
-        System.out.println("Tura numer: "+ this.weekTillElection);
-        if (this.weekTillElection == 0)
+    protected void finishTurn(){
+        if (this.weekTillElection == 0){
             this.getWinner();
-        else
+            this.gameOver = true;}
+        else{
             this.weekTillElection --;
+            this.noActionProTurn = 3;
+        }
+
     }
+    protected void visitState(State s){
 
-
-
-    public static void main(String[] args){
-        // try{
-            
-            //Game g = new Game();
-            
-            // for(int i=0; i < g.USA.size(); i++){
-            //     System.out.println(g.USA.get((i)));
-            // }
-            
-
-
-            //Scanner scan = new Scanner(System.in);
-            // while(g.gameOver == false){
-            //     System.out.println("Wybierz akcje:\n 1 - zbierz fundusze 2 - przeprowadź wizytę");
-            //     int choice = scan.nextInt();
-            //     scan.nextLine();
-            //     if (choice == 1){
-            //         p.getFounds();
-            //     }
-            //     else{
-            //         if(p.founds - 20 < 0){
-            //             System.out.println("za mało funduszy. Za oszustwo wyborcze tracisz turę!");
-            //         }
-            //         else{
-            //             System.out.println("Wprowdź ID stanu w któym chesz przeprowadzić wiec wyborczy");
-            //             for(int i = 0; i < g.USA.size(); i++){
-            //                 State helper = g.USA.get(i);
-            //                 System.out.println(helper.name + " " + helper.id);
-            //             }
-            //             String stateId = scan.nextLine();
-            //             State chosenState = g.chooseStateByID(stateId);
-            //             if (chosenState != null){
-            //                 System.out.println("Tak wygladał stan przed wizytą");
-            //                 System.out.println(chosenState);
-            //                 p.makeVisit(chosenState);
-            //                 System.out.println("Tak wygladał stan po wizycie");
-            //                 System.out.println(chosenState);
-            //                 g.USA.add(chosenState);
-            //             }
-                        
-            //         }
-            //     }
-                
-            //     g.finishTurn();
-            // }
-            // scan.close();
-
-        // }
-        // catch(FileNotFoundException e){
-        //     System.out.println("Nie udało się otworzyć pliku z danymi");
-        // }
-        
-        
-      }
+    }
 }
