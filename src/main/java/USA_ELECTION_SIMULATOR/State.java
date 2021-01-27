@@ -12,7 +12,9 @@ public class State {
     int electoralVotes;
     int population;
     String stateType; 
-    int momentum = 0;
+    double DEMmomentum = 0;
+    double GOPMomentum = 0;
+
 
     public State(String id, String name,  int electoralVotes, int population){
         this.id = id;
@@ -62,6 +64,89 @@ public class State {
         }
     }
 
+    protected void launchTVCampaign(String party){
+        if (party == "D"){
+            switch(this.stateType){
+                    case "LD":
+                        this.GOPSupport -= this.GOPSupport * 0.05;
+                        break;
+                    case "D":
+                        this.GOPSupport -= this.GOPSupport * 0.06;
+                        break;
+                    case "R":
+                        this.GOPSupport -= this.GOPSupport * 0.02;
+                        break;
+                    case "LR":
+                        this.GOPSupport -= this.GOPSupport * 0.03;
+                        break;
+                    default:
+                        this.GOPSupport -= this.GOPSupport * 0.04;
+                }
+        }
+        else{
+            switch(this.stateType){
+                    case "LD":
+                        this.DEMSupport -= DEMSupport * 0.03;
+                        break;
+                    case "D":
+                        this.DEMSupport -= DEMSupport * 0.02;
+                        break;
+                    case "R":
+                        this.DEMSupport -= DEMSupport * 0.06;
+                        break;
+                    case "LR":
+                        this.DEMSupport -= DEMSupport * 0.05;
+                        break;
+                    default:
+                        this.DEMSupport -= DEMSupport * 0.04;
+                }
+        }
+
+    }
+
+    protected int getCostOfTVCampaign(String party){
+        int cost = 0;
+        if (party == "D"){
+            switch(this.stateType){
+                    case "LD":
+                        cost = (int) (0.28 * this.population);
+                        return cost;
+                    case "D":
+                        cost = (int) (0.25 * this.population);
+                        return cost;
+                    case "R":
+                        cost = (int) (0.4 * this.population);
+                        return cost;
+                    case "LR":
+                        cost = (int) (0.36 * this.population);
+                        return cost;
+                    default:
+                        cost = (int) (0.33 * this.population);
+                        return cost;
+                }
+        }
+        else{
+            switch(this.stateType){
+                    case "LD":
+                        cost = (int) (0.36 * this.population);
+                        return cost;
+                    case "D":
+                        cost = (int) (0.4 * this.population);
+                        return cost;
+                    case "R":
+                        cost = (int) (0.25 * this.population);
+                        return cost;
+                    case "LR":
+                        cost = (int) (0.28 * this.population);
+                        return cost;
+                    default:
+                        cost = (int) (0.33 * this.population);
+                        return cost;
+                }
+        }
+
+    }
+
     protected void visitState(String party){
         double undecided = this.getUndecided();
         Random r = new Random();
@@ -104,6 +189,49 @@ public class State {
 
     }
 
+
+    protected int getCostOfVisit(String party){
+        int cost = 0;
+        if (party == "D"){
+            switch(this.stateType){
+                    case "LD":
+                        cost = (int) ((this.getUndecided() + this.DEMSupport) * 0.28 * this.population);
+                        return cost;
+                    case "D":
+                        cost = (int) ((this.getUndecided() + this.DEMSupport) * 0.25 * this.population);
+                        return cost;
+                    case "R":
+                        cost = (int) ((this.getUndecided() + this.DEMSupport) * 0.4 * this.population);
+                        return cost;
+                    case "LR":
+                        cost = (int) ((this.getUndecided() + this.DEMSupport) * 0.36 * this.population);
+                        return cost;
+                    default:
+                        cost = (int) ((this.getUndecided() + this.DEMSupport) * 0.33 * this.population);
+                        return cost;
+                }
+        }
+        else{
+            switch(this.stateType){
+                    case "LD":
+                        cost = (int) ((this.getUndecided() + this.GOPSupport) * 0.36 * this.population);
+                        return cost;
+                    case "D":
+                        cost = (int) ((this.getUndecided() + this.GOPSupport) * 0.4 * this.population);
+                        return cost;
+                    case "R":
+                        cost = (int) ((this.getUndecided() + this.GOPSupport) * 0.25 * this.population);
+                        return cost;
+                    case "LR":
+                        cost = (int) ((this.getUndecided() + this.GOPSupport) * 0.28 * this.population);
+                        return cost;
+                    default:
+                        cost = (int) ((this.getUndecided() + this.GOPSupport) * 0.33 * this.population);
+                        return cost;
+                }
+        }
+    }
+
     protected int raiseFounds(String party){
         int raisedMoney = 0;
         if (party == "D"){
@@ -140,7 +268,7 @@ public class State {
                         raisedMoney = (int) (this.GOPSupport * 0.8 * this.population);
                         return raisedMoney;
                     default:
-                        raisedMoney = (int) (this.DEMSupport * 0.5 * this.population);
+                        raisedMoney = (int) (this.GOPSupport * 0.5 * this.population);
                         return raisedMoney;
                 }
         }

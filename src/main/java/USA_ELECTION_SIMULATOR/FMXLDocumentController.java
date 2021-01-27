@@ -30,6 +30,7 @@ public class FMXLDocumentController implements Initializable {
     @FXML private Button endTurnBtn;
     @FXML private Button makeVisitBtn;
     @FXML private Button raiseFoundsBtn;
+    @FXML private Button launchTVCampaignBtn;
 
     ///////BOXES///////
     @FXML private AnchorPane legend;
@@ -50,6 +51,8 @@ public class FMXLDocumentController implements Initializable {
     @FXML protected Label statePopulation;
     @FXML protected Label stateMomentum;
     @FXML protected Label statePossibleMoney;
+    @FXML protected Label visitCost;
+    @FXML protected Label tvCampaignCost;
 
     ///////PIECHART///////
     @FXML private PieChart support;
@@ -1191,9 +1194,11 @@ public class FMXLDocumentController implements Initializable {
     @FXML void showStateInformation(State s){
         stateName.setText("NAME: " + s.name);
         stateType.setText("STATE TYPE: " + s.stateType);
-        stateMomentum.setText("STATE MOMENTUM: " + s.momentum + "%");
+        stateMomentum.setText("STATE MOMENTUM: " + 0 + "%");
         statePopulation.setText("STATE POPULATION: " + s.population + "k people");
         statePossibleMoney.setText("STATE POSSIBLE FOUNDS: " + s.raiseFounds(App.GAME.player.party) + "k $");
+        visitCost.setText("ESTIMATED VISIT COST: " + s.getCostOfVisit(App.GAME.player.party) + "k $");
+        tvCampaignCost.setText("TV CAMPAIGN COST: " + s.getCostOfTVCampaign(App.GAME.player.party) + "k $");
         switch(s.stateType){
             case "D":
                 stateType.setStyle("-fx-background-color: BLUE;");
@@ -1353,6 +1358,22 @@ public class FMXLDocumentController implements Initializable {
             initMainLabels();
             colorMap();
             showStateInformation(App.GAME.chosenState);
+            showPieChart(App.GAME.chosenState);
+        }
+
+        else{
+            System.out.println("cos nie tak");
+        }
+
+    }
+
+    @FXML void launchTVCampaign(Event event){
+        boolean isLauched = App.GAME.launchTVCampaign();
+        if (isLauched == true){
+            initMainLabels();
+            colorMap();
+            showStateInformation(App.GAME.chosenState);
+            showPieChart(App.GAME.chosenState);
         }
 
         else{

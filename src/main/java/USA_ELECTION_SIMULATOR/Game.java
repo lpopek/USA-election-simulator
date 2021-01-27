@@ -113,6 +113,7 @@ public class Game {
     protected boolean getFounds(){
         if(this.checkIfAbleToMakeSupportAction(0) == true){
             this.money += this.chosenState.raiseFounds(player.party);
+            this.noActionProTurn--;
             return true;
         }
         else
@@ -122,17 +123,17 @@ public class Game {
     protected boolean checkIfAbleToMakeSupportAction(int neededFounds){
         if(this.chosenState == null){
             this.currentInfo = this.popularInfo[0];
-            System.out.println(this.currentInfo);
+            System.out.println(this.currentInfo.getinfo());
             return false;
         }
         if(this.noActionProTurn <= 0){
             this.currentInfo = this.popularInfo[1];
-            System.out.println(this.currentInfo);
+            System.out.println(this.currentInfo.getinfo());
             return false;
         }
-        if(this.money < neededFounds){
-            this.currentInfo = this.popularInfo[0];
-            System.out.println(this.currentInfo);
+        if(this.money <= neededFounds){
+            this.currentInfo = this.popularInfo[2];
+            System.out.println(this.currentInfo.getinfo());
             return false;
         }
         else
@@ -142,34 +143,36 @@ public class Game {
 
 
     protected boolean visitState(){
-        if(this.chosenState != null){
-            if(this.noActionProTurn > 0){
-                if(this.money > 0){
-                    chosenState.visitState(App.GAME.player.party);
-                    this.noActionProTurn--;
-                    return true;
-                }
-                //TODO makecondition for maoney
-                else{
-                //TODO say why it is imposible     
-                    return false;
-                }
-
-            }
-            else{
-                return false;
-            }
+        int costOfVisit = this.getCostOfVisit();
+        if(this.checkIfAbleToMakeSupportAction(costOfVisit) == true){
+            chosenState.visitState(App.GAME.player.party);
+            this.money -= costOfVisit;
+            this.noActionProTurn--;
+            return true;
         }
-        else{
+        else
             return false;
-        }
     }
 
-    protected int getCostOfVisit(State s){
-        return 0;
+    protected int getCostOfVisit(){
+        return this.chosenState.getCostOfVisit(this.player.party);
     }
 
     protected boolean launchTVCampaign(){
-        return true;
+        int costOfTVCampaign = this.getCostOfTVCampaign();
+        if(this.checkIfAbleToMakeSupportAction(costOfTVCampaign) == true){
+            chosenState.launchTVCampaign(App.GAME.player.party);
+            this.money -= costOfTVCampaign;
+            this.noActionProTurn--;
+            return true;
+        }
+        else
+            return false;
     }
+
+    protected int getCostOfTVCampaign(){
+        return this.chosenState.getCostOfTVCampaign(this.player.party);
+    }
+
+
 }
