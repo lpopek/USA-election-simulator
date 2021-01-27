@@ -8,7 +8,7 @@ import java.util.Scanner;
 public class Game {
     ArrayList<State> USA = new ArrayList<State>();
     Player player = new Player(null, null, null);
-    int money = 1000;
+    int money = 10;
     int weekTillElection = 10;
     int electoralVotes;
     int noActionProTurn = 4;
@@ -16,6 +16,12 @@ public class Game {
     boolean gameOver = false;
     boolean isWinner = false;
     State chosenState = null;
+    Comunnication currentInfo = null;
+    Comunnication [] popularInfo ={
+        new Comunnication("Choose state", 1), 
+        new Comunnication("Too many actions in current round", 1),
+        new Comunnication("Not enought money", 1)
+    };
 
 
     protected int countVotes(){
@@ -104,16 +110,35 @@ public class Game {
 
     }
 
-    protected boolean checkIfAbleToMakeAction(int neededFounds){
+    protected boolean getFounds(){
+        if(this.checkIfAbleToMakeSupportAction(0) == true){
+            this.money += this.chosenState.raiseFounds(player.party);
+            return true;
+        }
+        else
+            return false;
+    }
+
+    protected boolean checkIfAbleToMakeSupportAction(int neededFounds){
+        if(this.chosenState == null){
+            this.currentInfo = this.popularInfo[0];
+            System.out.println(this.currentInfo);
+            return false;
+        }
         if(this.noActionProTurn <= 0){
+            this.currentInfo = this.popularInfo[1];
+            System.out.println(this.currentInfo);
             return false;
         }
         if(this.money < neededFounds){
+            this.currentInfo = this.popularInfo[0];
+            System.out.println(this.currentInfo);
             return false;
         }
         else
             return true;
     }
+
 
 
     protected boolean visitState(){

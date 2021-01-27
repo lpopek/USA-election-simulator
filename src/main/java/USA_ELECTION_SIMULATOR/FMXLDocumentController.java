@@ -29,6 +29,7 @@ public class FMXLDocumentController implements Initializable {
     @FXML private static MenuItem exitBtn;
     @FXML private Button endTurnBtn;
     @FXML private Button makeVisitBtn;
+    @FXML private Button raiseFoundsBtn;
 
     ///////BOXES///////
     @FXML private AnchorPane legend;
@@ -1192,7 +1193,7 @@ public class FMXLDocumentController implements Initializable {
         stateType.setText("STATE TYPE: " + s.stateType);
         stateMomentum.setText("STATE MOMENTUM: " + s.momentum + "%");
         statePopulation.setText("STATE POPULATION: " + s.population + "k people");
-        statePossibleMoney.setText("STATE POSSIBLE FOUNDS: ");
+        statePossibleMoney.setText("STATE POSSIBLE FOUNDS: " + s.raiseFounds(App.GAME.player.party) + "k $");
         switch(s.stateType){
             case "D":
                 stateType.setStyle("-fx-background-color: BLUE;");
@@ -1273,7 +1274,7 @@ public class FMXLDocumentController implements Initializable {
     @FXML public void initMainLabels() {
         timeLabel.setText("Weeks until election: " + App.GAME.getWeekTillElections());
         electoralVotesLabel.setText("Electoral votes: " + App.GAME.countVotes());
-        moneyLabel.setText("Money: " + App.GAME.getMoney()+ "$");
+        moneyLabel.setText("Money: " + App.GAME.getMoney()+ "k $");
         actionNumber.setText("You can stil make " + App.GAME.noActionProTurn + " actions");
     }
 
@@ -1336,12 +1337,24 @@ public class FMXLDocumentController implements Initializable {
     void exitFromGame(ActionEvent event) {
         System.exit(0);
     }
+    @FXML void raiseFounds(Event event){
+        boolean foundsRaised = App.GAME.getFounds();
+        if (foundsRaised == true){
+            initMainLabels();
+        }
+        else{
+            System.out.println("cos nie tak");
+        }
+    }
 
     @FXML void makeVisit(Event event){
         boolean isVisted = App.GAME.visitState();
         if (isVisted == true){
             initMainLabels();
-            colorMap();}
+            colorMap();
+            showStateInformation(App.GAME.chosenState);
+        }
+
         else{
             System.out.println("cos nie tak");
         }

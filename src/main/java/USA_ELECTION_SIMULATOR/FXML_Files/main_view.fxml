@@ -116,7 +116,7 @@
                                              <children>
                                                 <Button layoutX="26.0" layoutY="34.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="200.0" stylesheets="@../css/styleMainWindow.css" text="Lauch TV campaign" AnchorPane.leftAnchor="26.0" AnchorPane.topAnchor="35.0" />
                                                 <Button fx:id="makeVisitBtn" layoutX="25.0" layoutY="85.0" mnemonicParsing="false" onMouseClicked="#makeVisit" prefHeight="40.0" prefWidth="200.0" stylesheets="@../css/styleMainWindow.css" text="Make Visit" AnchorPane.leftAnchor="26.0" />
-                                                <Button layoutX="26.0" layoutY="135.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="200.0" stylesheets="@../css/styleMainWindow.css" text="Raise Founds" AnchorPane.leftAnchor="26.0" />
+                                                <Button fx:id="raiseFoundsBtn" layoutX="26.0" layoutY="135.0" mnemonicParsing="false" onMouseClicked= "#raiseFounds" prefHeight="40.0" prefWidth="200.0" stylesheets="@../css/styleMainWindow.css" text="Raise Founds" AnchorPane.leftAnchor="26.0" />
                                                 <Label layoutX="78.0" layoutY="10.0" styleClass="h1" stylesheets="@../css/styleMainWindow.css" text="ACTIONS" />
                                                 <Button layoutX="26.0" layoutY="185.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="200.0" stylesheets="@../css/styleMainWindow.css" text="Exit from state panel" AnchorPane.leftAnchor="26.0" />
                                              </children>

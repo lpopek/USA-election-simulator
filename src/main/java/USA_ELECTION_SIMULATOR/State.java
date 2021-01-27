@@ -28,10 +28,6 @@ public class State {
        }  
 
     public void setStateType(String stateType){
-         /**
- * This is setter of class state type 
- * @stateType - define influecnce of player decision there are 5 types of states - D (democratic), LD(leaning to democrats), S (swing), LR(leaninto Rep), R(Rrepublican)
- */
         this.stateType = stateType;
     }
 
@@ -66,38 +62,88 @@ public class State {
         }
     }
 
-    public void visitState(String party){
+    protected void visitState(String party){
         double undecided = this.getUndecided();
         Random r = new Random();
         if (party == "D"){
             switch(this.stateType){
                     case "LD":
                         this.DEMSupport += undecided * r.nextDouble() * 0.4;
+                        break;
                     case "D":
                         this.DEMSupport += undecided * r.nextDouble() * 0.5;
+                        break;
                     case "R":
                         this.DEMSupport += undecided * r.nextDouble() * 0.1;
+                        break;
                     case "LR":
                         this.DEMSupport += undecided * r.nextDouble() * 0.2;
+                        break;
                     default:
-                        this.DEMSupport += undecided * r.nextDouble() * 0.3;;
+                        this.DEMSupport += undecided * r.nextDouble() * 0.3;
                 }
         }
         else{
             switch(this.stateType){
                     case "LD":
                         this.GOPSupport += undecided * r.nextDouble() * 0.2;
+                        break;
                     case "D":
                         this.GOPSupport += undecided * r.nextDouble() * 0.1;
+                        break;
                     case "R":
                         this.GOPSupport += undecided * r.nextDouble() * 0.5;
+                        break;
                     case "LR":
                         this.GOPSupport += undecided * r.nextDouble() * 0.4;
+                        break;
                     default:
                         this.GOPSupport += undecided * r.nextDouble() * 0.3;
                 }
         }
 
+    }
+
+    protected int raiseFounds(String party){
+        int raisedMoney = 0;
+        if (party == "D"){
+            switch(this.stateType){
+                    case "LD":
+                        raisedMoney = (int) (this.DEMSupport * 0.8 * this.population);
+                        return raisedMoney;
+                    case "D":
+                        raisedMoney = (int) (this.DEMSupport * this.population);
+                        return raisedMoney;
+                    case "R":
+                        raisedMoney = (int) (this.DEMSupport * 0.2 * this.population);
+                        return raisedMoney;
+                    case "LR":
+                        raisedMoney = (int) (this.DEMSupport * 0.4 * this.population);
+                        return raisedMoney;
+                    default:
+                        raisedMoney = (int) (this.DEMSupport * 0.5 * this.population);
+                        return raisedMoney;
+                }
+        }
+        else{
+            switch(this.stateType){
+                    case "LD":
+                        raisedMoney = (int) (this.GOPSupport * 0.4 * this.population);
+                        return raisedMoney;
+                    case "D":
+                        raisedMoney = (int) (this.GOPSupport * 0.2 * this.population);
+                        return raisedMoney;
+                    case "R":
+                        raisedMoney = (int) (this.GOPSupport * this.population);
+                        return raisedMoney;
+                    case "LR":
+                        raisedMoney = (int) (this.GOPSupport * 0.8 * this.population);
+                        return raisedMoney;
+                    default:
+                        raisedMoney = (int) (this.DEMSupport * 0.5 * this.population);
+                        return raisedMoney;
+                }
+        }
     }
 
 
