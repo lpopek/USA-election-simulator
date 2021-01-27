@@ -12,12 +12,13 @@ public class State {
     int electoralVotes;
     int population;
     String stateType; 
-    int momentum;
+    int momentum = 0;
 
-    public State(String id, String name,  int electoralVotes){
+    public State(String id, String name,  int electoralVotes, int population){
         this.id = id;
         this.name = name;
         this.electoralVotes = electoralVotes;
+        this.population = population;
     }
 
     public String toString(){//overriding the toString() method  

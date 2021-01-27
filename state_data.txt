@@ -1,52 +1,52 @@
-STUSAB|STATE_NAME|ELECTORAL_VOTES
-AL|Alabama|9
-AK|Alaska|3
-AZ|Arizona|11
-AR|Arkansas|6
-CA|California|55
-CO|Colorado|9
-CT|Connecticut|7
-DE|Delaware|3
-DC|District of Columbia|3
-FL|Florida|29
-GA|Georgia|16
-HI|Hawaii|4
-ID|Idaho|4
-IL|Illinois|20
-IN|Indiana|11
-IA|Iowa|6
-KS|Kansas|6
-KY|Kentucky|8
-LA|Louisiana|8
-ME|Maine|5
-MD|Maryland|10
-MA|Massachusetts|11
-MI|Michigan|16
-MN|Minnesota|10
-MS|Mississippi|6
-MO|Missouri|10
-MT|Montana|3
-NE|Nebraska|5
-NV|Nevada|6
-NH|New Hampshire|4
-NJ|New Jersey|14
-NM|New Mexico|5
-NY|New York|29
-NC|North Carolina|15
-ND|North Dakota|3
-OH|Ohio|18
-OK|Oklahoma|7
-OR|Oregon|7
-PA|Pennsylvania|20
-RI|Rhode Island|4
-SC|South Carolina|9
-SD|South Dakota|3
-TN|Tennessee|11
-TX|Texas|38
-UT|Utah|6
-VT|Vermont|3
-VA|Virginia|13
-WA|Washington|12
-WV|West Virginia|5
-WI|Wisconsin|10
-WY|Wyoming|3
+STUSAB|STATE_NAME|ELECTORAL_VOTES|POPULATION(in k)
+AL|Alabama|9|4921
+AK|Alaska|3|731
+AZ|Arizona|11|7421
+AR|Arkansas|6|3030
+CA|California|55|39368
+CO|Colorado|9|5807
+CT|Connecticut|7|3557
+DE|Delaware|3|986
+DC|District of Columbia|3|712
+FL|Florida|29|21733
+GA|Georgia|16|10710
+HI|Hawaii|4|1407
+ID|Idaho|4|1826
+IL|Illinois|20|12527
+IN|Indiana|11|6754
+IA|Iowa|6|3163
+KS|Kansas|6|2853
+KY|Kentucky|8|44770
+LA|Louisiana|8|4645
+ME|Maine|5|1350
+MD|Maryland|10|6055
+MA|Massachusetts|11|6893
+MI|Michigan|16|9966
+MN|Minnesota|10|5657
+MS|Mississippi|6|2966
+MO|Missouri|10|6151
+MT|Montana|3|1080
+NE|Nebraska|5|1937
+NV|Nevada|6|3138
+NH|New Hampshire|4|1366
+NJ|New Jersey|14|8882
+NM|New Mexico|5|2106
+NY|New York|29|19336
+NC|North Carolina|15|10600
+ND|North Dakota|3|765
+OH|Ohio|18|11693
+OK|Oklahoma|7|3980
+OR|Oregon|7|4241
+PA|Pennsylvania|20|12783
+RI|Rhode Island|4|1057
+SC|South Carolina|9|5218
+SD|South Dakota|3|892
+TN|Tennessee|11|6886
+TX|Texas|38|29360
+UT|Utah|6|3249
+VT|Vermont|3|623
+VA|Virginia|13|8590
+WA|Washington|12|7693
+WV|West Virginia|5|1784
+WI|Wisconsin|10|5832
+WY|Wyoming|3|582

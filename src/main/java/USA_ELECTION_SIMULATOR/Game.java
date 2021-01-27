@@ -66,7 +66,7 @@ public class Game {
     public void getUSListRandom(String[] dataTable){
         for(int i= 0; i < dataTable.length; i++){
             String[] helper = dataTable[i].split("\\|", 0);
-            State s = new State(helper[0], helper[1], Integer.parseInt(helper[2]));
+            State s = new State(helper[0], helper[1], Integer.parseInt(helper[2]), Integer.parseInt(helper[3]));
             s.getRandomSupport();
             s.getRandomType();
             this.USA.add(s);
@@ -103,6 +103,19 @@ public class Game {
         }
 
     }
+
+    protected boolean checkIfAbleToMakeAction(int neededFounds){
+        if(this.noActionProTurn <= 0){
+            return false;
+        }
+        if(this.money < neededFounds){
+            return false;
+        }
+        else
+            return true;
+    }
+
+
     protected boolean visitState(){
         if(this.chosenState != null){
             if(this.noActionProTurn > 0){
@@ -125,5 +138,13 @@ public class Game {
         else{
             return false;
         }
+    }
+
+    protected int getCostOfVisit(State s){
+        return 0;
+    }
+
+    protected boolean launchTVCampaign(){
+        return true;
     }
 }

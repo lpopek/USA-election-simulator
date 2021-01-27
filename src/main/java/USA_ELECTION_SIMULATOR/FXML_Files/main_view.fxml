@@ -35,15 +35,15 @@
           </Menu>
         </menus>
       </MenuBar>
-      <SplitPane dividerPositions="0.423728813559322" layoutX="191.0" layoutY="28.0" prefHeight="870.0" prefWidth="1409.0" scaleShape="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="30.0">
+      <SplitPane dividerPositions="0.4661016949152542" layoutX="191.0" layoutY="28.0" prefHeight="870.0" prefWidth="1409.0" scaleShape="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="30.0">
         <items>
-          <AnchorPane maxHeight="900.0" maxWidth="600.0" minHeight="0.0" minWidth="400.0" prefHeight="822.0" prefWidth="470.0">
+          <AnchorPane maxHeight="900.0" maxWidth="620.0" minHeight="0.0" minWidth="400.0" prefHeight="822.0" prefWidth="470.0">
                <children>
                   <SplitPane dividerPositions="0.20083463745435579" layoutX="-2.0" layoutY="1.0" orientation="VERTICAL" prefHeight="869.0" prefWidth="470.0" styleClass="boxBigerStyle" stylesheets="@../css/styleMainWindow.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                     <items>
                       <AnchorPane maxHeight="150.0" minHeight="150.0" minWidth="0.0" prefHeight="229.0" prefWidth="546.0" styleClass="boxBigerStyle" stylesheets="@../css/styleMainWindow.css" SplitPane.resizableWithParent="false">
                            <children>
-                              <AnchorPane layoutX="22.0" layoutY="13.0" prefHeight="123.0" prefWidth="318.0" styleClass="boxOneStyle" stylesheets="@../css/styleMainWindow.css">
+                              <AnchorPane layoutX="265.0" layoutY="13.0" prefHeight="123.0" prefWidth="318.0" styleClass="boxOneStyle" stylesheets="@../css/styleMainWindow.css">
                                  <children>
                                     <Label fx:id="timeLabel" layoutX="6.0" layoutY="14.0" prefHeight="23.0" prefWidth="171.0" text="timeLibel">
                                        <font>
@@ -67,7 +67,7 @@
                                     </Label>
                                  </children>
                               </AnchorPane>
-                              <Button fx:id="endTurnBtn" layoutX="360.0" layoutY="25.0" mnemonicParsing="false" onMouseClicked="#endTurn" prefHeight="99.0" prefWidth="144.0" style="-fx-background-radius: 60px; -fx-border-width: 5px; -fx-border-color: darkblue; -fx-border-radius: 60px;" stylesheets="@../css/styleMainWindow.css" text="NEXT TURN">
+                              <Button fx:id="endTurnBtn" layoutX="27.0" layoutY="25.0" mnemonicParsing="false" onMouseClicked="#endTurn" prefHeight="99.0" prefWidth="144.0" style="-fx-background-radius: 60px; -fx-border-width: 5px; -fx-border-color: darkblue; -fx-border-radius: 60px;" stylesheets="@../css/styleMainWindow.css" text="NEXT TURN" AnchorPane.leftAnchor="27.0">
                                  <font>
                                     <Font name="Arial Bold" size="15.0" />
                                  </font>
@@ -97,10 +97,10 @@
                                                 <Label id="repSup" fx:id="GOPSupport" layoutX="101.0" layoutY="144.0" text="RepSup" AnchorPane.rightAnchor="20.0" />
                                              </children>
                                           </AnchorPane>
-                                          <PieChart fx:id="support" layoutX="14.0" layoutY="305.0" prefHeight="290.0" prefWidth="320.0" style="-fx-background-color: LIGHTPINK; -fx-background-radius: 20px; -fx-border-width: 2px; -fx-border-color: DARKBLUE; -fx-border-radius: 20;" AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="290.0" />
-                                          <AnchorPane id="StateInfo" fx:id="stateInfo" layoutX="14.0" layoutY="14.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="240.0" prefWidth="247.0" styleClass="boxOneStyle" stylesheets="@../css/styleMainWindow.css" AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="14.0">
+                                          <PieChart fx:id="support" layoutX="14.0" layoutY="305.0" prefHeight="290.0" prefWidth="320.0" style="-fx-background-color: LIGHTPINK; -fx-background-radius: 20px; -fx-border-width: 3px; -fx-border-color: DARKBLUE; -fx-border-radius: 20;" AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="290.0" />
+                                          <AnchorPane id="StateInfo" fx:id="stateInfo" layoutX="14.0" layoutY="14.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="240.0" prefWidth="318.0" styleClass="boxOneStyle" stylesheets="@../css/styleMainWindow.css" AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="14.0">
                                              <children>
-                                                <Label fx:id="stateType" layoutX="3.0" layoutY="150.0" prefHeight="20.0" prefWidth="234.0" stylesheets="@../css/styleMainWindow.css" text="type of State" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" />
+                                                <Label fx:id="stateType" layoutX="3.0" layoutY="150.0" prefHeight="20.0" prefWidth="234.0" stylesheets="@../css/styleMainWindow.css" text="type of State" textAlignment="CENTER" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" />
                                                 <Label fx:id="statePopulation" layoutY="51.0" prefHeight="20.0" prefWidth="240.0" stylesheets="@../css/styleMainWindow.css" text="Population" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" />
                                                 <Label layoutX="8.0" layoutY="10.0" styleClass="h1" stylesheets="@../css/styleMainWindow.css" text="STATE INFORMATIONS" AnchorPane.leftAnchor="8.0" AnchorPane.rightAnchor="8.0">
                                                    <font>
@@ -112,7 +112,7 @@
                                                 <Label fx:id="statePossibleMoney" layoutX="2.0" layoutY="71.0" prefHeight="20.0" prefWidth="230.0" stylesheets="@../css/styleMainWindow.css" text="State Possible money" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" />
                                              </children>
                                           </AnchorPane>
-                                          <AnchorPane fx:id="actionsPane" layoutX="280.0" layoutY="14.0" prefHeight="240.0" prefWidth="246.0" styleClass="boxOneStyle" stylesheets="@../css/styleMainWindow.css" AnchorPane.leftAnchor="300.0" AnchorPane.topAnchor="14.0">
+                                          <AnchorPane fx:id="actionsPane" layoutX="280.0" layoutY="14.0" prefHeight="240.0" prefWidth="246.0" styleClass="boxOneStyle" stylesheets="@../css/styleMainWindow.css" AnchorPane.leftAnchor="350.0" AnchorPane.topAnchor="14.0">
                                              <children>
                                                 <Button layoutX="26.0" layoutY="34.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="200.0" stylesheets="@../css/styleMainWindow.css" text="Lauch TV campaign" AnchorPane.leftAnchor="26.0" AnchorPane.topAnchor="35.0" />
                                                 <Button fx:id="makeVisitBtn" layoutX="25.0" layoutY="85.0" mnemonicParsing="false" onMouseClicked="#makeVisit" prefHeight="40.0" prefWidth="200.0" stylesheets="@../css/styleMainWindow.css" text="Make Visit" AnchorPane.leftAnchor="26.0" />
@@ -132,11 +132,11 @@
                </children></AnchorPane>
           <AnchorPane minHeight="0.0" minWidth="0.0" scaleShape="false">
                <children>
-                  <ScrollPane hmax="0.95" maxHeight="769.0" minHeight="-Infinity" minWidth="-Infinity" prefWidth="738.0" vmax="0.7" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                  <ScrollPane hmax="0.95" layoutX="-8.0" maxHeight="814.0" minHeight="600.0" minWidth="-Infinity" prefWidth="698.0" vmax="0.7" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="-8.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                      <content>
-                        <AnchorPane>
+                        <AnchorPane maxHeight="900.0" maxWidth="1261.0" prefHeight="900.0" prefWidth="1261.0">
                            <children>
-                              <ImageView fitHeight="900.0" fitWidth="1212.0" layoutX="18.0" layoutY="60.0" opacity="0.73" pickOnBounds="true" AnchorPane.bottomAnchor="-30.0" AnchorPane.leftAnchor="-20.0" AnchorPane.rightAnchor="-60.0" AnchorPane.topAnchor="-60.0">
+                              <ImageView fitHeight="900.0" fitWidth="1341.0" layoutX="-9.0" layoutY="60.0" opacity="0.79" pickOnBounds="true" AnchorPane.bottomAnchor="-60.0" AnchorPane.leftAnchor="-29.0" AnchorPane.rightAnchor="-50.0" AnchorPane.topAnchor="-60.0">
                                  <image>
                                     <Image url="@../pic/flag-background.jpg" />
                                  </image>

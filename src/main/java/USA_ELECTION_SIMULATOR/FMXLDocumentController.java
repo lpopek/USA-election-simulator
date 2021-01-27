@@ -1190,8 +1190,8 @@ public class FMXLDocumentController implements Initializable {
     @FXML void showStateInformation(State s){
         stateName.setText("NAME: " + s.name);
         stateType.setText("STATE TYPE: " + s.stateType);
-        stateMomentum.setText("STATE MOMENTUM: ");
-        statePopulation.setText("STATE POPULATION: ");
+        stateMomentum.setText("STATE MOMENTUM: " + s.momentum + "%");
+        statePopulation.setText("STATE POPULATION: " + s.population + "k people");
         statePossibleMoney.setText("STATE POSSIBLE FOUNDS: ");
         switch(s.stateType){
             case "D":
