@@ -31,6 +31,7 @@ public class FMXLDocumentController implements Initializable {
     @FXML private Button makeVisitBtn;
     @FXML private Button raiseFoundsBtn;
     @FXML private Button launchTVCampaignBtn;
+    @FXML private Button exitFromStatePanelBtn;
 
     ///////BOXES///////
     @FXML private AnchorPane legend;
@@ -49,7 +50,8 @@ public class FMXLDocumentController implements Initializable {
     @FXML protected Label stateName;
     @FXML protected Label stateType;
     @FXML protected Label statePopulation;
-    @FXML protected Label stateMomentum;
+    @FXML protected Label stateMomentumDEM;
+    @FXML protected Label stateMomentumGOP;
     @FXML protected Label statePossibleMoney;
     @FXML protected Label visitCost;
     @FXML protected Label tvCampaignCost;
@@ -1191,14 +1193,18 @@ public class FMXLDocumentController implements Initializable {
         colorStateWY();
     }
 
+
+    ///////STATE PANEL CONTROLS /////////////
+
     @FXML void showStateInformation(State s){
         stateName.setText("NAME: " + s.name);
         stateType.setText("STATE TYPE: " + s.stateType);
-        stateMomentum.setText("STATE MOMENTUM: " + 0 + "%");
+        stateMomentumGOP.setText("STATE MOMENTUM FOR DEM: " + s.DEMMomentum + " points");
+        stateMomentumDEM.setText("STATE MOMENTUM FOR REP: " + s.GOPMomentum + " points");
         statePopulation.setText("STATE POPULATION: " + s.population + "k people");
-        statePossibleMoney.setText("STATE POSSIBLE FOUNDS: " + s.raiseFounds(App.GAME.player.party) + "k $");
-        visitCost.setText("ESTIMATED VISIT COST: " + s.getCostOfVisit(App.GAME.player.party) + "k $");
-        tvCampaignCost.setText("TV CAMPAIGN COST: " + s.getCostOfTVCampaign(App.GAME.player.party) + "k $");
+        statePossibleMoney.setText("STATE POSSIBLE FOUNDS: " + s.getValueOfRaisedFounds(App.GAME.player1.party) + "k $");
+        visitCost.setText("ESTIMATED VISIT COST: " + s.getCostOfVisit(App.GAME.player1.party) + "k $");
+        tvCampaignCost.setText("TV CAMPAIGN COST: " + s.getCostOfTVCampaign(App.GAME.player1.party) + "k $");
         switch(s.stateType){
             case "D":
                 stateType.setStyle("-fx-background-color: BLUE;");
@@ -1218,6 +1224,11 @@ public class FMXLDocumentController implements Initializable {
         }
         stateInfo.setVisible(true);
         actionsPane.setVisible(true);
+    }
+
+    @FXML void exitFromStatePanel(){
+        this.hideStateInfo();
+        App.GAME.chosenState = null;
     }
 
    

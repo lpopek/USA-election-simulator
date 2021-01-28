@@ -7,8 +7,8 @@ import java.util.Scanner;
 
 public class Game {
     ArrayList<State> USA = new ArrayList<State>();
-    Player player = new Player(null, null, null);
-    int money = 10;
+    Player player1 = new Player(null, null, null);
+    int money = 0;
     int weekTillElection = 10;
     int electoralVotes;
     int noActionProTurn = 4;
@@ -20,13 +20,17 @@ public class Game {
     Comunnication [] popularInfo ={
         new Comunnication("Choose state", 1), 
         new Comunnication("Too many actions in current round", 1),
-        new Comunnication("Not enought money", 1)
+        new Comunnication("Not enought money", 1),
+        new Comunnication("This State is already visited" , 1),
+        new Comunnication("This State has already lauched TV Campaign" , 1),
+        new Comunnication("In this State has alreardy been raised founds" , 1),
+        new Comunnication("NEXT ROUND", 0)
     };
 
 
     protected int countVotes(){
         int electoralVotes = 0; 
-        if (player.party == "R"){
+        if (player1.party == "R"){
             for(int i=0; i < this.USA.size(); i++){
                 State s = this.USA.get((i));
                 if (s.DEMSupport < s.GOPSupport){electoralVotes += s.electoralVotes;}
@@ -106,17 +110,24 @@ public class Game {
         else{
             this.weekTillElection --;
             this.noActionProTurn = this.actionProTurnDefaultValue;
+            for(int i=0; i < this.USA.size(); i++){
+                this.USA.get(i).endTurnForState();
+            }
+            this.currentInfo = this.popularInfo[6];
+            System.out.println(this.currentInfo.getinfo());
         }
 
     }
 
     protected boolean getFounds(){
-        if(this.checkIfAbleToMakeSupportAction(0) == true){
-            this.money += this.chosenState.raiseFounds(player.party);
+        if(this.checkIfAbleToMakeSupportAction(-1) == true && this.chosenState.isRaisedFounds == false){
+            this.money += this.chosenState.raiseFounds(player1.party);
             this.noActionProTurn--;
             return true;
         }
         else
+            this.currentInfo = this.popularInfo[5];
+            System.out.println(this.currentInfo.getinfo());
             return false;
     }
 
@@ -144,34 +155,38 @@ public class Game {
 
     protected boolean visitState(){
         int costOfVisit = this.getCostOfVisit();
-        if(this.checkIfAbleToMakeSupportAction(costOfVisit) == true){
-            chosenState.visitState(App.GAME.player.party);
+        if(this.checkIfAbleToMakeSupportAction(costOfVisit) == true && this.chosenState.isVisted == false){
+            chosenState.visitState(App.GAME.player1.party);
             this.money -= costOfVisit;
             this.noActionProTurn--;
             return true;
         }
         else
+            this.currentInfo = this.popularInfo[3];
+            System.out.println(this.currentInfo.getinfo());
             return false;
     }
 
     protected int getCostOfVisit(){
-        return this.chosenState.getCostOfVisit(this.player.party);
+        return this.chosenState.getCostOfVisit(this.player1.party);
     }
 
     protected boolean launchTVCampaign(){
         int costOfTVCampaign = this.getCostOfTVCampaign();
-        if(this.checkIfAbleToMakeSupportAction(costOfTVCampaign) == true){
-            chosenState.launchTVCampaign(App.GAME.player.party);
+        if(this.checkIfAbleToMakeSupportAction(costOfTVCampaign) == true && this.chosenState.isLauchedCampaign == false){
+            chosenState.launchTVCampaign(App.GAME.player1.party);
             this.money -= costOfTVCampaign;
             this.noActionProTurn--;
             return true;
         }
         else
+        this.currentInfo = this.popularInfo[4];
+            System.out.println(this.currentInfo.getinfo());
             return false;
     }
 
     protected int getCostOfTVCampaign(){
-        return this.chosenState.getCostOfTVCampaign(this.player.party);
+        return this.chosenState.getCostOfTVCampaign(this.player1.party);
     }
 
 

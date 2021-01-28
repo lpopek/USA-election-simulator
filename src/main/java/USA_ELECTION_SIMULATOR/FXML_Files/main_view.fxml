@@ -108,10 +108,11 @@
                                                    </font>
                                                 </Label>
                                                 <Label fx:id="stateName" layoutY="34.0" prefHeight="20.0" prefWidth="240.0" stylesheets="@../css/styleMainWindow.css" text="Name" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" />
-                                                <Label fx:id="stateMomentum" layoutY="91.0" prefHeight="18.0" prefWidth="240.0" stylesheets="@../css/styleMainWindow.css" text="State Momentum" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" />
+                                                <Label fx:id="stateMomentumDEM" layoutX="8.0" layoutY="130.0" prefHeight="18.0" prefWidth="240.0" stylesheets="@../css/styleMainWindow.css" text="State Dem Mom" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" />
                                                 <Label fx:id="statePossibleMoney" layoutX="2.0" layoutY="71.0" prefHeight="20.0" prefWidth="230.0" stylesheets="@../css/styleMainWindow.css" text="State Possible money" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" />
-                                                <Label fx:id="visitCost" layoutX="8.0" layoutY="112.0" prefHeight="20.0" prefWidth="294.0" text="Visit cost" AnchorPane.leftAnchor="5.0" />
-                                                <Label fx:id="tvCampaignCost" layoutX="8.0" layoutY="132.0" text="TV campaign cost" AnchorPane.leftAnchor="5.0" />
+                                                <Label fx:id="visitCost" layoutX="8.0" layoutY="91.0" prefHeight="20.0" prefWidth="294.0" text="Visit cost" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" />
+                                                <Label fx:id="tvCampaignCost" layoutX="8.0" layoutY="110.0" text="TV campaign cost" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" />
+                                                <Label fx:id="stateMomentumGOP" layoutX="8.0" layoutY="150.0" text="State GOP Mom" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" />
                                              </children>
                                           </AnchorPane>
                                           <AnchorPane fx:id="actionsPane" layoutX="280.0" layoutY="14.0" prefHeight="240.0" prefWidth="246.0" styleClass="boxOneStyle" stylesheets="@../css/styleMainWindow.css" AnchorPane.leftAnchor="350.0" AnchorPane.topAnchor="14.0">
@@ -120,7 +121,7 @@
                                                 <Button fx:id="makeVisitBtn" layoutX="25.0" layoutY="85.0" mnemonicParsing="false" onMouseClicked="#makeVisit" prefHeight="40.0" prefWidth="200.0" stylesheets="@../css/styleMainWindow.css" text="Make Visit" AnchorPane.leftAnchor="26.0" />
                                                 <Button fx:id="raiseFoundsBtn" layoutX="26.0" layoutY="135.0" mnemonicParsing="false" onMouseClicked="#raiseFounds" prefHeight="40.0" prefWidth="200.0" stylesheets="@../css/styleMainWindow.css" text="Raise Founds" AnchorPane.leftAnchor="26.0" />
                                                 <Label layoutX="78.0" layoutY="10.0" styleClass="h1" stylesheets="@../css/styleMainWindow.css" text="ACTIONS" />
-                                                <Button layoutX="26.0" layoutY="185.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="200.0" stylesheets="@../css/styleMainWindow.css" text="Exit from state panel" AnchorPane.leftAnchor="26.0" />
+                                                <Button fx:id="exitFromStatePanelBtn" layoutX="26.0" layoutY="185.0" mnemonicParsing="false" onMouseClicked="#exitFromStatePanel" prefHeight="40.0" prefWidth="200.0" stylesheets="@../css/styleMainWindow.css" text="Exit from state panel" AnchorPane.leftAnchor="26.0" />
                                              </children>
                                           </AnchorPane>
                                        </children>
@@ -194,7 +195,7 @@
                               <Polygon id="NH" fx:id="NH" fill="WHITE" layoutX="1072.0" layoutY="305.0" onMouseClicked="#clickStateNH" onMouseEntered="#hoverOverStateNH" onMouseExited="#exitOverStateNH" points="-66.99993896484375, -147.60000610351562, -70.99993896484375, -153.39999389648438, -61.99993896484375, -155.8000030517578, -45.0, -113.19999694824219, -42.60009765625, -111.60000610351562, -42.60009765625, -100.59999084472656, -70.99993896484375, -98.0, -68.60003662109375, -106.0, -70.99993896484375, -116.19999694824219, -70.99993896484375, -128.8000030517578, -68.60003662109375, -135.0, -68.60003662109375, -144.1999969482422" stroke="BLACK" strokeType="INSIDE" />
                               <Polygon id="MA" fx:id="MA" fill="WHITE" layoutX="1052.0" layoutY="373.0" onMouseClicked="#clickStateMA" onMouseEntered="#hoverOverStateMA" onMouseExited="#exitOverStateMA" points="-64.60003662109375, -166.39999389648438, -64.60003662109375, -140.8000030517578, -64.60003662109375, -140.8000030517578, -64.60003662109375, -140.8000030517578, -64.60003662109375, -140.8000030517578, -64.60003662109375, -140.8000030517578, -64.60003662109375, -140.8000030517578, -64.60003662109375, -140.8000030517578, -64.60003662109375, -140.8000030517578, -64.60003662109375, -140.8000030517578, -64.60003662109375, -140.8000030517578, -64.60003662109375, -140.8000030517578, -64.60003662109375, -140.8000030517578, -64.60003662109375, -140.8000030517578, -34.20001220703125, -150.5999755859375, -29.20001220703125, -149.0, -25.60009765625, -146.1999969482422, -18.0, -143.59999084472656, -14.7999267578125, -146.1999969482422, -8.2000732421875, -146.1999969482422, -2.2000732421875, -149.0, -2.2000732421875, -153.1999969482422, -8.2000732421875, -160.1999969482422, -6.199951171875, -156.1999969482422, -8.2000732421875, -153.1999969482422, -12.5999755859375, -153.1999969482422, -18.0, -160.1999969482422, -22.800048828125, -169.60000610351562" stroke="BLACK" strokeType="INSIDE" strokeWidth="2.0" />
                               <Polygon id="ME" fx:id="ME" fill="WHITE" layoutX="1160.0" layoutY="264.0" onMouseClicked="#clickStateME" onMouseEntered="#hoverOverStateME" onMouseExited="#exitOverStateME" points="-141.0, -156.0, -146.4000244140625, -152.1999969482422, -144.4000244140625, -136.8000030517578, -146.4000244140625, -124.19998168945312, -150.0, -114.20001220703125, -132.5999755859375, -70.20002746582031, -130.5999755859375, -70.20001220703125, -128.7999267578125, -79.40000915527344, -123.7999267578125, -88.00001525878906, -110.199951171875, -102.4000244140625, -110.199951171875, -109.00003051757812, -102.199951171875, -109.00001525878906, -94.0, -118.20002746582031, -86.5999755859375, -118.20001220703125, -83.1192626953125, -121.40000915527344, -86.5999755859375, -124.19998168945312, -90.7999267578125, -126.20001220703125, -96.199951171875, -131.8000030517578, -98.0, -136.8000030517578, -103.7999267578125, -134.40000915527344, -105.5999755859375, -136.8000030517578, -107.199951171875, -154.39999389648438, -110.199951171875, -166.8000030517578, -117.4000244140625, -175.80001831054688, -121.0, -175.80001831054688, -128.7999267578125, -170.1999969482422, -134.7999267578125, -175.80001831054688, -141.0, -172.60000610351562" stroke="BLACK" strokeType="INSIDE" strokeWidth="2.0" />
-                              <Button id="HI" fx:id="HI" layoutX="45.0" layoutY="490.0" mnemonicParsing="false" onMouseClicked="#clickStateHI" onMouseEntered="#hoverOverStateHI" onMouseExited="#exitOverStateHI" prefHeight="56.0" prefWidth="127.0" text="HAWAII">
+                              <Button id="HI" fx:id="HI" layoutX="45.0" layoutY="463.0" mnemonicParsing="false" onMouseClicked="#clickStateHI" onMouseEntered="#hoverOverStateHI" onMouseExited="#exitOverStateHI" prefHeight="56.0" prefWidth="127.0" text="HAWAII">
                                  <font>
                                     <Font size="13.0" />
                                  </font>
@@ -209,6 +210,11 @@
                                     <Font size="13.0" />
                                  </font>
                               </Button>
+                              <Label layoutX="144.0" layoutY="572.0" text="Information Bar">
+                                 <font>
+                                    <Font size="30.0" />
+                                 </font>
+                              </Label>
                            </children>
                            <padding>
                               <Insets bottom="60.0" left="20.0" right="60.0" top="60.0" />

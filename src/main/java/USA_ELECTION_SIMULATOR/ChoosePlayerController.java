@@ -25,7 +25,6 @@ public class ChoosePlayerController {
 
     @FXML
     private void loadGame(ActionEvent event) {        
-        System.out.println("clicked Play");
         //TODO: load game screen, get data from name field and state field
         String name = nameField.getText();
         String state = homeStateField.getText();
@@ -59,15 +58,13 @@ public class ChoosePlayerController {
 
     @FXML
     private void clickedDemocratic(ActionEvent event) {        
-        System.out.println("clicked Democratic");
-        App.GAME.player.setDemocrat();
+        App.GAME.player1.setDemocrat();
         republicanButton.setSelected(false);
     }
 
     @FXML
     private void clickedRepublican(ActionEvent event) {        
-        System.out.println("clicked Republican");
-        App.GAME.player.setRepublican();
+        App.GAME.player1.setRepublican();
         democraticButton.setSelected(false);
     }
 

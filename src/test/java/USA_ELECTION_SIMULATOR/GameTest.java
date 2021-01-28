@@ -14,7 +14,7 @@ public class GameTest {
     @Test
     public void testCountState() throws FileNotFoundException {
         Game game = new Game();
-        game.player.setRepublican();
+        game.player1.setRepublican();
         int votes = game.countVotes();
         int votesChecked = 0;
         for(int i=0; i < game.USA.size(); i++){

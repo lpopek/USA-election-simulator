@@ -12,8 +12,11 @@ public class State {
     int electoralVotes;
     int population;
     String stateType; 
-    double DEMmomentum = 0;
-    double GOPMomentum = 0;
+    int DEMMomentum = 0;
+    int GOPMomentum = 0;
+    boolean isRaisedFounds = false;
+    boolean isVisted = false;
+    boolean isLauchedCampaign = false;
 
 
     public State(String id, String name,  int electoralVotes, int population){
@@ -65,40 +68,51 @@ public class State {
     }
 
     protected void launchTVCampaign(String party){
+        this.isLauchedCampaign = true;
         if (party == "D"){
             switch(this.stateType){
                     case "LD":
                         this.GOPSupport -= this.GOPSupport * 0.05;
+                        this.DEMMomentum += 2;
                         break;
                     case "D":
                         this.GOPSupport -= this.GOPSupport * 0.06;
+                        this.DEMMomentum += 1;
                         break;
                     case "R":
                         this.GOPSupport -= this.GOPSupport * 0.02;
+                        this.DEMMomentum += 3;
                         break;
                     case "LR":
                         this.GOPSupport -= this.GOPSupport * 0.03;
+                        this.DEMMomentum += 4;
                         break;
                     default:
                         this.GOPSupport -= this.GOPSupport * 0.04;
+                        this.DEMMomentum += 5;
                 }
         }
         else{
             switch(this.stateType){
                     case "LD":
                         this.DEMSupport -= DEMSupport * 0.03;
+                        this.GOPMomentum += 4;
                         break;
                     case "D":
                         this.DEMSupport -= DEMSupport * 0.02;
+                        this.GOPMomentum += 3;
                         break;
                     case "R":
                         this.DEMSupport -= DEMSupport * 0.06;
+                        this.GOPMomentum += 1;
                         break;
                     case "LR":
                         this.DEMSupport -= DEMSupport * 0.05;
+                        this.GOPMomentum += 2;
                         break;
                     default:
                         this.DEMSupport -= DEMSupport * 0.04;
+                        this.GOPMomentum += 5;
                 }
         }
 
@@ -149,8 +163,10 @@ public class State {
 
     protected void visitState(String party){
         double undecided = this.getUndecided();
+        this.isVisted = true;
         Random r = new Random();
         if (party == "D"){
+            this.DEMMomentum += 2;
             switch(this.stateType){
                     case "LD":
                         this.DEMSupport += undecided * r.nextDouble() * 0.4;
@@ -169,6 +185,7 @@ public class State {
                 }
         }
         else{
+            this.GOPMomentum += 2;
             switch(this.stateType){
                     case "LD":
                         this.GOPSupport += undecided * r.nextDouble() * 0.2;
@@ -231,8 +248,11 @@ public class State {
                 }
         }
     }
-
     protected int raiseFounds(String party){
+        this.isRaisedFounds = true;
+        return this.getValueOfRaisedFounds(party);
+    }
+    protected int getValueOfRaisedFounds(String party){
         int raisedMoney = 0;
         if (party == "D"){
             switch(this.stateType){
@@ -272,6 +292,32 @@ public class State {
                         return raisedMoney;
                 }
         }
+    }
+
+    protected void changeSupportOnTheEndOfTurn(){
+        if(this.DEMMomentum > 0){
+            this.GOPSupport -= this.GOPSupport * this.DEMMomentum/200;
+            this.DEMSupport += this.getUndecided() * this.DEMMomentum/100;
+            this.DEMMomentum--;
+        }
+        if(this.GOPMomentum > 0){
+            this.DEMSupport -= this.DEMSupport * this.GOPMomentum/200;
+            this.GOPSupport += this.getUndecided() * this.GOPMomentum/100;
+            this.GOPMomentum--;
+        }
+    }
+
+    protected void endTurnForState(){
+        this.changeSupportOnTheEndOfTurn();
+        if(this.DEMMomentum > 0){
+            this.DEMMomentum--;
+        }
+        if(this.GOPMomentum > 0){
+            this.GOPMomentum--;
+        }
+        isRaisedFounds = false;
+        isLauchedCampaign = false;
+        isVisted = false;
     }
 
 
