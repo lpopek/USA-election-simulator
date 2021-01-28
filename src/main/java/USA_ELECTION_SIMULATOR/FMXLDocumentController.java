@@ -126,6 +126,7 @@ public class FMXLDocumentController implements Initializable {
         AL.setFill(Color.GREEN);
         showPieChart(al);
         showStateInformation(al);
+        showEnebledButtons(al);
     }
     @FXML void hoverOverStateAL(Event event){
         AL.setFill(Color.LIGHTGREEN);
@@ -147,6 +148,7 @@ public class FMXLDocumentController implements Initializable {
         AK.setStyle("-fx-background-color: GREEN ;");
         showPieChart(ak);
         showStateInformation(ak);
+        showEnebledButtons(ak);
     }
     @FXML void hoverOverStateAK(Event event){
         AK.setStyle("-fx-background-color: LIGHTGREEN ;");
@@ -170,6 +172,7 @@ public class FMXLDocumentController implements Initializable {
         AZ.setFill(Color.GREEN);
         showPieChart(az);
         showStateInformation(az);
+        showEnebledButtons(az);
     }
     @FXML void hoverOverStateAZ(Event event){
         AZ.setFill(Color.LIGHTGREEN);
@@ -191,6 +194,7 @@ public class FMXLDocumentController implements Initializable {
         AR.setFill(Color.GREEN);
         showPieChart(ar);
         showStateInformation(ar);
+        showEnebledButtons(ar);
     }
     @FXML void hoverOverStateAR(Event event){
         AR.setFill(Color.LIGHTGREEN);
@@ -212,6 +216,7 @@ public class FMXLDocumentController implements Initializable {
         CA.setFill(Color.GREEN);
         showPieChart(ca);
         showStateInformation(ca);
+        showEnebledButtons(ca);
     }
     @FXML void hoverOverStateCA(Event event){
         CA.setFill(Color.LIGHTGREEN);
@@ -235,6 +240,7 @@ public class FMXLDocumentController implements Initializable {
         CO.setFill(Color.GREEN);
         showPieChart(co);
         showStateInformation(co);
+        showEnebledButtons(co);
     }
     @FXML void hoverOverStateCO(Event event){
         CO.setFill(Color.LIGHTGREEN);
@@ -256,6 +262,7 @@ public class FMXLDocumentController implements Initializable {
         CT.setFill(Color.GREEN);
         showPieChart(ct);
         showStateInformation(ct);
+        showEnebledButtons(ct);
     }
     @FXML void hoverOverStateCT(Event event){
         CT.setFill(Color.LIGHTGREEN);
@@ -277,6 +284,7 @@ public class FMXLDocumentController implements Initializable {
         DE.setFill(Color.GREEN);
         showPieChart(de);
         showStateInformation(de);
+        showEnebledButtons(de);
     }
     @FXML void hoverOverStateDE(Event event){
         DE.setFill(Color.LIGHTGREEN);
@@ -298,6 +306,7 @@ public class FMXLDocumentController implements Initializable {
         DC.setStyle("-fx-background-color: GREEN ;");
         showPieChart(dc);
         showStateInformation(dc);
+        showEnebledButtons(dc);
     }
     @FXML void hoverOverStateDC(Event event){
         DC.setStyle("-fx-background-color: LIGHTGREEN ;");
@@ -319,6 +328,8 @@ public class FMXLDocumentController implements Initializable {
         FL.setFill(Color.GREEN);
         showPieChart(fl);
         showStateInformation(fl);
+        showEnebledButtons(fl);
+
     }
     @FXML void hoverOverStateFL(Event event){
         FL.setFill(Color.LIGHTGREEN);
@@ -340,6 +351,7 @@ public class FMXLDocumentController implements Initializable {
         GA.setFill(Color.GREEN);
         showPieChart(ga);
         showStateInformation(ga);
+        showEnebledButtons(fl);
     }
     @FXML void hoverOverStateGA(Event event){
         GA.setFill(Color.LIGHTGREEN);
@@ -361,6 +373,8 @@ public class FMXLDocumentController implements Initializable {
         HI.setStyle("-fx-background-color: GREEN ;");
         showPieChart(hi);
         showStateInformation(hi);
+        showEnebledButtons(hi);
+
     }
     @FXML void hoverOverStateHI(Event event){
         HI.setStyle("-fx-background-color: LIGHTGREEN ;");
@@ -382,6 +396,8 @@ public class FMXLDocumentController implements Initializable {
         ID.setFill(Color.GREEN);
         showPieChart(id);
         showStateInformation(id);
+        showEnebledButtons(id);
+
     }
     @FXML void hoverOverStateID(Event event){
         ID.setFill(Color.LIGHTGREEN);
@@ -403,6 +419,8 @@ public class FMXLDocumentController implements Initializable {
         IL.setFill(Color.GREEN);
         showPieChart(il);
         showStateInformation(il);
+        showEnebledButtons(il);
+
     }
     @FXML void hoverOverStateIL(Event event){
         IL.setFill(Color.LIGHTGREEN);
@@ -424,6 +442,8 @@ public class FMXLDocumentController implements Initializable {
         IN.setFill(Color.GREEN);
         showPieChart(in);
         showStateInformation(in);
+        showEnebledButtons(in);
+
     }
     @FXML void hoverOverStateIN(Event event){
         IN.setFill(Color.LIGHTGREEN);
@@ -445,6 +465,7 @@ public class FMXLDocumentController implements Initializable {
         IA.setFill(Color.GREEN);
         showPieChart(ia);
         showStateInformation(ia);
+        showEnebledButtons(ia);
     }
     @FXML void hoverOverStateIA(Event event){
         IA.setFill(Color.LIGHTGREEN);
@@ -466,6 +487,7 @@ public class FMXLDocumentController implements Initializable {
         KS.setFill(Color.GREEN);
         showPieChart(ks);
         showStateInformation(ks);
+        showEnebledButtons(ks);
     }
     @FXML void hoverOverStateKS(Event event){
         KS.setFill(Color.LIGHTGREEN);
@@ -487,6 +509,7 @@ public class FMXLDocumentController implements Initializable {
         KY.setFill(Color.GREEN);
         showPieChart(ky);
         showStateInformation(ky);
+        showEnebledButtons(ky);
     }
     @FXML void hoverOverStateKY(Event event){
         KY.setFill(Color.LIGHTGREEN);
@@ -508,6 +531,8 @@ public class FMXLDocumentController implements Initializable {
         LA.setFill(Color.GREEN);
         showPieChart(la);
         showStateInformation(la);
+        showEnebledButtons(ky);
+
     }
     @FXML void hoverOverStateLA(Event event){
         LA.setFill(Color.LIGHTGREEN);
@@ -529,7 +554,7 @@ public class FMXLDocumentController implements Initializable {
         showStateInformation(me);
         ME.setFill(Color.GREEN);
         showPieChart(me);
-
+        showEnebledButtons(me);
     }
     @FXML void hoverOverStateME(Event event){
         ME.setFill(Color.LIGHTGREEN);
@@ -552,6 +577,7 @@ public class FMXLDocumentController implements Initializable {
         showStateInformation(md);
         MD.setFill(Color.GREEN);
         showPieChart(md);
+        showEnebledButtons(md);
     }
     @FXML void hoverOverStateMD(Event event){
         MD.setFill(Color.LIGHTGREEN);
@@ -573,6 +599,7 @@ public class FMXLDocumentController implements Initializable {
         showStateInformation(ma);
         MA.setFill(Color.GREEN);
         showPieChart(ma);
+        showEnebledButtons(ma);
     }
     @FXML void hoverOverStateMA(Event event){
         MA.setFill(Color.LIGHTGREEN);
@@ -595,6 +622,7 @@ public class FMXLDocumentController implements Initializable {
         showStateInformation(mi);
         MI.setFill(Color.GREEN);
         showPieChart(mi);
+        showEnebledButtons(mi);
     }
     @FXML void hoverOverStateMI(Event event){
         MI.setFill(Color.LIGHTGREEN);
@@ -617,6 +645,7 @@ public class FMXLDocumentController implements Initializable {
         showStateInformation(mi);
         MN.setFill(Color.GREEN);
         showPieChart(mn);
+        showEnebledButtons(mn);
     }
     @FXML void hoverOverStateMN(Event event){
         MN.setFill(Color.LIGHTGREEN);
@@ -638,6 +667,7 @@ public class FMXLDocumentController implements Initializable {
         showStateInformation(ms);
         MS.setFill(Color.GREEN);
         showPieChart(ms);
+        showEnebledButtons(ms);
     }
     @FXML void hoverOverStateMS(Event event){
         MS.setFill(Color.LIGHTGREEN);
@@ -659,6 +689,7 @@ public class FMXLDocumentController implements Initializable {
         showStateInformation(mo);
         MO.setFill(Color.GREEN);
         showPieChart(mo);
+        showEnebledButtons(mo);
     }
     @FXML void hoverOverStateMO(Event event){
         MO.setFill(Color.LIGHTGREEN);
@@ -680,6 +711,7 @@ public class FMXLDocumentController implements Initializable {
         showStateInformation(mt);
         MT.setFill(Color.GREEN);
         showPieChart(mt);
+        showEnebledButtons(mt);
     }
     @FXML void hoverOverStateMT(Event event){
         MT.setFill(Color.LIGHTGREEN);
@@ -702,6 +734,7 @@ public class FMXLDocumentController implements Initializable {
         showStateInformation(ne);
         NE.setFill(Color.GREEN);
         showPieChart(ne);
+        showEnebledButtons(ne);
     }
     @FXML void hoverOverStateNE(Event event){
         NE.setFill(Color.LIGHTGREEN);
@@ -723,6 +756,7 @@ public class FMXLDocumentController implements Initializable {
         showStateInformation(nv);
         NV.setFill(Color.GREEN);
         showPieChart(nv);
+        showEnebledButtons(nv);
     }
     @FXML void hoverOverStateNV(Event event){
         NV.setFill(Color.LIGHTGREEN);
@@ -744,6 +778,7 @@ public class FMXLDocumentController implements Initializable {
         showStateInformation(nh);
         NH.setFill(Color.GREEN);
         showPieChart(nh);
+        showEnebledButtons(nh);
     }
     @FXML void hoverOverStateNH(Event event){
         NH.setFill(Color.LIGHTGREEN);
@@ -765,6 +800,7 @@ public class FMXLDocumentController implements Initializable {
         showStateInformation(nj);
         NJ.setFill(Color.GREEN);
         showPieChart(nj);
+        showEnebledButtons(nj);
     }
     @FXML void hoverOverStateNJ(Event event){
         NJ.setFill(Color.LIGHTGREEN);
@@ -786,6 +822,7 @@ public class FMXLDocumentController implements Initializable {
         showStateInformation(nm);
         NM.setFill(Color.GREEN);
         showPieChart(nm);
+        showEnebledButtons(nm);
     }
     @FXML void hoverOverStateNM(Event event){
         NM.setFill(Color.LIGHTGREEN);
@@ -807,6 +844,7 @@ public class FMXLDocumentController implements Initializable {
         showStateInformation(ny);
         NY.setFill(Color.GREEN);
         showPieChart(ny);
+        showEnebledButtons(ny);
     }
     @FXML void hoverOverStateNY(Event event){
         NY.setFill(Color.LIGHTGREEN);
@@ -828,6 +866,7 @@ public class FMXLDocumentController implements Initializable {
         showStateInformation(nc);
         NC.setFill(Color.GREEN);
         showPieChart(nc);
+        showEnebledButtons(nc);
     }
     @FXML void hoverOverStateNC(Event event){
         NC.setFill(Color.LIGHTGREEN);
@@ -849,6 +888,7 @@ public class FMXLDocumentController implements Initializable {
         showStateInformation(nd);
         ND.setFill(Color.GREEN);
         showPieChart(nd);
+        showEnebledButtons(nd);
     }
     @FXML void hoverOverStateND(Event event){
         ND.setFill(Color.LIGHTGREEN);
@@ -870,6 +910,7 @@ public class FMXLDocumentController implements Initializable {
         showStateInformation(oh);
         showPieChart(oh);
         OH.setFill(Color.GREEN);
+        showEnebledButtons(oh);
     }
     @FXML void hoverOverStateOH(Event event){
         OH.setFill(Color.LIGHTGREEN);
@@ -891,6 +932,7 @@ public class FMXLDocumentController implements Initializable {
         showStateInformation(ok);
         showPieChart(ok);
         OK.setFill(Color.GREEN);
+        showEnebledButtons(oh);
     }
     @FXML void hoverOverStateOK(Event event){
         OK.setFill(Color.LIGHTGREEN);
@@ -912,6 +954,7 @@ public class FMXLDocumentController implements Initializable {
         showStateInformation(or);
         showPieChart(or);
         OR.setFill(Color.GREEN);
+        showEnebledButtons(or);
     }
     @FXML void hoverOverStateOR(Event event){
         OR.setFill(Color.LIGHTGREEN);
@@ -933,6 +976,7 @@ public class FMXLDocumentController implements Initializable {
         showStateInformation(pa);
         showPieChart(pa);
         PA.setFill(Color.GREEN);
+        showEnebledButtons(pa);
     }
     @FXML void hoverOverStatePA(Event event){
         PA.setFill(Color.LIGHTGREEN);
@@ -954,6 +998,7 @@ public class FMXLDocumentController implements Initializable {
         showStateInformation(ri);
         showPieChart(ri);
         RI.setFill(Color.GREEN);
+        showEnebledButtons(ri);
     }
     @FXML void hoverOverStateRI(Event event){
         RI.setFill(Color.LIGHTGREEN);
@@ -975,6 +1020,7 @@ public class FMXLDocumentController implements Initializable {
         showStateInformation(sc);
         showPieChart(sc);
         SC.setFill(Color.GREEN);
+        showEnebledButtons(sc);
     }
     @FXML void hoverOverStateSC(Event event){
         SC.setFill(Color.LIGHTGREEN);
@@ -996,6 +1042,7 @@ public class FMXLDocumentController implements Initializable {
         showStateInformation(sd);
         showPieChart(sd);
         SD.setFill(Color.GREEN);
+        showEnebledButtons(sd);
     }
     @FXML void hoverOverStateSD(Event event){
         SD.setFill(Color.LIGHTGREEN);
@@ -1017,6 +1064,7 @@ public class FMXLDocumentController implements Initializable {
         showStateInformation(tn);
         showPieChart(tn);
         TN.setFill(Color.GREEN);
+        showEnebledButtons(tn);
     }
     @FXML void hoverOverStateTN(Event event){
         TN.setFill(Color.LIGHTGREEN);
@@ -1038,6 +1086,7 @@ public class FMXLDocumentController implements Initializable {
         showStateInformation(tx);
         showPieChart(tx);
         TX.setFill(Color.GREEN);
+        showEnebledButtons(tx);
     }
     @FXML void hoverOverStateTX(Event event){
         TX.setFill(Color.LIGHTGREEN);
@@ -1059,6 +1108,7 @@ public class FMXLDocumentController implements Initializable {
         showStateInformation(ut);
         UT.setFill(Color.GREEN);
         showPieChart(ut);
+        showEnebledButtons(ut);
     }
     @FXML void hoverOverStateUT(Event event){
         UT.setFill(Color.LIGHTGREEN);
@@ -1080,6 +1130,7 @@ public class FMXLDocumentController implements Initializable {
         showStateInformation(vt);
         VT.setFill(Color.GREEN);
         showPieChart(vt);
+        showEnebledButtons(vt);
     }
     @FXML void hoverOverStateVT(Event event){
         VT.setFill(Color.LIGHTGREEN);
@@ -1101,6 +1152,7 @@ public class FMXLDocumentController implements Initializable {
         showStateInformation(va);
         VA.setFill(Color.GREEN);
         showPieChart(va);
+        showEnebledButtons(va);
     }
     @FXML void hoverOverStateVA(Event event){
         VA.setFill(Color.LIGHTGREEN);
@@ -1122,6 +1174,7 @@ public class FMXLDocumentController implements Initializable {
         showStateInformation(wa);
         WA.setFill(Color.GREEN);
         showPieChart(wa);
+        showEnebledButtons(wa);
     }
     @FXML void hoverOverStateWA(Event event){
         WA.setFill(Color.LIGHTGREEN);
@@ -1143,6 +1196,7 @@ public class FMXLDocumentController implements Initializable {
         showStateInformation(wv);
         WV.setFill(Color.GREEN);
         showPieChart(wv);
+        showEnebledButtons(wv);
     }
     @FXML void hoverOverStateWV(Event event){
         WV.setFill(Color.LIGHTGREEN);
@@ -1163,6 +1217,7 @@ public class FMXLDocumentController implements Initializable {
         showStateInformation(wi);
         WI.setFill(Color.GREEN);
         showPieChart(wi);
+        showEnebledButtons(wi);
     }
     @FXML void hoverOverStateWI(Event event){
         WI.setFill(Color.LIGHTGREEN);
@@ -1185,6 +1240,7 @@ public class FMXLDocumentController implements Initializable {
         showStateInformation(wy);
         WY.setFill(Color.GREEN);
         showPieChart(wy);
+        showEnebledButtons(wy);
     }
     @FXML void hoverOverStateWY(Event event){
         WY.setFill(Color.LIGHTGREEN);
@@ -1199,8 +1255,8 @@ public class FMXLDocumentController implements Initializable {
     @FXML void showStateInformation(State s){
         stateName.setText("NAME: " + s.name);
         stateType.setText("STATE TYPE: " + s.stateType);
-        stateMomentumGOP.setText("STATE MOMENTUM FOR DEM: " + s.DEMMomentum + " points");
-        stateMomentumDEM.setText("STATE MOMENTUM FOR REP: " + s.GOPMomentum + " points");
+        stateMomentumGOP.setText("STATE MOMENTUM FOR DEM: " + s.DEMMomentum + " p");
+        stateMomentumDEM.setText("STATE MOMENTUM FOR REP: " + s.GOPMomentum + " p");
         statePopulation.setText("STATE POPULATION: " + s.population + "k people");
         statePossibleMoney.setText("STATE POSSIBLE FOUNDS: " + s.getValueOfRaisedFounds(App.GAME.player1.party) + "k $");
         visitCost.setText("ESTIMATED VISIT COST: " + s.getCostOfVisit(App.GAME.player1.party) + "k $");
@@ -1347,7 +1403,29 @@ public class FMXLDocumentController implements Initializable {
         colorStateWV();
         colorStateWY();
     }
+    @FXML void disableButtonsIfNoAction(){
+        if(App.GAME.noActionProTurn <= 0){
+            launchTVCampaignBtn.setDisable(true);
+            makeVisitBtn.setDisable(true);
+            raiseFoundsBtn.setDisable(true);
+        }
+    }
 
+    @FXML void showEnebledButtons(State s){
+        if(s.isLauchedCampaign == false)
+            launchTVCampaignBtn.setDisable(false);
+        else
+            launchTVCampaignBtn.setDisable(true);
+        if(s.isVisted == false)
+            makeVisitBtn.setDisable(false);
+        else 
+            makeVisitBtn.setDisable(true);
+        if(s.isRaisedFounds == false)
+            raiseFoundsBtn.setDisable(false);
+        else
+            raiseFoundsBtn.setDisable(true);
+        disableButtonsIfNoAction();
+    }
 
     @FXML
     void exitFromGame(ActionEvent event) {
@@ -1355,8 +1433,11 @@ public class FMXLDocumentController implements Initializable {
     }
     @FXML void raiseFounds(Event event){
         boolean foundsRaised = App.GAME.getFounds();
+        raiseFoundsBtn.setDisable(false);
         if (foundsRaised == true){
             initMainLabels();
+            raiseFoundsBtn.setDisable(true);
+            disableButtonsIfNoAction();
         }
         else{
             System.out.println("cos nie tak");
@@ -1370,6 +1451,8 @@ public class FMXLDocumentController implements Initializable {
             colorMap();
             showStateInformation(App.GAME.chosenState);
             showPieChart(App.GAME.chosenState);
+            makeVisitBtn.setDisable(true);
+            disableButtonsIfNoAction();
         }
 
         else{
@@ -1385,6 +1468,8 @@ public class FMXLDocumentController implements Initializable {
             colorMap();
             showStateInformation(App.GAME.chosenState);
             showPieChart(App.GAME.chosenState);
+            launchTVCampaignBtn.setDisable(true);
+            disableButtonsIfNoAction();
         }
 
         else{
@@ -1396,6 +1481,7 @@ public class FMXLDocumentController implements Initializable {
     @FXML void endTurn(Event event){
         App.GAME.finishTurn();
         if(App.GAME.gameOver ==false){
+            exitFromStatePanel();
             initMainLabels();
         }
         else{

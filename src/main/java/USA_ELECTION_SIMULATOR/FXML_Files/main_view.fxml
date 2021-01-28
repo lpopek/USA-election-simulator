@@ -14,6 +14,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.shape.Circle?>
 <?import javafx.scene.shape.Polygon?>
+<?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1300.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="USA_ELECTION_SIMULATOR.FMXLDocumentController">
@@ -22,9 +23,6 @@
         <menus>
           <Menu mnemonicParsing="false" text="Game Options">
             <items>
-              <MenuItem mnemonicParsing="false" text="Save Game" />
-                  <MenuItem mnemonicParsing="false" text="Load Game" />
-                  <MenuItem mnemonicParsing="false" text="Music Volume" />
                   <MenuItem fx:id="exitBtn" mnemonicParsing="false" onAction="#exitFromGame" text="Exit Game" />
             </items>
           </Menu>
@@ -35,7 +33,7 @@
           </Menu>
         </menus>
       </MenuBar>
-      <SplitPane dividerPositions="0.4661016949152542" layoutX="191.0" layoutY="28.0" prefHeight="870.0" prefWidth="1409.0" scaleShape="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="30.0">
+      <SplitPane dividerPositions="0.47996918335901384" layoutX="191.0" layoutY="28.0" prefHeight="870.0" prefWidth="1409.0" scaleShape="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="30.0">
         <items>
           <AnchorPane maxHeight="900.0" maxWidth="620.0" minHeight="0.0" minWidth="400.0" prefHeight="822.0" prefWidth="470.0">
                <children>
@@ -45,22 +43,17 @@
                            <children>
                               <AnchorPane layoutX="265.0" layoutY="13.0" prefHeight="123.0" prefWidth="318.0" styleClass="boxOneStyle" stylesheets="@../css/styleMainWindow.css">
                                  <children>
-                                    <Label fx:id="timeLabel" layoutX="6.0" layoutY="14.0" prefHeight="23.0" prefWidth="171.0" text="timeLibel">
+                                    <Label fx:id="timeLabel" layoutX="6.0" layoutY="14.0" prefHeight="23.0" prefWidth="298.0" styleClass="labelMid" text="timeLibel" textAlignment="JUSTIFY" AnchorPane.leftAnchor="6.0" AnchorPane.rightAnchor="5.0">
                                        <font>
                                           <Font name="Arial Bold" size="20.0" />
                                        </font>
                                     </Label>
-                                    <Label fx:id="electoralVotesLabel" layoutX="6.0" layoutY="37.0" prefHeight="23.0" prefWidth="207.0" text="electoralVotes">
+                                    <Label fx:id="moneyLabel" layoutX="6.0" layoutY="60.0" prefHeight="23.0" prefWidth="298.0" styleClass="labelMid" text="moneyLabel" textAlignment="JUSTIFY" AnchorPane.leftAnchor="6.0" AnchorPane.rightAnchor="5.0">
                                        <font>
                                           <Font name="Arial Bold" size="20.0" />
                                        </font>
                                     </Label>
-                                    <Label fx:id="moneyLabel" layoutX="6.0" layoutY="60.0" prefHeight="23.0" prefWidth="186.0" text="moneyLabel">
-                                       <font>
-                                          <Font name="Arial Bold" size="20.0" />
-                                       </font>
-                                    </Label>
-                                    <Label fx:id="actionNumber" layoutX="3.0" layoutY="83.0" prefHeight="23.0" prefWidth="207.0" text="posibleActions">
+                                    <Label fx:id="actionNumber" layoutX="3.0" layoutY="83.0" prefHeight="23.0" prefWidth="297.0" styleClass="labelMid" text="posibleActions" textAlignment="JUSTIFY" AnchorPane.leftAnchor="6.0" AnchorPane.rightAnchor="5.0">
                                        <font>
                                           <Font name="Arial Bold" size="20.0" />
                                        </font>
@@ -79,7 +72,7 @@
                                  <children>
                                   <AnchorPane layoutY="-1.0" minHeight="0.0" minWidth="0.0" prefHeight="684.0" prefWidth="879.0" styleClass="boxBigerStyle" stylesheets="@../css/styleMainWindow.css" AnchorPane.bottomAnchor="-89.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="-297.0" AnchorPane.topAnchor="-1.0">
                                        <children>
-                                          <AnchorPane id="Legend" fx:id="legend" prefHeight="290.0" prefWidth="186.0" styleClass="boxOneStyle" stylesheets="@../css/styleMainWindow.css" AnchorPane.leftAnchor="350.0" AnchorPane.topAnchor="290.0">
+                                          <AnchorPane id="Legend" fx:id="legend" layoutX="399.0" layoutY="302.0" prefHeight="290.0" prefWidth="213.0" styleClass="boxOneStyle" stylesheets="@../css/styleMainWindow.css" AnchorPane.leftAnchor="399.0" AnchorPane.topAnchor="302.0">
                                              <children>
                                                 <Label id="und" fx:id="undecided" layoutX="96.0" layoutY="225.0" text="Undecide" AnchorPane.rightAnchor="20.0" />
                                                 <ImageView fitHeight="71.0" fitWidth="72.0" layoutX="14.0" layoutY="33.0" pickOnBounds="true" preserveRatio="true">
@@ -97,31 +90,31 @@
                                                 <Label id="repSup" fx:id="GOPSupport" layoutX="101.0" layoutY="144.0" text="RepSup" AnchorPane.rightAnchor="20.0" />
                                              </children>
                                           </AnchorPane>
-                                          <PieChart fx:id="support" layoutX="14.0" layoutY="305.0" prefHeight="290.0" prefWidth="320.0" style="-fx-background-color: LIGHTPINK; -fx-background-radius: 20px; -fx-border-width: 3px; -fx-border-color: DARKBLUE; -fx-border-radius: 20;" AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="290.0" />
-                                          <AnchorPane id="StateInfo" fx:id="stateInfo" layoutX="14.0" layoutY="14.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="240.0" prefWidth="318.0" styleClass="boxOneStyle" stylesheets="@../css/styleMainWindow.css" AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="14.0">
+                                          <PieChart fx:id="support" layoutX="19.0" layoutY="302.0" prefHeight="290.0" prefWidth="320.0" style="-fx-background-color: LIGHTPINK; -fx-background-radius: 20px; -fx-border-width: 3px; -fx-border-color: DARKBLUE; -fx-border-radius: 20;" AnchorPane.leftAnchor="19.0" AnchorPane.topAnchor="302.0" />
+                                          <AnchorPane id="StateInfo" fx:id="stateInfo" layoutX="14.0" layoutY="14.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="270.0" prefWidth="343.0" styleClass="boxOneStyle" stylesheets="@../css/styleMainWindow.css" AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="14.0">
                                              <children>
-                                                <Label fx:id="stateType" alignment="CENTER" layoutX="93.0" layoutY="189.0" prefHeight="20.0" prefWidth="122.0" stylesheets="@../css/styleMainWindow.css" text="type of State" textAlignment="CENTER" AnchorPane.leftAnchor="85.0" AnchorPane.rightAnchor="85.0" />
-                                                <Label fx:id="statePopulation" layoutY="51.0" prefHeight="20.0" prefWidth="240.0" stylesheets="@../css/styleMainWindow.css" text="Population" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" />
-                                                <Label layoutX="8.0" layoutY="10.0" styleClass="h1" stylesheets="@../css/styleMainWindow.css" text="STATE INFORMATIONS" AnchorPane.leftAnchor="8.0" AnchorPane.rightAnchor="8.0">
+                                                <Label fx:id="stateType" alignment="CENTER" layoutX="74.0" layoutY="209.0" prefHeight="27.0" prefWidth="201.0" styleClass="labelMid" stylesheets="@../css/styleMainWindow.css" text="type of State" textAlignment="CENTER" AnchorPane.leftAnchor="74.0" AnchorPane.rightAnchor="74.0" />
+                                                <Label fx:id="statePopulation" layoutX="10.0" layoutY="68.0" prefHeight="20.0" prefWidth="240.0" stylesheets="@../css/styleMainWindow.css" text="Population" textAlignment="JUSTIFY" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" />
+                                                <Label layoutX="14.0" layoutY="11.0" styleClass="h1" stylesheets="@../css/styleMainWindow.css" text="STATE INFORMATIONS" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="14.0">
                                                    <font>
                                                       <Font name="Arial Bold" size="30.0" />
                                                    </font>
                                                 </Label>
-                                                <Label fx:id="stateName" layoutY="34.0" prefHeight="20.0" prefWidth="240.0" stylesheets="@../css/styleMainWindow.css" text="Name" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" />
-                                                <Label fx:id="stateMomentumDEM" layoutX="8.0" layoutY="130.0" prefHeight="18.0" prefWidth="240.0" stylesheets="@../css/styleMainWindow.css" text="State Dem Mom" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" />
-                                                <Label fx:id="statePossibleMoney" layoutX="2.0" layoutY="71.0" prefHeight="20.0" prefWidth="230.0" stylesheets="@../css/styleMainWindow.css" text="State Possible money" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" />
-                                                <Label fx:id="visitCost" layoutX="8.0" layoutY="91.0" prefHeight="20.0" prefWidth="294.0" text="Visit cost" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" />
-                                                <Label fx:id="tvCampaignCost" layoutX="8.0" layoutY="110.0" text="TV campaign cost" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" />
-                                                <Label fx:id="stateMomentumGOP" layoutX="8.0" layoutY="150.0" text="State GOP Mom" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" />
+                                                <Label fx:id="stateName" layoutX="10.0" layoutY="48.0" prefHeight="23.0" prefWidth="318.0" stylesheets="@../css/styleMainWindow.css" text="Name" textAlignment="JUSTIFY" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" />
+                                                <Label fx:id="stateMomentumDEM" layoutX="10.0" layoutY="148.0" prefHeight="18.0" prefWidth="240.0" stylesheets="@../css/styleMainWindow.css" text="State Dem Mom" textAlignment="JUSTIFY" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" />
+                                                <Label fx:id="statePossibleMoney" layoutX="10.0" layoutY="88.0" prefHeight="20.0" prefWidth="230.0" stylesheets="@../css/styleMainWindow.css" text="State Possible money" textAlignment="JUSTIFY" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" />
+                                                <Label fx:id="visitCost" layoutX="10.0" layoutY="108.0" prefHeight="20.0" prefWidth="294.0" text="Visit cost" textAlignment="JUSTIFY" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" />
+                                                <Label fx:id="tvCampaignCost" layoutX="10.0" layoutY="128.0" text="TV campaign cost" textAlignment="JUSTIFY" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" />
+                                                <Label fx:id="stateMomentumGOP" layoutX="10.0" layoutY="168.0" text="State GOP Mom" textAlignment="JUSTIFY" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" />
                                              </children>
                                           </AnchorPane>
-                                          <AnchorPane fx:id="actionsPane" layoutX="280.0" layoutY="14.0" prefHeight="240.0" prefWidth="246.0" styleClass="boxOneStyle" stylesheets="@../css/styleMainWindow.css" AnchorPane.leftAnchor="350.0" AnchorPane.topAnchor="14.0">
+                                          <AnchorPane fx:id="actionsPane" layoutX="367.0" layoutY="14.0" maxHeight="-Infinity" maxWidth="246.0" minHeight="-Infinity" prefHeight="270.0" prefWidth="246.0" styleClass="boxOneStyle" stylesheets="@../css/styleMainWindow.css" AnchorPane.leftAnchor="367.0" AnchorPane.topAnchor="14.0">
                                              <children>
-                                                <Button fx:id="launchTVCampaignBtn" layoutX="26.0" layoutY="34.0" mnemonicParsing="false" onMouseClicked="#launchTVCampaign" prefHeight="40.0" prefWidth="200.0" stylesheets="@../css/styleMainWindow.css" text="Lauch TV campaign" AnchorPane.leftAnchor="26.0" AnchorPane.topAnchor="35.0" />
-                                                <Button fx:id="makeVisitBtn" layoutX="25.0" layoutY="85.0" mnemonicParsing="false" onMouseClicked="#makeVisit" prefHeight="40.0" prefWidth="200.0" stylesheets="@../css/styleMainWindow.css" text="Make Visit" AnchorPane.leftAnchor="26.0" />
-                                                <Button fx:id="raiseFoundsBtn" layoutX="26.0" layoutY="135.0" mnemonicParsing="false" onMouseClicked="#raiseFounds" prefHeight="40.0" prefWidth="200.0" stylesheets="@../css/styleMainWindow.css" text="Raise Founds" AnchorPane.leftAnchor="26.0" />
-                                                <Label layoutX="78.0" layoutY="10.0" styleClass="h1" stylesheets="@../css/styleMainWindow.css" text="ACTIONS" />
-                                                <Button fx:id="exitFromStatePanelBtn" layoutX="26.0" layoutY="185.0" mnemonicParsing="false" onMouseClicked="#exitFromStatePanel" prefHeight="40.0" prefWidth="200.0" stylesheets="@../css/styleMainWindow.css" text="Exit from state panel" AnchorPane.leftAnchor="26.0" />
+                                                <Button fx:id="launchTVCampaignBtn" layoutX="26.0" layoutY="45.0" mnemonicParsing="false" onMouseClicked="#launchTVCampaign" prefHeight="40.0" prefWidth="200.0" stylesheets="@../css/styleMainWindow.css" text="Lauch TV campaign" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="45.0" />
+                                                <Button fx:id="makeVisitBtn" layoutX="25.0" layoutY="100.0" mnemonicParsing="false" onMouseClicked="#makeVisit" prefHeight="40.0" prefWidth="200.0" stylesheets="@../css/styleMainWindow.css" text="Make Visit" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" />
+                                                <Button fx:id="raiseFoundsBtn" layoutX="26.0" layoutY="155.0" mnemonicParsing="false" onMouseClicked="#raiseFounds" prefHeight="40.0" prefWidth="200.0" stylesheets="@../css/styleMainWindow.css" text="Raise Founds" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" />
+                                                <Label layoutX="64.0" layoutY="12.0" styleClass="h1" stylesheets="@../css/styleMainWindow.css" text="ACTIONS" />
+                                                <Button fx:id="exitFromStatePanelBtn" layoutX="32.0" layoutY="210.0" mnemonicParsing="false" onMouseClicked="#exitFromStatePanel" prefHeight="40.0" prefWidth="208.0" stylesheets="@../css/styleMainWindow.css" text="Exit from state panel" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" />
                                              </children>
                                           </AnchorPane>
                                        </children>
@@ -135,7 +128,7 @@
                </children></AnchorPane>
           <AnchorPane minHeight="0.0" minWidth="0.0" scaleShape="false">
                <children>
-                  <ScrollPane hmax="0.95" layoutX="-8.0" maxHeight="814.0" minHeight="600.0" minWidth="-Infinity" prefWidth="698.0" vmax="0.7" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="-8.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                  <ScrollPane hmax="0.95" hvalue="0.95" layoutX="-8.0" maxHeight="814.0" minHeight="600.0" minWidth="-Infinity" prefWidth="698.0" vmax="0.7" vvalue="0.1" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="-8.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                      <content>
                         <AnchorPane maxHeight="900.0" maxWidth="1261.0" prefHeight="900.0" prefWidth="1261.0">
                            <children>
@@ -205,16 +198,30 @@
                                     <Font size="13.0" />
                                  </font>
                               </Button>
-                              <Button id="DC" fx:id="DC" layoutX="922.0" layoutY="477.0" mnemonicParsing="false" onMouseClicked="#clickStateDC" onMouseEntered="#hoverOverStateDC" onMouseExited="#exitOverStateDC" prefHeight="56.0" prefWidth="176.0" text="DISTRICT OF COLUMBIA">
+                              <Button id="DC" fx:id="DC" layoutX="1005.0" layoutY="477.0" mnemonicParsing="false" onMouseClicked="#clickStateDC" onMouseEntered="#hoverOverStateDC" onMouseExited="#exitOverStateDC" prefHeight="56.0" prefWidth="176.0" text="DISTRICT OF COLUMBIA">
                                  <font>
                                     <Font size="13.0" />
                                  </font>
                               </Button>
-                              <Label layoutX="144.0" layoutY="572.0" text="Information Bar">
+                              <Rectangle arcHeight="5.0" arcWidth="5.0" fill="BLUE" height="50.0" layoutX="341.0" layoutY="679.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="2.0" width="538.0" />
+                              <Rectangle arcHeight="5.0" arcWidth="5.0" fill="RED" height="50.0" layoutX="339.0" layoutY="679.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="2.0" width="273.0" />
+                              <ImageView fitHeight="71.0" fitWidth="72.0" layoutX="883.0" layoutY="668.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../pic/Democratic_Disc.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fitHeight="71.0" fitWidth="72.0" layoutX="263.0" layoutY="668.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../pic/Republican_Disc.png" />
+                                 </image>
+                              </ImageView>
+                              <Label fx:id="electoralVotesLabel" layoutX="203.0" layoutY="638.0" prefHeight="23.0" prefWidth="192.0" styleClass="labelMid" text="electoralVotesREP" textAlignment="JUSTIFY">
                                  <font>
-                                    <Font size="30.0" />
+                                    <Font name="Arial Bold" size="20.0" />
                                  </font>
                               </Label>
+                              <Label layoutX="496.0" layoutY="643.0" styleClass="h1" stylesheets="@../css/styleMainWindow.css" text="ELECTORAL VOTES" />
+                              <Label layoutX="905.0" layoutY="641.0" text="Label" />
                            </children>
                            <padding>
                               <Insets bottom="60.0" left="20.0" right="60.0" top="60.0" />

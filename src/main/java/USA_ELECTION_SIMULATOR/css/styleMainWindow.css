@@ -25,28 +25,40 @@
     -fx-width: 60px;
     -fx-font-size: 13pt;
     -fx-text-fill: white;
-    -fx-font-family: "Arial";
+    -fx-font-family: "Comic Sans MS", "Comic Sans";
     -fx-font-weight: bold;
-    -fx-background-color: linear-gradient(#ffa9a9, #ff0000);
+    -fx-background-color: rgb(255, 0, 0);
     -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.0 , 0 , 1 );
     -fx-background-size: cover;
 }
 
 .button:hover {
-    -fx-background-color: linear-gradient(#afa8ff, #0000ff);
+    -fx-background-color: blue;
 }
+
+.button:disabled{
+    -fx-opacity: 0.3;
+}
+
 
 /* LABELS */
 
 .label {
     -fx-font-size: 12pt;
-    -fx-font-family: "Arial";
+    -fx-font-family: "Comic Sans MS", "Comic Sans";
+    -fx-font-weight: bold;
+    -fx-text-align:center;
+}
+.labelMid {
+    -fx-font-size: 14pt;
+    -fx-font-family: "Comic Sans MS", "Comic Sans";
+    -fx-font-weight: bold;
     -fx-text-align:center;
 }
 
 .h1 {
-    -fx-font-size: 15pt;
+    -fx-font-size: 18pt;
     -fx-font-weight: bold;
-    -fx-font-family: "Arial";
+    -fx-font-family: "Comic Sans MS", "Comic Sans";;
     -fx-text-align:center;
 }

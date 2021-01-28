@@ -309,12 +309,6 @@ public class State {
 
     protected void endTurnForState(){
         this.changeSupportOnTheEndOfTurn();
-        if(this.DEMMomentum > 0){
-            this.DEMMomentum--;
-        }
-        if(this.GOPMomentum > 0){
-            this.GOPMomentum--;
-        }
         isRaisedFounds = false;
         isLauchedCampaign = false;
         isVisted = false;
