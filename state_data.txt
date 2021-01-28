@@ -18,7 +18,7 @@ IA|Iowa|6|3163
 KS|Kansas|6|2853
 KY|Kentucky|8|44770
 LA|Louisiana|8|4645
-ME|Maine|5|1350
+ME|Maine|4|1350
 MD|Maryland|10|6055
 MA|Massachusetts|11|6893
 MI|Michigan|16|9966

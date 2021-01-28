@@ -27,6 +27,19 @@ public class Game {
         new Comunnication("NEXT ROUND", 0)
     };
 
+    protected int getGOPElectVotes(){
+        int GOPELectVotes = 0;
+        for(int i=0; i < this.USA.size(); i++){
+            State s = this.USA.get((i));
+            if (s.DEMSupport < s.GOPSupport)
+                GOPELectVotes += s.electoralVotes;
+        }
+        return GOPELectVotes;
+    }
+    protected int getDEMElectVotes(){
+        return 538 - this.getGOPElectVotes();
+    }
+
 
     protected int countVotes(){
         int electoralVotes = 0; 

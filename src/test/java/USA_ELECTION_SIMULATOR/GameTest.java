@@ -60,5 +60,15 @@ public class GameTest {
         v = game.checkIfAbleToMakeSupportAction(1400);
         assertTrue(v);
     }
+    @Test
+    public void testCoutElectVotes() throws FileNotFoundException {
+        Game game = new Game();
+        int noElectVotes = 0;
+        for(int i=0; i < game.USA.size(); i++){
+            State s = game.USA.get((i));
+            noElectVotes += s.electoralVotes;
+        }
+        assertEquals(538, noElectVotes);
+    }
 
 }

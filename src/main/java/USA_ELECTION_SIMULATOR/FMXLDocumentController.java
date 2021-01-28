@@ -18,6 +18,7 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
 import javafx.scene.shape.Polygon;
+import javafx.scene.shape.Rectangle;
 
 
 public class FMXLDocumentController implements Initializable {
@@ -41,7 +42,8 @@ public class FMXLDocumentController implements Initializable {
     //////////LABELS//////
     @FXML private Label timeLabel;
     @FXML private Label moneyLabel;
-    @FXML private Label electoralVotesLabel;
+    @FXML private Label GOPELectVotes;
+    @FXML private Label DEMElectVotes;
     @FXML private Label actionNumber;
     @FXML private Label stateTypeLabel;
     @FXML protected Label GOPSupport;
@@ -49,7 +51,7 @@ public class FMXLDocumentController implements Initializable {
     @FXML protected Label undecided;
     @FXML protected Label stateName;
     @FXML protected Label stateType;
-    @FXML protected Label statePopulation;
+    @FXML protected Label stateElectoralVotesLabel;
     @FXML protected Label stateMomentumDEM;
     @FXML protected Label stateMomentumGOP;
     @FXML protected Label statePossibleMoney;
@@ -58,6 +60,9 @@ public class FMXLDocumentController implements Initializable {
 
     ///////PIECHART///////
     @FXML private PieChart support;
+
+    /////RECTAGLES////////
+    @FXML private Rectangle GOPsupportBar;
     
 
     ////////////STATES GEOMETRY////////////////
@@ -1255,9 +1260,9 @@ public class FMXLDocumentController implements Initializable {
     @FXML void showStateInformation(State s){
         stateName.setText("NAME: " + s.name);
         stateType.setText("STATE TYPE: " + s.stateType);
-        stateMomentumGOP.setText("STATE MOMENTUM FOR DEM: " + s.DEMMomentum + " p");
-        stateMomentumDEM.setText("STATE MOMENTUM FOR REP: " + s.GOPMomentum + " p");
-        statePopulation.setText("STATE POPULATION: " + s.population + "k people");
+        stateMomentumGOP.setText("STATE MOMENTUM FOR DEM: " + s.DEMMomentum + "p");
+        stateMomentumDEM.setText("STATE MOMENTUM FOR REP: " + s.GOPMomentum + "p");
+        stateElectoralVotesLabel.setText("STATE ELECTORAL VOTES: " + s.electoralVotes + " VOTES");
         statePossibleMoney.setText("STATE POSSIBLE FOUNDS: " + s.getValueOfRaisedFounds(App.GAME.player1.party) + "k $");
         visitCost.setText("ESTIMATED VISIT COST: " + s.getCostOfVisit(App.GAME.player1.party) + "k $");
         tvCampaignCost.setText("TV CAMPAIGN COST: " + s.getCostOfTVCampaign(App.GAME.player1.party) + "k $");
@@ -1308,6 +1313,12 @@ public class FMXLDocumentController implements Initializable {
         legend.setVisible(true);
     }
 
+    @FXML void setElectVotes(){
+        GOPsupportBar.setWidth(App.GAME.getGOPElectVotes());
+        GOPELectVotes.setText(""+ App.GAME.getGOPElectVotes());
+        DEMElectVotes.setText(""+ App.GAME.getDEMElectVotes());
+    }
+
     @FXML void colorStateBtn(Button b, State s){
         if (s.DEMSupport > s.GOPSupport){
             b.setStyle("-fx-background-color: BLUE; -fx-border-width: 3px; -fx-border-color: black;");
@@ -1345,7 +1356,6 @@ public class FMXLDocumentController implements Initializable {
 
     @FXML public void initMainLabels() {
         timeLabel.setText("Weeks until election: " + App.GAME.getWeekTillElections());
-        electoralVotesLabel.setText("Electoral votes: " + App.GAME.countVotes());
         moneyLabel.setText("Money: " + App.GAME.getMoney()+ "k $");
         actionNumber.setText("You can stil make " + App.GAME.noActionProTurn + " actions");
     }
@@ -1453,6 +1463,7 @@ public class FMXLDocumentController implements Initializable {
             showPieChart(App.GAME.chosenState);
             makeVisitBtn.setDisable(true);
             disableButtonsIfNoAction();
+            setElectVotes();
         }
 
         else{
@@ -1470,6 +1481,7 @@ public class FMXLDocumentController implements Initializable {
             showPieChart(App.GAME.chosenState);
             launchTVCampaignBtn.setDisable(true);
             disableButtonsIfNoAction();
+            setElectVotes();
         }
 
         else{
@@ -1483,6 +1495,7 @@ public class FMXLDocumentController implements Initializable {
         if(App.GAME.gameOver ==false){
             exitFromStatePanel();
             initMainLabels();
+            setElectVotes();
         }
         else{
             App.screenController.activate("results");
@@ -1495,6 +1508,7 @@ public class FMXLDocumentController implements Initializable {
     public void initialize(URL location, ResourceBundle resources) {
         initMainLabels();
         colorMap();
+        setElectVotes();
         hideStateInfo();
     }
     
