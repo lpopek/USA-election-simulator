@@ -1,6 +1,7 @@
 package USA_ELECTION_SIMULATOR;
 
 import java.util.ArrayList;
+import java.util.Random;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
@@ -8,15 +9,20 @@ import java.util.Scanner;
 public class Game {
     ArrayList<State> USA = new ArrayList<State>();
     Player player1 = new Player(null, null, null);
-    int money = 0;
-    int weekTillElection = 2;
+    Player player2 = new Player(null, null, null);
+
+    int moneyPlayerOne = 0;
+    int moneyPlayerTwo = 0;
+    int weekTillElection = 10;
     int electoralVotes;
-    int noActionProTurn = 4;
-    int actionProTurnDefaultValue = 4;
+    int noActionProTurnPlayerOne = 3;
+    int noActionProTurnPlayerTwo = 3;
+    int actionProTurnDefaultValue = 3;
     boolean gameOver = false;
     boolean isWinnerPlayerOne = false;
-    boolean twoPlayerMode = false;
     State chosenState = null;
+    ArrayList<State> choosenBySI = new ArrayList <State>();
+    boolean isHumanPlayerTurn = true;
     Comunnication currentInfo = null;
     Comunnication [] popularInfo ={
         new Comunnication("Choose state", 1), 
@@ -37,6 +43,7 @@ public class Game {
         }
         return GOPELectVotes;
     }
+
     protected int getDEMElectVotes(){
         return 538 - this.getGOPElectVotes();
     }
@@ -64,7 +71,7 @@ public class Game {
         return this.weekTillElection;
     }
     public int getMoney(){
-        return this.money;
+        return this.moneyPlayerOne;
     }
 
     public Game() throws FileNotFoundException {
@@ -103,20 +110,6 @@ public class Game {
             this.isWinnerPlayerOne = true;
     }
 
-    public State chooseStateByID(String searchID){
-        State helper = null;
-        boolean isFound = false;
-        for(int i = 0; i < this.USA.size(); i++){
-            helper = this.USA.get(i);
-            if (helper.id.equals(searchID) == true)
-            {
-                isFound = true;
-                break;
-            }
-        }
-        this.USA.remove(helper);
-        return helper;
-    }
 
     protected void finishTurn(){
         if (this.weekTillElection == 0){
@@ -124,10 +117,16 @@ public class Game {
             this.gameOver = true;}
         else{
             this.weekTillElection --;
-            this.noActionProTurn = this.actionProTurnDefaultValue;
+            this.noActionProTurnPlayerOne = this.actionProTurnDefaultValue;
             for(int i=0; i < this.USA.size(); i++){
                 this.USA.get(i).endTurnForState();
             }
+            isHumanPlayerTurn = false;
+            makeSITurn();
+            for(int i=0; i < this.USA.size(); i++){
+                this.USA.get(i).endTurnForState();
+            }
+            isHumanPlayerTurn = true;
             this.currentInfo = this.popularInfo[6];
             System.out.println(this.currentInfo.getinfo());
         }
@@ -136,8 +135,8 @@ public class Game {
 
     protected boolean getFounds(){
         if(this.checkIfAbleToMakeSupportAction(-1) == true && this.chosenState.isRaisedFounds == false){
-            this.money += this.chosenState.raiseFounds(player1.party);
-            this.noActionProTurn--;
+            this.moneyPlayerOne += this.chosenState.raiseFounds(player1.party);
+            this.noActionProTurnPlayerOne--;
             return true;
         }
         else
@@ -152,12 +151,12 @@ public class Game {
             System.out.println(this.currentInfo.getinfo());
             return false;
         }
-        if(this.noActionProTurn <= 0){
+        if(this.noActionProTurnPlayerOne <= 0){
             this.currentInfo = this.popularInfo[1];
             System.out.println(this.currentInfo.getinfo());
             return false;
         }
-        if(this.money <= neededFounds){
+        if(this.moneyPlayerOne <= neededFounds){
             this.currentInfo = this.popularInfo[2];
             System.out.println(this.currentInfo.getinfo());
             return false;
@@ -172,8 +171,8 @@ public class Game {
         int costOfVisit = this.getCostOfVisit();
         if(this.checkIfAbleToMakeSupportAction(costOfVisit) == true && this.chosenState.isVisted == false){
             chosenState.visitState(App.GAME.player1.party);
-            this.money -= costOfVisit;
-            this.noActionProTurn--;
+            this.moneyPlayerOne -= costOfVisit;
+            this.noActionProTurnPlayerOne--;
             return true;
         }
         else
@@ -190,8 +189,8 @@ public class Game {
         int costOfTVCampaign = this.getCostOfTVCampaign();
         if(this.checkIfAbleToMakeSupportAction(costOfTVCampaign) == true && this.chosenState.isLauchedCampaign == false){
             chosenState.launchTVCampaign(App.GAME.player1.party);
-            this.money -= costOfTVCampaign;
-            this.noActionProTurn--;
+            this.moneyPlayerOne -= costOfTVCampaign;
+            this.noActionProTurnPlayerOne--;
             return true;
         }
         else
@@ -203,6 +202,92 @@ public class Game {
     protected int getCostOfTVCampaign(){
         return this.chosenState.getCostOfTVCampaign(this.player1.party);
     }
+
+    //////////////SI PLAYER/////////////////
+
+    protected void findStateToRaiseFounds(){
+        int helper;
+        int firstStateMoney = 0;
+        State firstState = null;
+
+        for(int i=0; i < this.USA.size(); i++){
+                helper = this.USA.get(i).raiseFounds(player2.party);
+                if(helper > firstStateMoney){
+                    firstStateMoney = helper;
+                    firstState = this.USA.get(i);
+                }
+                this.choosenBySI.add(firstState);
+                this.moneyPlayerTwo += firstStateMoney;
+        }
+        System.out.println("została zebrane fundusze w" + firstState.name);
+        
+    }
+
+    protected boolean chooseRandStateToVisit(){
+        Random rand = new Random();
+        ArrayList<State> statesTovisit = new ArrayList<State>();
+        for(int i=0; i < this.USA.size(); i++){
+            if(this.USA.get(i).getCostOfVisit(player2.party) < this.moneyPlayerTwo)
+                if(this.USA.get(i).getPartySupportDiff(player2.party) < 0)
+                    statesTovisit.add(this.USA.get(i));
+        }
+        if (statesTovisit.size() > 0){
+            int randomInt = rand.nextInt(statesTovisit.size());
+            State SIVisitedState = statesTovisit.get(randomInt);
+            SIVisitedState.visitState(player2.party);
+            this.moneyPlayerTwo -= SIVisitedState.getCostOfVisit(player2.party);
+            this.choosenBySI.add(SIVisitedState);
+            System.out.println("została przeprowadzona wizyta w" + SIVisitedState.name);
+            return true;
+        }
+        else{
+            findStateToRaiseFounds();
+            return false;
+        }
+
+    }
+
+    protected boolean chooseRandStateToTVCampaign(){
+        Random rand = new Random();
+        ArrayList<State> statesToLauchTV = new ArrayList<State>();
+        for(int i=0; i < this.USA.size(); i++){
+            if(this.USA.get(i).getCostOfTVCampaign(player2.party) < this.moneyPlayerTwo)
+                if(this.USA.get(i).getPartySupportDiff(player2.party) < 0)
+                    statesToLauchTV.add(this.USA.get(i));
+        }
+        if (statesToLauchTV.size() > 0){
+            int randomInt = rand.nextInt(statesToLauchTV.size());
+            State SILauchedTVCamState = statesToLauchTV.get(randomInt);
+            SILauchedTVCamState.launchTVCampaign(player2.party);
+            this.moneyPlayerTwo -= SILauchedTVCamState.getCostOfTVCampaign(player2.party);
+            this.choosenBySI.add(SILauchedTVCamState);
+            System.out.println("została wyswietlona kampania w " + SILauchedTVCamState.name);
+            return true;
+        }
+        else{
+            findStateToRaiseFounds();
+            return false;
+        }
+ 
+    }
+
+    protected void makeSITurn(){
+        findStateToRaiseFounds();
+        Random rand = new Random();
+        int sequenceOfEvents = rand.nextInt(10);
+        if (sequenceOfEvents % 3 == 0){
+            chooseRandStateToTVCampaign();
+            chooseRandStateToVisit();
+        }
+        else{
+            chooseRandStateToVisit();
+            chooseRandStateToTVCampaign();
+        }
+            
+    }
+
+
+
 
 
 }

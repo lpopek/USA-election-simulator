@@ -41,9 +41,9 @@ public class GameTest {
         game.weekTillElection = 3;
         game.finishTurn();
         assertEquals(2, game.weekTillElection);
-        game.noActionProTurn--;
+        game.noActionProTurnPlayerOne--;
         game.finishTurn();
-        assertEquals(4, game.noActionProTurn);
+        assertEquals(4, game.noActionProTurnPlayerOne);
     }
     @Test
     public void testCheckIfAbleToMakeSupportAction() throws FileNotFoundException {
@@ -52,11 +52,11 @@ public class GameTest {
         boolean v = game.checkIfAbleToMakeSupportAction(1000);
         assertFalse(v);
         game.chosenState = game.USA.get(0);
-        game.noActionProTurn = 0;
+        game.noActionProTurnPlayerOne = 0;
         v = game.checkIfAbleToMakeSupportAction(1000);
         assertFalse(v);
-        game.noActionProTurn = 3;
-        game.money = 2000;
+        game.noActionProTurnPlayerOne = 3;
+        game.moneyPlayerOne = 2000;
         v = game.checkIfAbleToMakeSupportAction(1400);
         assertTrue(v);
     }

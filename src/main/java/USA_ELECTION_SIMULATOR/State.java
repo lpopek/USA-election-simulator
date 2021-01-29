@@ -36,6 +36,13 @@ public class State {
         this.stateType = stateType;
     }
 
+    protected double getPartySupportDiff(String party){
+        if(party == "D")
+            return this.DEMSupport - this.GOPSupport;
+        else
+            return this.GOPSupport - this.DEMSupport;
+    }
+
     public void getRandomSupport(){
         Random r = new Random();
         this.DEMSupport = 0.3 + r.nextDouble() * 0.20;

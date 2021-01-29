@@ -59,12 +59,14 @@ public class ChoosePlayerController {
     @FXML
     private void clickedDemocratic(ActionEvent event) {        
         App.GAME.player1.setDemocrat();
+        App.GAME.player2.setRepublican();
         republicanButton.setSelected(false);
     }
 
     @FXML
     private void clickedRepublican(ActionEvent event) {        
         App.GAME.player1.setRepublican();
+        App.GAME.player2.setDemocrat();
         democraticButton.setSelected(false);
     }
 

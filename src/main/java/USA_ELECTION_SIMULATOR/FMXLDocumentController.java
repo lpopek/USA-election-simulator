@@ -8,15 +8,12 @@ import javafx.event.ActionEvent;
 import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.geometry.Side;
 import javafx.scene.chart.PieChart;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.MenuItem;
-import javafx.scene.image.Image;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.paint.Color;
-import javafx.scene.shape.Circle;
 import javafx.scene.shape.Polygon;
 import javafx.scene.shape.Rectangle;
 
@@ -1357,7 +1354,7 @@ public class FMXLDocumentController implements Initializable {
     @FXML public void initMainLabels() {
         timeLabel.setText("Weeks until election: " + App.GAME.getWeekTillElections());
         moneyLabel.setText("Money: " + App.GAME.getMoney()+ "k $");
-        actionNumber.setText("You can stil make " + App.GAME.noActionProTurn + " actions");
+        actionNumber.setText("You can stil make " + App.GAME.noActionProTurnPlayerOne + " actions");
     }
 
     @FXML public void colorMap(){
@@ -1414,7 +1411,7 @@ public class FMXLDocumentController implements Initializable {
         colorStateWY();
     }
     @FXML void disableButtonsIfNoAction(){
-        if(App.GAME.noActionProTurn <= 0){
+        if(App.GAME.noActionProTurnPlayerOne <= 0){
             launchTVCampaignBtn.setDisable(true);
             makeVisitBtn.setDisable(true);
             raiseFoundsBtn.setDisable(true);
