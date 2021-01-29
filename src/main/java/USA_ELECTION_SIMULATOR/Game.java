@@ -9,12 +9,13 @@ public class Game {
     ArrayList<State> USA = new ArrayList<State>();
     Player player1 = new Player(null, null, null);
     int money = 0;
-    int weekTillElection = 10;
+    int weekTillElection = 2;
     int electoralVotes;
     int noActionProTurn = 4;
     int actionProTurnDefaultValue = 4;
     boolean gameOver = false;
-    boolean isWinner = false;
+    boolean isWinnerPlayerOne = false;
+    boolean twoPlayerMode = false;
     State chosenState = null;
     Comunnication currentInfo = null;
     Comunnication [] popularInfo ={
@@ -97,8 +98,9 @@ public class Game {
     }
 
     public void getWinner(){
-        if (electoralVotes > 270)
-            this.isWinner = true;
+        this.countVotes();
+        if (this.electoralVotes > 270)
+            this.isWinnerPlayerOne = true;
     }
 
     public State chooseStateByID(String searchID){

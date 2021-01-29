@@ -32,9 +32,15 @@ public class App extends Application {
         screenController.addScreen("choose_player", FXMLLoader.load(getClass().getResource( "FXML_Files/choose_player.fxml" )));
         screenController.addScreen("highscores", FXMLLoader.load(getClass().getResource( "FXML_Files/highscores.fxml" )));
         screenController.addScreen("map", FXMLLoader.load(getClass().getResource( "FXML_Files/main_view.fxml" )));
-        screenController.addScreen("results", FXMLLoader.load(getClass().getResource( "FXML_Files/result_page.fxml" )));
+        screenController.addScreen("defeat", FXMLLoader.load(getClass().getResource( "FXML_Files/defeat.fxml" )));
+        screenController.addScreen("GOPwin", FXMLLoader.load(getClass().getResource( "FXML_Files/GOPwin.fxml" )));
+        screenController.addScreen("DEMwin", FXMLLoader.load(getClass().getResource( "FXML_Files/DEMwin.fxml" )));
         stage.show();
      }
+
+    protected static void reset() throws FileNotFoundException {
+        App.GAME = new Game();
+    }
      
 }
 

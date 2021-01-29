@@ -101,7 +101,7 @@
                                                       <Font name="Arial Bold" size="30.0" />
                                                    </font>
                                                 </Label>
-                                                <Label fx:id="stateName" layoutX="16.0" layoutY="50.0" prefHeight="23.0" prefWidth="318.0" stylesheets="@../css/styleMainWindow.css" text="Name" textAlignment="JUSTIFY" AnchorPane.leftAnchor="13.0" AnchorPane.rightAnchor="12.0" />
+                                                <Label fx:id="stateName" layoutX="19.0" layoutY="50.0" prefHeight="23.0" prefWidth="204.0" stylesheets="@../css/styleMainWindow.css" text="Name" textAlignment="JUSTIFY" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="123.0" />
                                                 <Label fx:id="stateMomentumDEM" layoutX="10.0" layoutY="175.0" prefHeight="18.0" prefWidth="240.0" stylesheets="@../css/styleMainWindow.css" text="State Dem Mom" textAlignment="JUSTIFY" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" />
                                                 <Label fx:id="statePossibleMoney" layoutX="10.0" layoutY="100.0" prefHeight="20.0" prefWidth="230.0" stylesheets="@../css/styleMainWindow.css" text="State Possible money" textAlignment="JUSTIFY" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" />
                                                 <Label fx:id="visitCost" layoutX="10.0" layoutY="125.0" prefHeight="20.0" prefWidth="294.0" text="Visit cost" textAlignment="JUSTIFY" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" />

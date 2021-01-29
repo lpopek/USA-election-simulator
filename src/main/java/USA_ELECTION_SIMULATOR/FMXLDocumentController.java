@@ -1437,8 +1437,7 @@ public class FMXLDocumentController implements Initializable {
         disableButtonsIfNoAction();
     }
 
-    @FXML
-    void exitFromGame(ActionEvent event) {
+    @FXML void exitFromGame(ActionEvent event) {
         System.exit(0);
     }
     @FXML void raiseFounds(Event event){
@@ -1483,7 +1482,6 @@ public class FMXLDocumentController implements Initializable {
             disableButtonsIfNoAction();
             setElectVotes();
         }
-
         else{
             System.out.println("cos nie tak");
         }
@@ -1492,14 +1490,33 @@ public class FMXLDocumentController implements Initializable {
 
     @FXML void endTurn(Event event){
         App.GAME.finishTurn();
-        if(App.GAME.gameOver ==false){
+        if(App.GAME.gameOver == false){
             exitFromStatePanel();
             initMainLabels();
             setElectVotes();
+            colorMap();
         }
         else{
-            App.screenController.activate("results");
+            lauchResultScreen();
         }
+    }
+
+    @FXML void lauchResultScreen(){
+        if(App.GAME.isWinnerPlayerOne == true){
+            if(App.GAME.player1.party == "R"){
+                App.screenController.activate("GOPwin");
+            }
+
+            else{
+                App.screenController.activate("DEMwin");
+
+            }
+            
+        }
+        else{
+            App.screenController.activate("defeat");
+        }
+
     }
 
 

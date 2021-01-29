@@ -1,0 +1,97 @@
+
+.rootDefeat {
+    -fx-background-image: url("../pic/Backgroundphoto.jpg");
+    -fx-background-size: 100% 100%;
+}
+
+.rootRep {
+    -fx-background-image: url("../pic/backgroundGOPwin.jpg");
+    -fx-background-size: 100% 100%;
+} 
+
+.rootDem {
+    -fx-background-image: url("../pic/backgroundDEMwin.jpg");
+    -fx-background-size: 100% 100%;
+} 
+.h1 {
+    -fx-font-size: 50pt;
+    -fx-font-weight: bold;
+    -fx-text-fill: black;
+    -fx-font-family: "Comic Sans MS", "Comic Sans";
+}
+
+.h2 {
+    -fx-bacground-color: white;
+    -fx-font-size: 40pt;
+    -fx-font-style: italic;
+    -fx-font-weight: bold;
+    -fx-text-fill: black;
+    -fx-font-family: "Verdana";
+}
+
+.label {
+    -fx-bacground-color: white;
+    -fx-font-size: 20pt;
+    -fx-font-weight: bold;
+    -fx-text-fill: black;
+    -fx-font-family: "Comic Sans MS", "Comic Sans";
+}
+
+.text {
+    -fx-bacground-color: white;
+    -fx-font-size: 28pt;
+    -fx-font-weight: bold;
+    -fx-text-fill: black;
+    -fx-font-family: "Comic Sans MS", "Comic Sans";
+}
+
+.buttonD {
+    -fx-width: 180px;
+    -fx-width: 60px;
+    -fx-font-size: 13pt;
+    -fx-text-fill: white;
+    -fx-font-family: "Comic Sans MS", "Comic Sans";
+    -fx-font-weight: bold;
+    -fx-background-color: rgb(0, 0, 0);
+    -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.0 , 0 , 1 );
+    -fx-background-size: cover;
+}
+
+.buttonD:hover{
+    -fx-background-color: white;
+    -fx-text-fill: rgb(0, 0, 0);
+}
+
+.buttonDEM {
+    -fx-width: 180px;
+    -fx-width: 60px;
+    -fx-font-size: 13pt;
+    -fx-text-fill: black;
+    -fx-font-family: "Comic Sans MS", "Comic Sans";
+    -fx-font-weight: bold;
+    -fx-background-color: blue;
+    -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.0 , 0 , 1 );
+    -fx-background-size: cover;
+}
+
+.buttonDEM:hover{
+    -fx-background-color: white;
+    -fx-text-fill: blue;
+}
+
+.buttonREP {
+    -fx-width: 180px;
+    -fx-width: 60px;
+    -fx-font-size: 50pt;
+    -fx-text-fill: black;
+    -fx-font-family: "Comic Sans MS", "Comic Sans";
+    -fx-font-weight: bold;
+    -fx-background-color: red;
+    -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.0 , 0 , 1 );
+    -fx-background-size: cover;
+}
+
+.buttonREP:hover{
+    -fx-background-color: white;
+    -fx-text-fill: red;
+}

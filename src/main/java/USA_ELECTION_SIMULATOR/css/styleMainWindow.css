@@ -18,6 +18,14 @@
     -fx-border-color: DarkBLUE;
     -fx-border-radius: 20px;
 }
+
+/* POLYGONS */
+
+.polygon:focused{
+    -fx-background-color: DarkGreen;
+}
+
+
 /* BUTTTONS */
 
 .button {
