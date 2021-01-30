@@ -315,7 +315,6 @@ public class State {
     }
 
     protected void endTurnForState(){
-        this.changeSupportOnTheEndOfTurn();
         isRaisedFounds = false;
         isLauchedCampaign = false;
         isVisted = false;

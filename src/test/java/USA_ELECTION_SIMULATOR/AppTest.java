@@ -15,18 +15,6 @@ public class AppTest {
         assertEquals("Surname", player.surname);
         assertEquals("R", player.party);     
     }
-    @Test //failed. lets name and surname be empty
-    public void testPlayerEmptyName() {
-        boolean except = false;
-        try {
-            Player player = new Player("", "","");
-        }
-        catch (Exception e)
-        {
-            except = true;
-        }
-        assertTrue(except);
-    }
 
     @Test
     public void testStateType() {

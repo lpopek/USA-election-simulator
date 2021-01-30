@@ -1423,10 +1423,21 @@ public class FMXLDocumentController implements Initializable {
             launchTVCampaignBtn.setDisable(false);
         else
             launchTVCampaignBtn.setDisable(true);
+        if(s.getCostOfTVCampaign(App.GAME.player1.party) < App.GAME.moneyPlayerOne)
+            launchTVCampaignBtn.setDisable(false);
+        else
+            launchTVCampaignBtn.setDisable(true);
+
         if(s.isVisted == false)
             makeVisitBtn.setDisable(false);
         else 
             makeVisitBtn.setDisable(true);
+        
+        if(s.getCostOfVisit(App.GAME.player1.party) < App.GAME.moneyPlayerOne)
+            makeVisitBtn.setDisable(false);
+        else
+            makeVisitBtn.setDisable(true);
+
         if(s.isRaisedFounds == false)
             raiseFoundsBtn.setDisable(false);
         else

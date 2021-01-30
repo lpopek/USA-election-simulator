@@ -43,7 +43,7 @@ public class GameTest {
         assertEquals(2, game.weekTillElection);
         game.noActionProTurnPlayerOne--;
         game.finishTurn();
-        assertEquals(4, game.noActionProTurnPlayerOne);
+        assertEquals(3, game.noActionProTurnPlayerOne);
     }
     @Test
     public void testCheckIfAbleToMakeSupportAction() throws FileNotFoundException {

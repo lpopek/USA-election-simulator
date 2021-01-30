@@ -16,11 +16,11 @@
                <font>
                   <Font size="70.0" />
                </font></Label>
-            <Text layoutX="17.0" layoutY="240.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text" text="After poor Campaign You have obtained " textAlignment="CENTER" wrappingWidth="622.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" />
+            <Text layoutX="10.0" layoutY="258.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text" text="After poor Campaign You have lost with your opponent!" textAlignment="CENTER" wrappingWidth="622.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="22.399999999999977" />
             <Text layoutX="9.0" layoutY="394.0" strokeType="INSIDE" styleClass="text" text="You won't become next US President. Maybe next time... " textAlignment="CENTER" wrappingWidth="639.5999755859375" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" />
             <Label alignment="CENTER" layoutX="10.0" layoutY="122.0" prefHeight="38.0" prefWidth="599.0" style="-fx-font-family: &quot;Lucida Handwriting&quot;; -fx-font-size: 50;" styleClass="h2" text="Dear Candidate," textAlignment="CENTER" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" />
-            <Button fx:id = "mainMenuBtn" layoutX="164.0" layoutY="492.0" mnemonicParsing="false" prefHeight="102.0" prefWidth="340.0" styleClass="buttonD" text="Main Menu" AnchorPane.leftAnchor="164.0" AnchorPane.rightAnchor="150.0"  onMouseClicked="#backToMainMenu" />
-            <Button fx:id = "exitBtn" layoutX="205.0" layoutY="616.0" mnemonicParsing="false" prefHeight="43.0" prefWidth="180.0" styleClass="buttonD" text="Exit" textAlignment="CENTER" AnchorPane.leftAnchor="205.0" AnchorPane.rightAnchor="195.0"  onMouseClicked="#exitFromGame"/>
+            <Button fx:id="mainMenuBtn" layoutX="164.0" layoutY="492.0" mnemonicParsing="false" onMouseClicked="#backToMainMenu" prefHeight="102.0" prefWidth="340.0" styleClass="buttonD" text="Main Menu" AnchorPane.leftAnchor="164.0" AnchorPane.rightAnchor="150.0" />
+            <Button fx:id="exitBtn" layoutX="205.0" layoutY="616.0" mnemonicParsing="false" onMouseClicked="#exitFromGame" prefHeight="43.0" prefWidth="180.0" styleClass="buttonD" text="Exit" textAlignment="CENTER" AnchorPane.leftAnchor="205.0" AnchorPane.rightAnchor="195.0" />
          </children>
       </AnchorPane>
    </children>

@@ -9,7 +9,7 @@
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.text.Font?>
 
-<StackPane style="-fx-background-size: 100% 100%;" styleClass="root" stylesheets="@../css/MPage.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="USA_ELECTION_SIMULATOR.mainPage">
+<StackPane maxHeight="900.0" maxWidth="-Infinity" minHeight="800.0" minWidth="-Infinity" prefHeight="800.0" prefWidth="1200.0" style="-fx-background-size: 100% 100%;" styleClass="root" stylesheets="@../css/MPage.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="USA_ELECTION_SIMULATOR.mainPage">
    <children>
       <BorderPane prefHeight="200.0" prefWidth="200.0">
          <center>

@@ -125,6 +125,7 @@ public class Game {
             makeSITurn();
             for(int i=0; i < this.USA.size(); i++){
                 this.USA.get(i).endTurnForState();
+                this.USA.get(i).changeSupportOnTheEndOfTurn();
             }
             isHumanPlayerTurn = true;
             this.currentInfo = this.popularInfo[6];
@@ -219,7 +220,7 @@ public class Game {
                 this.choosenBySI.add(firstState);
                 this.moneyPlayerTwo += firstStateMoney;
         }
-        System.out.println("została zebrane fundusze w" + firstState.name);
+        System.out.println("została zebrane fundusze w " + firstState.name);
         
     }
 
@@ -237,7 +238,7 @@ public class Game {
             SIVisitedState.visitState(player2.party);
             this.moneyPlayerTwo -= SIVisitedState.getCostOfVisit(player2.party);
             this.choosenBySI.add(SIVisitedState);
-            System.out.println("została przeprowadzona wizyta w" + SIVisitedState.name);
+            System.out.println("została przeprowadzona wizyta w " + SIVisitedState.name);
             return true;
         }
         else{
@@ -275,7 +276,7 @@ public class Game {
         findStateToRaiseFounds();
         Random rand = new Random();
         int sequenceOfEvents = rand.nextInt(10);
-        if (sequenceOfEvents % 3 == 0){
+        if (sequenceOfEvents % 2 == 0){
             chooseRandStateToTVCampaign();
             chooseRandStateToVisit();
         }
@@ -283,6 +284,7 @@ public class Game {
             chooseRandStateToVisit();
             chooseRandStateToTVCampaign();
         }
+
             
     }
 
